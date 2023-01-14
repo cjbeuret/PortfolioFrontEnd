@@ -18,7 +18,10 @@
   <link href="assets/libs/bootstrap/css/bootstrap.min.css"rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-     
+  
+  <!-- Font Awesome  -->
+  <script src="https://kit.fontawesome.com/4b024f1032.js" crossorigin="anonymous"></script>
+
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
@@ -32,15 +35,17 @@
 </head>
 <body>
   <!-- Barra de navegación-->
-  <nav class="navbar navbar-expand-md navbar-light">
-    <div class="container-fluid">
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbar-toggler">
+  <section id="navbar">
+
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container-fluid">
         
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+      <div class="collapse navbar-collapse" id="navbar-toggler">
+
         <!-- logo argentina programa-->
         <section id="logoArgProg">
           <a class="navbar-brand" href="#">
@@ -51,43 +56,48 @@
             />
           </a>
         </section>
-        
+
         <!--lista links internos-->
         <section id="inks-portfolio"> 
-          <ul class="navbar-nav d-flex justify-content-center align-items-center">        
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Sobre mí</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Aptitudes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Proyectos</a>
-              </li>
+          
+          <a class="navbar-brand" href="#"></a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Sobre mí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Habilidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Proyectos</a>
+            </li>
           </ul>
+
         </section>
-            
+
         <!--lista redes-->
         <section id="redes">
-          <ul class="navbar-nav d-flex justify-content-center align-items-center"> 
-              <li class="nav-item"> <a href="https://discord.com" target="_blank"> <i class="bi bi-discord"></i></a></li>
-              <li class="nav-item"> <a href="https://github.com" target="_blank"> <i class="bi bi-github"></i></a></li>
-              <li class="nav-item"> <a href="https://gmail.com" target="_blank"> <i class="bi bi-envelope-at-fill"></i></a></li>
+          <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item"><a href="https://discord.com" target="_blank"></a><i class="fa-brands fa-discord"></i></li>
+            <li class="list-group-item"><a href="https://github.com" target="_blank"> </a><i class="fa-brands fa-github"></i></li>
+            <li class="list-group-item"><a href="https://web.whatsapp.com" target="_blank"> </a><i class="fa-brands fa-whatsapp"></i></li>
+            <li class="list-group-item"><a href="https://gmail.com" target="_blank"> </a><i class="fa-solid fa-envelope-circle-check"></i></li>
           </ul>
         </section>
 
-        <!--login-->
-        <section id="login">
-          <button type="button" class="btn btn-primary">
-            <i class="bi bi-box-arrow-in-right"></i>
-          </button>
-        </section>
-              
+        <!-- Button Login modal -->
+        
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+          <i class="fa-sharp fa-solid fa-lock"></i>
+        </button>
+      
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!--sección principal-->
+  </section>
+  
+
+<!--sección principal-->
 <header class="container-fluid">
     <div class="row" style="background: grey; height: 100 px">     
         <img class="banner" 
@@ -387,6 +397,42 @@
       6. Documentos relacionados.
   </p>
 </footer>
+
+<!--MODALES-->
+
+  <!-- Botón Modal Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+             
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>  
 
   <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src = "ecma.brw.js"></script> 
