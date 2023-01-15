@@ -34,9 +34,13 @@
 
 </head>
 <body>
+   
+<!--sección principal-->
+<header class="container-fluid">
+  
   <!-- Barra de navegación-->
   <section id="navbar">
-    <nav class="navbar navbar-expand-lg" style="background-color: #0783db;">
+    <nav class="navbar navbar-expand-lg rounded" style="background-color: rgb(13, 136, 13);">
       <div class="container-fluid">
              
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,60 +95,44 @@
     </nav>
 
   </section>
-  
 
-<!--sección principal-->
-<header class="container-fluid">
-    <div class="row" style="background: grey; height: 100 px">     
-        <img class="banner" 
-        src="./assets/img/banner_2.png" 
-        alt="banner"
-        height = 10%
-        />
-    </div>      
+  <!-- SOBRE MÍ --> 
+  <section id="sobre-mi" class="sobre-mi">    
+
+    <div class="acercaDe container-fluid text-center rounded shadow-sm mb-5 bg-body-transparent p-0">  
+      
+      <button type="submit" class="btn btn-light editBanner">Editar banner</button>  
+      <img src="assets/img/banner_2.png" alt="banner" width="100%" height="300rem" class="rounded-top-banner">
+                
+        <div class="row p-3">
+          <div class="col-3">
+            <img src="assets/img/ceci.jpg" class=" miFoto rounded-circle" width=250 height=auto alt="imagen de Perfil">
+            <button type="submit" class="btn btn-light"><i class="fa-solid fa-pen"></i></button>
+            <br>
+            <h2 class="nombrePerfil">Cecilia Judith Beuret</h2>
+            <h4 class="tituloPerfil">Desarrollador Web Full Stack Jr</h4>
+          </div>
+
+          <div class="col-8 text-center">
+            <h3>Perfil</h3>
+            <h6 class="sobreMiPerfil"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi distinctio necessitatibus reprehenderit temporibus dolorem molestias, saepe repellat totam commodi, quos atque sint delectus similique tempora, quaerat dicta asperiores accusamus optio.</h6>
+          </div>  
+          
+          <div class="col-1">
+            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+            <br>
+            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+          </div>  
+
+        </div>
+    </div>
+  </section>
+
+       
 </header>
 
-<div class="container text"> <!-- imagen -->
-  <div class="row">
-    <div class="col-4">
-      <div class="miFoto"> 
-        <img 
-        class="imagenPerfil"
-        src="./assets/img/ceci.jpg" 
-        width="250" 
-        height="auto"
-        alt="foto de Cecilia Beuret"
-        title="imagen de Cecilia"
-        >
-      </div>
-    </div>
-    
-    <div class="col-8">
-    </div>
-   
-  </div>
-</div>
-
-
-<main class="container"> 
-  <section id="sobre-mi"> <!-- SOBRE MÍ -->    
-        
-    <div class="container text-center">  
-      <div class="row">
-        <div class="col-4"> <!-- nombre & especialidad -->   
-          <h1>Cecilia Judith Beuret</h1>
-          <h2>Full Stack Developer Jr</h2>
-        </div>
-        <div class="col-8"><!--Perfil-->
-          <h2>Perfil</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ullam blanditiis iste repellat sit quaerat aspernatur reiciendis ut? Ea, alias voluptatum laudantium possimus molestiae voluptate repellendus iusto voluptatibus sunt ipsam.</p>
-        </div>
-      </div>
-    </div>
-
-
-  </section>
-     
+<main> 
+      
   <section id="editSobreMi" class="bg-dark p-4">  <!-- Editar SOBRE MÍ -->  
     <div class="container text-center">
       <div class="row">
@@ -172,104 +160,93 @@
   </section>
       
   <section id="experiencia"> <!-- EXPERIENCIA -->
-    <h2 class="text mt-4 pb-3">Experiencia Laboral</h2>
+    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">    
+      <div class="row p-3">
+
+        <h2 class="text mt-4 pb-8">Experiencia Laboral</h2>
+              
+        <article class="row"> <!-- ENRE -->
+          <div class="col-2">
+            <a href="https://google.com" target="_blank">
+              <img src="./assets/img/Enre_logo.png" 
+              alt="logo ENRE"
+              width="80%"
+              >                  
+            </a>
+          </div>
+                        
+          <div class="col-9">
+            <h3>ENRE</h3>
+            <h5>subtítulo</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eius consequatur, excepturi dolorum soluta consectetur explicabo? Vel eveniet, corrupti vero deserunt, assumenda rerum autem consequatur veritatis distinctio debitis quas minima.</p>
+          </div>
           
-    <article class="row"> <!-- ENRE -->
-      <div class="col-2">
-        <a href="https://google.com" target="_blank">
-          <img src="./assets/img/Enre_logo.png" 
-          alt="logo ENRE"
-          width="80%"
-          >                  
-        </a>
-      </div>
-                    
-      <div class="col-8">
-        <h3>ENRE</h3>
-        <h5>subtítulo</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eius consequatur, excepturi dolorum soluta consectetur explicabo? Vel eveniet, corrupti vero deserunt, assumenda rerum autem consequatur veritatis distinctio debitis quas minima.</p>
-      </div>
-      
-      <div class="col-1">
-        <button> <!-- Editar-->
-          <i class="bi bi-pen-fill"></i>  
-          </button>
-      </div>
-  
-      <div class="col-1">
-        <button> <!-- Eliminar-->
-          <i class="bi bi-trash-fill"></i>
-        </button>
-      </div>   
-    </article>
+          <div class="col-1">
+            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+            <br>
+            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+          </div>  
+          
+        </article>
 
-    <article class="row"> <!-- UBA -->
-      <div class="col-2">
-          <img src="./assets/img/800px-UBA.png" 
-          alt="logo UBA-FFYB"
-          width="50%">
-      </div>
-      <div class="col-8">
-          <h3>UBA</h3>
-          <h5>subtítulo</h5>
-          <p>descripción</p>
-      </div>
-      <div class="col-1">
-        <button> <!-- Editar-->
-          <i class="bi bi-pen-fill"></i>  
-        </button>
-      </div>
-      <div class="col-1">
-        <button> <!-- Eliminar-->
-          <i class="bi bi-trash-fill"></i>
-        </button>
-      </div>   
-    </article>
+        <article class="row"> <!-- UBA -->
+          <div class="col-2">
+              <img src="./assets/img/800px-UBA.png" 
+              alt="logo UBA-FFYB"
+              width="50%">
+          </div>
+          <div class="col-9">
+              <h3>UBA</h3>
+              <h5>subtítulo</h5>
+              <p>descripción</p>
+          </div>
+          
+          <div class="col-1">
+            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+            <br>
+            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+          </div>  
 
-    <article class="row"> <!-- PROYECTO3 -->
-        <div class="col-2">
-            <img src=".." alt="logo PROYECTO3">
-        </div>
-        <div class="col-8">
-            <h3>PROYECTO 3</h3>
-            <h5>subtítulo</h5>
-            <p>descripción</p>
-        </div>
-        <div class="col-1">
-          <button> <!-- Editar-->
-            <i class="bi bi-pen-fill"></i>  
-          </button>
-        </div>
-        <div class="col-1">
-          <button> <!-- Eliminar-->
-            <i class="bi bi-trash-fill"></i>
-          </button>
-        </div>   
-    </article>
+        </article>
 
-    <article class="row"> <!-- UNSL -->
-        <div class="col-2">
-            <img src="./assets/img/unsl.png" 
-            alt="logo UNSL-FQBYF"
-            width="120%">
-        </div>
-        <div class="col-8">
-            <h3>UNSL</h3>
-            <h5>subtítulo</h5>
-            <p>descripción</p>
-        </div>
-        <div class="col-1">
-          <button> <!-- Editar-->
-            <i class="bi bi-pen-fill"></i>  
-          </button>
-        </div>
-        <div class="col-1">
-          <button> <!-- Eliminar-->
-            <i class="bi bi-trash-fill"></i>
-          </button>
-        </div>   
-    </article>
+        <article class="row"> <!-- PROYECTO3 -->
+            <div class="col-2">
+                <img src=".." alt="logo PROYECTO3">
+            </div>
+            <div class="col-9">
+                <h3>PROYECTO 3</h3>
+                <h5>subtítulo</h5>
+                <p>descripción</p>
+            </div>
+            <div class="col-1">
+              <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+              <br>
+              <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+            </div>  
 
+        </article>
+
+        <article class="row"> <!-- UNSL -->
+            <div class="col-2">
+                <img src="./assets/img/isologo-unsl-dos-lineas.png" 
+                alt="logo UNSL-FQBYF"
+                width="120%">
+            </div>
+            <div class="col-9">
+                <h3>UNSL</h3>
+                <h5>subtítulo</h5>
+                <p>descripción</p>
+            </div>
+          
+            <div class="col-1">
+              <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+              <br>
+              <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+            </div>  
+
+        </article>
+      </div>
+    </div>
   </section>
   
   <section id="editExperiencia" class="bg-dark p-4">  <!-- Modificar EXPERIENCIA -->  
@@ -282,85 +259,73 @@
   </section>
 
   <section id="educacion"> <!-- EDUCACIÓN -->
-    <h2 class="text mt-4 pb-3">Educación</h2>
-        
-    <article class="row"> <!-- UNSAM -->
-      <div class="col-2">
-            <a href="https://www.unsam.edu.ar/institutos/3ia/140/3ia/gestion-ambiental" target="_blank">
-              <img src="./assets/img/logo_UNSAM.png" 
-              alt="logo UNSAM"
-              width="100%">
+    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+      <div class="row p-3">
+        <h2 class="text mt-4 pb-8">Educación</h2>
+            
+        <article class="row"> <!-- UNSAM -->
+          <div class="col-2">
+                <a href="https://www.unsam.edu.ar/institutos/3ia/140/3ia/gestion-ambiental" target="_blank">
+                  <img src="./assets/img/logo_UNSAM.png" 
+                  alt="logo UNSAM"
+                  width="100%">
+                </a>
+          </div>
+          <div class="col-9">
+              <h3>UNIVERSIDAD NACIONAL DE SAN MARTÍN</h3>
+              <h5>Maestría en Gestión Ambiental</h5>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti impedit accusamus asperiores tempora perferendis magni dolorum, perspiciatis aliquid at consequatur qui consectetur quod dignissimos et corporis modi. Iure, sed facilis?</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+            <br>
+            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+          </div>
+        </article>
+            
+        <article class="row"> <!-- UNSL-LIC -->
+          <div class="col-2">
+            <a href="https://carreras.unsl.edu.ar/carreras/lic-cs-bio" target="_blank">
+              <img src="./assets/img/isologo-unsl-dos-lineas.png" 
+              alt="logo UNSL-FQBYF"
+              width="120%"
+              >
             </a>
+          </div>
+          <div class="col-9">
+              <h3>UNIVERSIDAD NACIONAL DE SAN LUIS</h3>
+              <h5>Licenciatura en Ciencias Biológicas</h5>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis deserunt cumque, nobis veniam laboriosam dolores accusamus exercitationem praesentium maxime nesciunt, maiores sunt minus voluptates! Dolor esse harum tempore culpa eum.</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+            <br>
+            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+          </div>
+        </article>
+            
+        <article class="row"> <!-- UNSL-PROF -->
+          <div class="col-2">
+            <a href="https://carreras.unsl.edu.ar/carreras/prof-bio" target="_blank">
+              <img src="./assets/img/isologo-unsl-dos-lineas.png" 
+              alt="logo UNSL-FQBYF"
+              width="120%"
+              >
+            </a>
+          </div>  
+          <div class="col-9">
+            <h3>UNIVERSIDAD NACIONAL DE SAN LUIS</h3>
+            <h5>Profesorado Universitario en Biología</h5>
+            <p>descripción</p>
+            </div>
+            <div class="col-1">
+              <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+              <br>
+              <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+            </div>
+        </article>
       </div>
-      <div class="col-8">
-          <h3>UNIVERSIDAD NACIONAL DE SAN MARTÍN</h3>
-          <h5>Maestría en Gestión Ambiental</h5>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti impedit accusamus asperiores tempora perferendis magni dolorum, perspiciatis aliquid at consequatur qui consectetur quod dignissimos et corporis modi. Iure, sed facilis?</p>
-      </div>
-      <div class="col-1">
-        <button> <!-- Editar-->
-          <i class="bi bi-pen-fill"></i>  
-        </button>
-      </div>
-      <div class="col-1">
-        <button> <!-- Eliminar-->
-          <i class="bi bi-trash-fill"></i>
-        </button>
-      </div>   
-    </article>
-        
-    <article class="row"> <!-- UNSL-LIC -->
-      <div class="col-2">
-        <a href="https://carreras.unsl.edu.ar/carreras/lic-cs-bio" target="_blank">
-          <img src="./assets/img/unsl.png" 
-          alt="logo UNSL-FQBYF"
-          width="120%"
-          >
-        </a>
-      </div>
-      <div class="col-8">
-          <h3>UNIVERSIDAD NACIONAL DE SAN LUIS</h3>
-          <h5>Licenciatura en Ciencias Biológicas</h5>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis deserunt cumque, nobis veniam laboriosam dolores accusamus exercitationem praesentium maxime nesciunt, maiores sunt minus voluptates! Dolor esse harum tempore culpa eum.</p>
-      </div>
-      <div class="col-1">
-        <button> <!-- Editar-->
-          <i class="bi bi-pen-fill"></i>  
-        </button>
-      </div>
-      <div class="col-1">
-        <button> <!-- Eliminar-->
-          <i class="bi bi-trash-fill"></i>
-        </button>
-      </div>   
-    </article>
-        
-    <article class="row"> <!-- UNSL-PROF -->
-      <div class="col-2">
-        <a href="https://carreras.unsl.edu.ar/carreras/prof-bio" target="_blank">
-          <img src="./assets/img/unsl.png" 
-          alt="logo UNSL-FQBYF"
-          width="120%"
-          >
-        </a>
-      </div>  
-      <div class="col-8">
-        <h3>UNIVERSIDAD NACIONAL DE SAN LUIS</h3>
-        <h5>Profesorado Universitario en Biología</h5>
-        <p>descripción</p>
-        </div>
-        <div class="col-1">
-          <button> <!-- Editar-->
-            <i class="bi bi-pen-fill"></i>  
-          </button>
-        </div>
-        <div class="col-1">
-          <button> <!-- Eliminar-->
-            <i class="bi bi-trash-fill"></i>
-          </button>
-        </div>   
-    </article>
-
+    </div>
   </section>
   
   <section id="editarEducacion" class="bg-dark p-4">  <!-- Modificar EDUCACIÓN -->  
@@ -373,32 +338,61 @@
   </section>
 
   <section id="habilidades"> <!-- HABILIDADES -->
-    <div id="info-apt">
-      <h2 class="text mt-4 pb-3">Habilidades</h2>
-        <ul id="info-compet">
-          <li>
-              <h4>Competencia1</h4>                 
-          </li>
-          <li>
-              <h4>Competencia2</h4>                    
-          </li>
-        </ul>
-      <h2 class="text mt-4 pb-3">Idiomas</h2>
-        <ul id="info-idiomas">
-            <li>
+    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+      <div class="row p-3">
+        <div id="info-apt">
+          
+          <h3 class="text-center mt-4 pb-8">HABILIDADES</h3>
+
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-6 col-sm-3">
+                <h4>HTTP</h4>
+                <div class="progress-circle progress-30"><span>30</span></div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <h4>CSS</h4>
+                <div class="progress-circle progress-50"><span>20</span></div>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <h4>JS</h4>
+                <div class="progress-circle progress-50"><span>20</span></div>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <h4>BOOTSTRAP</h4>
+                <div class="progress-circle progress-50"><span>30</span></div>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <h4>ANGULAR</h4>
+                <div class="progress-circle progress-50"><span>10</span></div>  
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-center mt-4 pb-8">IDIOMAS</h3>
+          
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-6 col-sm-3">
                 <h4>Español</h4>
-                <p>lengua materna</p>
-            </li>
-            <li>
+                <div class="progress-circle progress-100"><span>100</span></div>
+                <p>(lengua materna)</p> 
+              </div>
+              <div class="col-6 col-sm-3">
                 <h4>Inglés</h4>
-                <p>Avanzado</p>
-            </li>
-            <li>
+                <div class="progress-circle progress-50"><span>70</span></div>  
+              </div>
+              <div class="col-6 col-sm-3">
                 <h4>Francés</h4>
-                <p>Regular</p>
-            </li>
-        </ul>
-    </div>   
+                <div class="progress-circle progress-50"><span>40</span></div>  
+              </div>
+            </div>
+          </div>
+          
+             
+        </div>   
+      </div>
+    </div>
   </section>
   
   <section id="editarHabilidades" class="bg-dark p-4">  <!-- Modificar HABILIDADES -->  
@@ -411,33 +405,33 @@
   </section>
   
   <section id="proyectos"> <!-- PROYECTOS -->
-    <div id="proyectos">
-      <h2 class="text mt-4 pb-3">Proyectos</h2>
-
-      <article class="row"> <!-- ARGENTINA PROGRAMA -->
-        <div class="col-2">
-          <a href="https://argentinaprograma.inti.gob.ar" target="_blank">
-            <img id="logoArgProg" src="./assets/img/aplogo.png" alt="logo Argentina Programa"
-            width="100%">
-          </a>
+    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+      <div class="row p-3">
+    
+        <div id="proyectos">
+          <h2 class="text mt-4 pb-3">Proyectos</h2>
+          <article class="row"> <!-- ARGENTINA PROGRAMA -->
+            <div class="col-2">
+              <a href="https://argentinaprograma.inti.gob.ar" target="_blank">
+                <img id="logoArgProg" src="./assets/img/aplogo.png" alt="logo Argentina Programa"
+                width="100%">
+              </a>
+            </div>
+            <div class="col-9">
+                <h3>ARGENTINA PROGRAMA</h3>
+                <h5>Armado de porfolio</h5>
+                <h5>2022-2023</h5>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti impedit accusamus asperiores tempora perferendis magni dolorum, perspiciatis aliquid at consequatur qui consectetur quod dignissimos et corporis modi. Iure, sed facilis?</p>
+            </div>
+            <div class="col-1">
+              <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+              <br>
+              <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+            </div>
+          </article>
         </div>
-        <div class="col-8">
-            <h3>ARGENTINA PROGRAMA</h3>
-            <h5>Armado de porfolio</h5>
-            <h5>2022-2023</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti impedit accusamus asperiores tempora perferendis magni dolorum, perspiciatis aliquid at consequatur qui consectetur quod dignissimos et corporis modi. Iure, sed facilis?</p>
-        </div>
-        <div class="col-1">
-          <button> <!-- Editar-->
-            <i class="bi bi-pen-fill"></i>  
-          </button>
-        </div>
-        <div class="col-1">
-          <button> <!-- Eliminar-->
-            <i class="bi bi-trash-fill"></i>
-          </button>
-        </div>   
-      </article>
+      
+      </div>
     </div>
   </section>
   
@@ -453,30 +447,34 @@
   <hr>
   
   <section id="contactame"> <!-- CONTACTO -->
-    <div id="contacto">
-        <h2 class="text mt-4 pb-3">Contactarme</h2> <!-- enviar mensaje -->
-        <p>Cecilia Judith Beuret</p>
-        <p>Correo electrónico: xxxxxxx@gmail.com</p>
-        <p>teléfono: +54 9 11 00000000</p>
-        <br>
-        <label for="">Dejame tu mensaje</label>
-        <input type="text" name="acá dejá tu mensaje">
-        <button type="submit">Enviar</button>
+    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+      <div class="row p-3">
+       
+        <div id="contacto">
+            <h2 class="text mt-4 pb-3">Contactarme</h2> <!-- enviar mensaje -->
+            <p>Cecilia Judith Beuret</p>
+            <p>Correo electrónico: xxxxxxx@gmail.com</p>
+            <p>teléfono: +54 9 11 00000000</p>
+            <br>
+            <label for="">Dejame tu mensaje</label>
+            <input type="text" name="acá dejá tu mensaje">
+            <button type="submit">Enviar</button>
+        </div> 
+        <div class="ubicacion">      
+            <h5 class="text mt-4 pb-1">Ubicación</h5> <!-- mapa -->
+            <iframe 
+              class="mapa" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar" 
+              width="400" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>  
+      </div> 
     </div> 
-    <div class="ubicacion">      
-        <h5 class="text mt-4 pb-1">Ubicación</h5> <!-- mapa -->
-        <iframe 
-          class="mapa" 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar" 
-          width="400" 
-          height="300" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>  
-  
   </section>
 
   <section id="editContacto" class="bg-dark p-4">  <!-- Modificar CONTACTO -->  
@@ -490,6 +488,7 @@
 
 
 </main>
+
 <footer class="container">
   <p> 1. Información de autoría. 
       2. Información registrada. 
@@ -532,6 +531,32 @@
       </div>
     </div>
   </div>  
+
+   <!-- Botón Banner Modal-->
+   <div class="modal fade" id="bannerModal" tabindex="-1" aria-labelledby="bannerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">        
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="bannerModalLabel">Editar banner</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">             
+          <form>
+            <div class="mb-3">
+              <label for="imagenBanner" class="form-label">Editar imagen del banner</label>
+              <input type="url" placeholder="inserte url de la imagen" id="imagenBanner" name="imagenBanner" required>             
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>   
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- Botón Imagen Perfil Modal-->
   <div class="modal fade" id="imgPerfilModal" tabindex="-1" aria-labelledby="imgPerfilModal" aria-hidden="true">
