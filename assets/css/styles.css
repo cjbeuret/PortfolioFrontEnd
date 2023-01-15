@@ -11,16 +11,23 @@ h1 {
     width: 100%;
 }
 
-/* Barra de navegación */
+/* Barra de navegación 
 .navbar {
 padding: 2rem;
 background-color: grey
 }
+*/
 
 .navbar-collapse{
-align-items: center;    
-justify-content: space-between;
+    align-items: center;    
+    justify-content: space-between;
 }
+
+
+#logoArgProg{
+    filter:invert()
+}
+
 
 i {
     font-size: 550;
