@@ -72,9 +72,10 @@
             <li class="nav-item"><a class="nav-link" href="https://web.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
             <li class="nav-item"><a class="nav-link" href="mailto:cecibeuret@micorreo.com" target="_blank"><i class="fa-solid fa-envelope-circle-check"></i></a></li>
             <!-- links internos a la pagina   --> 
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Sobre mí</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Habilidades</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>         
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="#sobre-mi">Sobre mí</a></li>
+            <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contactame">Contacto</a></li>         
           </ul>
             
           <!-- Button Login modal -->
@@ -396,7 +397,7 @@
     <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
       <div class="row p-3">
         <div id="info-apt">
-          <h2 class="text-center mt-4 pb-8">HABILIDADES</h2>
+          <h2 class="text-center mt-4 pb-8">Habilidades</h2>
           <br>
 
           <div class="container text-center">
@@ -434,7 +435,7 @@
             </div>
           </div>
 
-          <h3 class="text-center mt-4 pb-8">IDIOMAS</h3>
+          <h3 class="text-center mt-4 pb-8">Idiomas</h3>
           
           <div class="container text-center">
             <div class="row">
@@ -453,10 +454,6 @@
               </div>
             </div>
           </div>
-          
-          
-             
-                
              
         </div>   
       </div>
@@ -562,15 +559,26 @@
 
 <br>
 
-<footer>
+<!--Pie de página (footer)-->
  
-  <section id="contactame"> <!-- CONTACTO -->
-    
+<footer>
+
+  <div id="contactame" class="links-redes-pie d-flex flex-column align-items-center justify-content-center">
+    <p class="footer-texto text-center">Contactame</p>
+    <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+      <a href="https://discord.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+      <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="mailto:cecibeuret@micorreo.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope-circle-check"></i></a>
+    </div>
+  </div>
+
+  <div> <!-- CONTACTO -->   
     <div class="contacto container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
       <div class="row p-3">
         <div class="col-6">
           <div id="contacto" class="justify-content-center align-items-center" >
-
+            
             <address>
               <strong>Dirección</strong>
               <br>
@@ -582,28 +590,13 @@
               <br>
               <strong>Correo electrónico: xxxxxxx@gmail.com</strong> 
             </address>
-
-            <!--segundo enlace a redes-->                 
-            <ul class="list-group list-group-horizontal align-items-center">
-              <a class="linkFooter link" href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a>
-              <a class="linkFooter link" href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
-              <a class="linkFooter link" href="https://web.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-              <a class="linkFooter link" href="mailto:cecibeuret@micorreo.com" target="_blank"><i class="fa-solid fa-envelope-circle-check"></i></a>
-            </ul>
-
+          
             <!-- enviar mensaje -->
             <div class="mensaje"> 
               <label for=""> <h6>Dejame tu mensaje</h6></label>
               <input type="text" name="acá dejá tu mensaje">
               <button type="submit">Enviar</button>
             </div>
-
-            <!--segunda instancia de link a contenido interno-->
-            <ul class="list-group list-group-horizontal align-items-center">             
-              <a class="linkFooter link" aria-current="page" href="#">Sobre mí</a>
-              <a class="linkFooter link" href="#">Habilidades</a>
-              <a class="linkFooter link" href="#">Proyectos</a> 
-            </ul>
 
           </div>  
         </div>      
@@ -626,15 +619,20 @@
           </div>  
         </div>
       </div>
-    </div>
+    </div>  
+  </div>
 
-    <div class="autoria container-fluid ">
-      <div class="row pb-3">
-        <h6 style="text-align: justify; text-align: center;">Creado por Cecilia J. Beuret (2023) © </h6>
-      </div>
-    </div>
-    
-  </section>
+  <!--segunda instancia de link a contenido interno-->
+  <div class="links-internos-pie d-flex flex-column align-items-center justify-content-center">
+    <ul class="list-group list-group-horizontal align-items-center">             
+      <a class="linkFooter" href="#sobre-mi">Sobre mí</a>
+      <a class="linkFooter" href="#experiencia">Experiencia</a>
+      <a class="linkFooter" href="#habilidades">Habilidades</a>
+      <a class="linkFooter" href="#proyectos">Proyectos</a> 
+    </ul>
+  </div>
+
+  <div class="derechos-de-autor d-flex flex-column align-items-center justify-content-center">Creado por Cecilia Beuret (2023) &#169;</div>  
 
   <section id="editContacto" class="bg-dark p-4">  <!-- Modificar CONTACTO -->  
     <h6 style="color: aliceblue;">Modificar contacto </h6>
@@ -1220,15 +1218,23 @@
         
         <div class="modal-body">             
           <form>
+            
             <div class="mb-3">
-              <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">              
+              <label for="inputCalle" class="form-label">Calle</label>
+              <input type="text" class="form-control" id="inputCalle" aria-describedby="calleHelp">              
+            </div>
+            <div class="mb-3">
+              <label for="inputLocalidad" class="form-label">Localidad</label>
+              <input type="text" class="form-control" id="inputLocalidad" aria-describedby="localidadHelp">              
             </div>
             <div class="mb-3">
               <label for="inputPhone" class="form-label">Teléfono</label>
               <input type="phone" class="form-control" id="inputPhone" aria-describedby="phoneHelp">              
             </div>
-            
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">              
+            </div>           
             <div class="mb-3">
               <label for="mapaUbicacion" class="form-label">Nueva ubicación</label>
               <input type="url" placeholder="inserte url del mapa" id="mapaUbicacion" name="mapaUbicacion" required>             
@@ -1257,15 +1263,23 @@
         
         <div class="modal-body">             
           <form>
+            
             <div class="mb-3">
-              <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">              
+              <label for="inputCalle" class="form-label">Calle y número</label>
+              <input type="text" class="form-control" id="inputCalle" aria-describedby="calleHelp">              
+            </div>
+            <div class="mb-3">
+              <label for="inputLocalidad" class="form-label">Localidad</label>
+              <input type="text" class="form-control" id="inputLocalidad" aria-describedby="localidadHelp">              
             </div>
             <div class="mb-3">
               <label for="inputPhone" class="form-label">Teléfono</label>
               <input type="phone" class="form-control" id="inputPhone" aria-describedby="phoneHelp">              
             </div>
-            
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">              
+            </div>           
             <div class="mb-3">
               <label for="mapaUbicacion" class="form-label">Nueva ubicación</label>
               <input type="url" placeholder="inserte url del mapa" id="mapaUbicacion" name="mapaUbicacion" required>             
