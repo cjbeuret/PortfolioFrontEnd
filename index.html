@@ -1,139 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <!-- metadatos -->
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Cecilia Beuret">
   <meta name="description" content="Portfolio de Cecilia Beuret">
   <meta name="keywords" content="HTML, CSS, JavaScript, React">
-  <meta name="viewport" content="width-device-width, initial-scale-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!--??-->
   <meta name="description" content="Roughly 155 characters">
-
    
+  <!-- Titulo -->
+  <title>PortfolioCB</title>
+
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href=".assets/img/ar-prog_logo.png">
+  <link rel="icon" type="image/x-icon" href="assets/img/ar-prog_logo.png">
     
   <!-- Bootstrap -->
-  <link href="assets/libs/bootstrap/css/bootstrap.min.css"rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- <link href="assets/libs/bootstrap/css/bootstrap.min.css"rel="stylesheet">  --> <!--OJO ESTO ES LO Q ME IMPIDE Q SEA RESPONSIVA-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   
   <!-- Font Awesome  -->
   <script src="https://kit.fontawesome.com/4b024f1032.js" crossorigin="anonymous"></script>
 
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-
+  <!-- y esto? googlefonts?-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="script.js"></script>
   
-  
-  
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+   
+   
+  <title>PortfolioCB</title>
+ 
   <title>PortfolioCB</title>
 
 </head>
 <body>
    
-<!--sección principal-->
+<!--seccion principal-->
 <header class="container-fluid">
   
-  <!-- Barra de navegación-->
+  <!-- Barra de navegacion-->
   <section id="navbar">
-    <nav class="navbar navbar-expand-lg rounded" style="background-color: rgb(13, 136, 13);">
+    <nav class="navbar navbar-expand-md rounded">
       <div class="container-fluid">
-             
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+         
+        <!--boton hamburguesa--> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        
+        <div class="collapse navbar-collapse" id="navbar-toggler">
               
-          <!--lista links internos-->
-          <section id="inks-portfolio"> 
-            <a class="navbar-brand" href="https://argentinaprograma.inti.gob.ar" target="_blank">
-              <img class="logoArgProg"
-              src="./assets/img/aplogo.png" 
-              alt="logo Argentina Programa"
-              width="180"
-              />
-            </a>
-          <!-- Por el momento no habilitar links internos a la página   
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Sobre mí</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Habilidades</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Proyectos</a>
-              </li>
-            </ul>
-            -->
-          </section>
-
-          <!--lista redes-->
-          <section id="redes">
-            <ul class="list-group list-group-horizontal-sm">
-              <li class="list-group-item"><a href="https://discord.com" target="_blank"></a><i class="fa-brands fa-discord"></i></li>
-              <li class="list-group-item"><a href="https://github.com" target="_blank"> </a><i class="fa-brands fa-github"></i></li>
-              <li class="list-group-item"><a href="https://web.whatsapp.com" target="_blank"> </a><i class="fa-brands fa-whatsapp"></i></li>
-              <li class="list-group-item"><a href="https://gmail.com" target="_blank"> </a><i class="fa-solid fa-envelope-circle-check"></i></li>
-            </ul>
-          </section>
-
+          <!--imagen boton y link a pagina Argentina Programa"--> 
+          <a class="navbar-brand" href="https://argentinaprograma.inti.gob.ar" target="_blank">
+            <img class="logoArgProg"
+            src="./assets/img/aplogo.png" 
+            alt="logo de Argentina Programa"
+            width="180"
+            />
+          </a>
+          
+          <ul class="navbar-nav d-flex justify-content-center align-items-center">
+            <!--lista redes-->
+            <li class="nav-item"><a class="nav-link" href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://web.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="mailto:cecibeuret@micorreo.com" target="_blank"><i class="fa-solid fa-envelope-circle-check"></i></a></li>
+            <!-- links internos a la pagina   --> 
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Sobre mí</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>         
+          </ul>
+            
           <!-- Button Login modal -->
           <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">
-            <i class="fa-sharp fa-solid fa-lock"></i>
+            <!--<i class="fa-sharp fa-solid fa-lock"></i>-->
+            <i class="fa-solid fa-right-to-bracket"></i>
           </button>
-          <button type="button" class="btn btn-light">
-            <i class="fa-solid fa-lock-open"></i>
+
+          <!-- Button Logout modal -->
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <!-- <i class="fa-solid fa-lock-open"></i>-->
+            <i class="fa-solid fa-right-from-bracket"></i>
           </button>
+
         </div>
-      
       </div>
     </nav>
 
   </section>
 
-  <!-- SOBRE MÍ --> 
-  <section id="sobre-mi" class="sobre-mi">    
+  <br>
 
+  <!-- SOBRE MI --> 
+  <section id="sobre-mi" class="sobre-mi text-white">    
+    <!-- Banner-->
     <div class="acercaDe container-fluid text-center rounded shadow-sm mb-5 bg-body-transparent p-0">  
-      
-      <button type="submit" class="btn btn-light editBanner">Editar banner</button>  
-      <img src="assets/img/banner_2.png" alt="banner" width="100%" height="300rem" class="rounded-top-banner">
-                
-        <div class="row p-3">
-          <div class="col-3">
-            <img src="assets/img/ceci.jpg" class=" miFoto rounded-circle" width=250 height=auto alt="imagen de Perfil">
-            <button type="submit" class="btn btn-light"><i class="fa-solid fa-pen"></i></button>
-            <br>
-            <h2 class="nombrePerfil">Cecilia Judith Beuret</h2>
-            <h4 class="tituloPerfil">Desarrollador Web Full Stack Jr</h4>
-          </div>
-
-          <div class="col-8 text-center">
-            <h3>Perfil</h3>
-            <h6 class="sobreMiPerfil"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi distinctio necessitatibus reprehenderit temporibus dolorem molestias, saepe repellat totam commodi, quos atque sint delectus similique tempora, quaerat dicta asperiores accusamus optio.</h6>
-          </div>  
+      <img src="assets/img/este.png" alt="banner" width="100%" height="500vh" class="rounded-top-banner">
+      <button type="submit" class="btn btn-light editBanner"><i class="fa-solid fa-pen"></i></button>  
+       <!-- mi foto-->         
+      <div class="row p-3">
+        <div class="col-3">
+          <img src="assets/img/fotoceci2.png" class="miFoto rounded-circle" width=200 height=auto alt="imagen de Perfil">
+          <button type="submit" class="btn btn-light"><i class="fa-solid fa-pen"></i></button>
+          <br>
+          <h2 class="nombrePerfil">Cecilia Judith Beuret</h2>
           
-          <div class="col-1">
-            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-            <br>
-            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
-          </div>  
-
         </div>
+
+        <div class="col-8 text-center">
+          <button class="btn btn-light titulo">Gestión Ambiental</button>
+          <button class="btn btn-light titulo">Desarrollador Web Full Stack Jr</button>
+          <p>  </p>     
+          <h3 style="font-style: italic;">mi perfil ...</h3>
+          <h6 class="sobreMiPerfil"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi distinctio necessitatibus reprehenderit temporibus dolorem molestias, saepe repellat totam commodi, quos atque sint delectus similique tempora, quaerat dicta asperiores accusamus optio.</h6>
+        </div>  
+        
+        <div class="col-1">
+          <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+          <br>
+          <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
+        </div>  
+
+      </div>
+    
     </div>
   </section>
 
-       
-</header>
-
-<main> 
-      
-  <section id="editSobreMi" class="bg-dark p-4">  <!-- Editar SOBRE MÍ -->  
+  <section id="editSobreMi" class="bg-dark p-4">  <!-- Editar SOBRE Mi -->  
     <div class="container text-center">
       <div class="row">
 
@@ -158,9 +157,14 @@
       </div>
     </div>
   </section>
-      
+       
+</header>
+
+<br>
+
+<main>
   <section id="experiencia"> <!-- EXPERIENCIA -->
-    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">    
+    <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">    
       <div class="row p-3">
 
         <h2 class="text mt-4 pb-8">Experiencia Laboral</h2>
@@ -258,8 +262,10 @@
     </div>    
   </section>
 
-  <section id="educacion"> <!-- EDUCACIÓN -->
-    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+  <br>
+
+  <section id="educacion"> <!-- EDUCACION -->
+    <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
       <div class="row p-3">
         <h2 class="text mt-4 pb-8">Educación</h2>
             
@@ -328,7 +334,9 @@
     </div>
   </section>
   
-  <section id="editarEducacion" class="bg-dark p-4">  <!-- Modificar EDUCACIÓN -->  
+  <br>
+
+  <section id="editEducacion" class="bg-dark p-4">  <!-- Modificar EDUCACION -->  
     <h6 style="color: aliceblue;">Modificar Educación </h6>
     <div class="btn-group" role="group" aria-label="editarEducacion">
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editEducModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
@@ -337,75 +345,11 @@
     </div>    
   </section>
 
-  <section id="habilidades"> <!-- HABILIDADES -->
-    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
-      <div class="row p-3">
-        <div id="info-apt">
-          
-          <h3 class="text-center mt-4 pb-8">HABILIDADES</h3>
+  <br>
 
-          <div class="container text-center">
-            <div class="row">
-              <div class="col-6 col-sm-3">
-                <h4>HTTP</h4>
-                <div class="progress-circle progress-30"><span>30</span></div>
-              </div>
-              <div class="col-6 col-sm-3">
-                <h4>CSS</h4>
-                <div class="progress-circle progress-50"><span>20</span></div>  
-              </div>
-              <div class="col-6 col-sm-3">
-                <h4>JS</h4>
-                <div class="progress-circle progress-50"><span>20</span></div>  
-              </div>
-              <div class="col-6 col-sm-3">
-                <h4>BOOTSTRAP</h4>
-                <div class="progress-circle progress-50"><span>30</span></div>  
-              </div>
-              <div class="col-6 col-sm-3">
-                <h4>ANGULAR</h4>
-                <div class="progress-circle progress-50"><span>10</span></div>  
-              </div>
-            </div>
-          </div>
-
-          <h3 class="text-center mt-4 pb-8">IDIOMAS</h3>
-          
-          <div class="container text-center">
-            <div class="row">
-              <div class="col-6 col-sm-3">
-                <h4>Español</h4>
-                <div class="progress-circle progress-100"><span>100</span></div>
-                <p>(lengua materna)</p> 
-              </div>
-              <div class="col-6 col-sm-3">
-                <h4>Inglés</h4>
-                <div class="progress-circle progress-50"><span>70</span></div>  
-              </div>
-              <div class="col-6 col-sm-3">
-                <h4>Francés</h4>
-                <div class="progress-circle progress-50"><span>40</span></div>  
-              </div>
-            </div>
-          </div>
-          
-             
-        </div>   
-      </div>
-    </div>
-  </section>
-  
-  <section id="editarHabilidades" class="bg-dark p-4">  <!-- Modificar HABILIDADES -->  
-    <h6 style="color: aliceblue;">Modificar Habilidades </h6>
-    <div class="btn-group" role="group" aria-label="editarHabilidades">
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHabModal"><i class="fa-solid fa-plus"></i></button>
-    </div>    
-  </section>
-  
+   
   <section id="proyectos"> <!-- PROYECTOS -->
-    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+    <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
       <div class="row p-3">
     
         <div id="proyectos">
@@ -434,8 +378,10 @@
       </div>
     </div>
   </section>
+
+  <br>
   
-  <section id="editarProyectos" class="bg-dark p-4">  <!-- Modificar PROYECTOS -->  
+  <section id="editProyectos" class="bg-dark p-4">  <!-- Modificar PROYECTOS -->  
     <h6 style="color: aliceblue;">Modificar Proyectos </h6>
     <div class="btn-group" role="group" aria-label="editarProyectos">
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProyModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
@@ -444,37 +390,250 @@
     </div>    
   </section>
 
+  <br>
+
+  <section id="habilidades" > <!-- HABILIDADES -->
+    <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+      <div class="row p-3">
+        <div id="info-apt">
+          <h2 class="text-center mt-4 pb-8">HABILIDADES</h2>
+          <br>
+
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-30"><span>30</span></div>
+                <h1><i class="fa-brands fa-html5"></i></h1>
+                <h6>HTML5</h6>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-50"><span>20</span></div>
+                <h1><i class="fa-brands fa-css3-alt"></i></h1>
+                <h6>CSS</h6>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-50"><span>30</span></div>
+                <h1><i class="fa-brands fa-bootstrap"></i></h1>
+                <h6>Bootstrap</h6>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-50"><span>10</span></div>
+                <h1><i class="fa-brands fa-angular"></i></h1>
+                <h6>Angular</h6>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-50"><span>10</span></div>
+                <h1> <i class="bi bi-github"></i></h1>
+                <h6>Github</h6>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-50"><span>70</span></div>
+                <h1><i class="fa-solid fa-database"></i></h1>
+                <h6>Base de datos</h6>  
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-center mt-4 pb-8">IDIOMAS</h3>
+          
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-100"><span>100</span></div>
+                <h5>Español</h5>
+                <p style="font-style: italic;">(lengua materna)</p> 
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-50"><span>70</span></div>
+                <h5>Inglés</h5>  
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="progress-circle progress-50"><span>40</span></div>
+                <h5>Francés</h5>  
+              </div>
+            </div>
+          </div>
+          
+          
+             
+                
+             
+        </div>   
+      </div>
+    </div>
+  </section>
+  
+  <br>
+
+  <section id="editHabilidades" class="bg-dark p-4">  <!-- Modificar HABILIDADES -->  
+    <h6 style="color: aliceblue;">Modificar Habilidades </h6>
+    <div class="btn-group" role="group" aria-label="editarHabilidades">
+      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+      <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHabModal"><i class="fa-solid fa-plus"></i></button>
+    </div>    
+  </section>
+
+  <br>
+ 
+  <section id="hobbies">
+    <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+      <div class="row p-3">
+        <div id="info-hobbies">
+          <h2 class="text-center mt-4 pb-8">Hobbies</h2>
+          <br>
+
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-book"></i></h1>
+                <h6>Leer</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-language"></i></h1>
+                <h6>Idiomas</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-clapperboard"></i></h1>
+                <h6>Cine</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1> <i class="fa-solid fa-masks-theater"></i></h1>
+                <h6>Teatro</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1>                      
+                <!--i class="fa-solid fa-paintbrush"></i-->
+                <i class="fa-solid fa-pencil"></i>
+                <i class="fa-solid fa-palette"></i>
+                </h1>
+                <h6>Dibujar y pintar</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-music"></i></h1>
+                <h6>Música</h6>
+              </div>          
+              
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-person-swimming"></i></h1>
+                <h6>Nadar</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-person-biking"></i></h1>
+                <h6>Bici</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-person-hiking"></i></h1>
+                <h6>Senderismo</h6>
+              </div>
+
+              <div class="col-6 col-md-4">
+                <h1><i class="fa-solid fa-plane-departure"></i></h1>
+                <h6>Viajar</h6>
+              </div>
+              
+            </div>
+          </div>       
+            
+        </div>   
+      </div>
+    </div>
+  </section>
+
+  <section id="editHobbies" class="bg-dark p-4">  <!-- Modificar HOBBIES -->  
+    <h6 style="color: aliceblue;">Modificar Hobbies </h6>
+    <div class="btn-group" role="group" aria-label="editarHobbies">
+      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHobbiesModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+      <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHobbiesModal"><i class="fa-solid fa-plus"></i></button>
+    </div>    
+  </section>
+  
   <hr>
   
+</main>
+
+<br>
+
+<footer>
+ 
   <section id="contactame"> <!-- CONTACTO -->
-    <div class="experiencia container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+    
+    <div class="contacto container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
       <div class="row p-3">
-       
-        <div id="contacto">
-            <h2 class="text mt-4 pb-3">Contactarme</h2> <!-- enviar mensaje -->
-            <p>Cecilia Judith Beuret</p>
-            <p>Correo electrónico: xxxxxxx@gmail.com</p>
-            <p>teléfono: +54 9 11 00000000</p>
-            <br>
-            <label for="">Dejame tu mensaje</label>
-            <input type="text" name="acá dejá tu mensaje">
-            <button type="submit">Enviar</button>
-        </div> 
-        <div class="ubicacion">      
-            <h5 class="text mt-4 pb-1">Ubicación</h5> <!-- mapa -->
+        <div class="col-6">
+          <div id="contacto" class="justify-content-center align-items-center" >
+
+            <address>
+              <strong>Dirección</strong>
+              <br>
+              Calle, N°
+              <br>
+              Ciudad Autónoma de Buenos Aires
+              <br>
+              Teléfono: +54 9 11 00000000
+              <br>
+              <strong>Correo electrónico: xxxxxxx@gmail.com</strong> 
+            </address>
+
+            <!--segundo enlace a redes-->                 
+            <ul class="list-group list-group-horizontal align-items-center">
+              <a class="linkFooter link" href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a>
+              <a class="linkFooter link" href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a class="linkFooter link" href="https://web.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+              <a class="linkFooter link" href="mailto:cecibeuret@micorreo.com" target="_blank"><i class="fa-solid fa-envelope-circle-check"></i></a>
+            </ul>
+
+            <!-- enviar mensaje -->
+            <div class="mensaje"> 
+              <label for=""> <h6>Dejame tu mensaje</h6></label>
+              <input type="text" name="acá dejá tu mensaje">
+              <button type="submit">Enviar</button>
+            </div>
+
+            <!--segunda instancia de link a contenido interno-->
+            <ul class="list-group list-group-horizontal align-items-center">             
+              <a class="linkFooter link" aria-current="page" href="#">Sobre mí</a>
+              <a class="linkFooter link" href="#">Habilidades</a>
+              <a class="linkFooter link" href="#">Proyectos</a> 
+            </ul>
+
+          </div>  
+        </div>      
+
+        <div class="col-6">
+          <div id="ubicacion"> <!-- mapa -->
+            <address>
+              <strong>Ubicación</strong>
+            </address>
             <iframe 
               class="mapa" 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar" 
-              width="400" 
-              height="300" 
-              style="border:0;" 
+              width="300" 
+              height="200" 
+              style="border: 0;" 
               allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-        </div>  
-      </div> 
-    </div> 
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <div class="autoria container-fluid ">
+      <div class="row pb-3">
+        <h6 style="text-align: justify; text-align: center;">Creado por Cecilia J. Beuret (2023) © </h6>
+      </div>
+    </div>
+    
   </section>
 
   <section id="editContacto" class="bg-dark p-4">  <!-- Modificar CONTACTO -->  
@@ -486,22 +645,11 @@
     </div>    
   </section>
 
-
-</main>
-
-<footer class="container">
-  <p> 1. Información de autoría. 
-      2. Información registrada. 
-      3. Información de contacto. 
-      4. Mapa del sitio. 
-      5. Volver a los enlaces superiores. 
-      6. Documentos relacionados.
-  </p>
 </footer>
 
 <!--MODALES-->
 
-  <!-- Botón Login Modal-->
+  <!-- Boton Login Modal-->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -522,8 +670,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Ingresar</button>
             </div>
           </form>
         </div> 
@@ -532,7 +679,27 @@
     </div>
   </div>  
 
-   <!-- Botón Banner Modal-->
+   <!-- Boton Logout Modal-->
+   <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="logoutModalLabel">Logout</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">               
+           <p>Desea cerrar la sesión?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Cancelar</button>
+        </div>
+      </div>
+      </div>
+    </div> 
+
+   <!-- Boton Banner Modal-->
    <div class="modal fade" id="bannerModal" tabindex="-1" aria-labelledby="bannerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">        
@@ -558,7 +725,7 @@
     </div>
   </div>
 
-  <!-- Botón Imagen Perfil Modal-->
+  <!-- Boton Imagen Perfil Modal-->
   <div class="modal fade" id="imgPerfilModal" tabindex="-1" aria-labelledby="imgPerfilModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">        
@@ -575,7 +742,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>   
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div>
@@ -584,12 +751,12 @@
     </div>
   </div>
 
-  <!-- Botón Nombre Modal-->
+  <!-- Boton Nombre Modal-->
   <div class="modal fade" id="nombreModal" tabindex="-1" aria-labelledby="nombreModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">        
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="nombreModal">Editar imagen</h1>
+          <h1 class="modal-title fs-5" id="nombreModal">Editar nombre</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
@@ -601,7 +768,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>   
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div>
@@ -610,7 +777,7 @@
     </div>
   </div>
 
-  <!-- Botón Profesión Modal-->
+  <!-- Boton Profesión Modal-->
   <div class="modal fade" id="profesionModal" tabindex="-1" aria-labelledby="profesionModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">        
@@ -622,12 +789,12 @@
         <div class="modal-body">             
           <form>
             <div class="mb-3">
-              <label for="profesionPerfil" class="form-label">Editar nombre</label>
+              <label for="profesionPerfil" class="form-label">Editar profesión</label>
               <input type="text" placeholder="inserte su profesion" id="profesionPerfil" name="profesionPerfil" required>             
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>   
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div>
@@ -636,7 +803,7 @@
     </div>
   </div>
 
-  <!-- Botón Perfil Profesional Modal-->
+  <!-- Boton Perfil Profesional Modal-->
   <div class="modal fade" id="perfilProfModal" tabindex="-1" aria-labelledby="perfilProfModal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">        
@@ -653,7 +820,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>   
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div>
@@ -662,7 +829,7 @@
     </div>
   </div>
 
-  <!-- Botón Editar EXPERIENCIA Modal-->
+  <!-- Boton Editar EXPERIENCIA Modal-->
   <div class="modal fade" id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -674,12 +841,16 @@
         <div class="modal-body">             
           <form>
             <div class="mb-3">
-              <label for="inputEmpresa" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputEmpresa">              
+              <label for="logoEmpresa" class="form-label">Logo</label>
+              <input type="url" placeholder="inserte url del logo" id="logoEmpresa" name="logoEmpresa">             
             </div>
             <div class="mb-3">
-              <label for="inputCargo" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputCargo">              
+              <label for="inputEmpresa" class="form-label">Empresa</label>
+              <input type="text" placeholder="inserte nombre de la empresa" class="form-control" id="inputEmpresa" name="inputEmpresa" required>  
+            </div>
+            <div class="mb-3">
+              <label for="inputCargo" class="form-label">Cargo</label>
+              <input type="text" placeholder="inserte cargo" class="form-control" id="inputCargo" name="inputCargo" required>               
             </div>
             <div class="mb-3">
               <label for="textoLargo" class="form-label">Descripción tareas</label>
@@ -695,7 +866,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div> 
@@ -704,7 +875,7 @@
     </div>
   </div>  
   
-  <!-- Botón Agregar EXPERIENCIA Modal-->
+  <!-- Boton Agregar EXPERIENCIA Modal-->
   <div class="modal fade" id="addExpModal" tabindex="-1" aria-labelledby="addExpModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -716,37 +887,41 @@
         <div class="modal-body">             
           <form>
             <div class="mb-3">
-              <label for="inputEmpresa" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputEmpresa">              
+              <label for="logoEmpresa" class="form-label">Logo Empresa</label>
+              <input type="url" placeholder="inserte url del logo" id="logoEmpresa" name="logoEmpresa">             
             </div>
             <div class="mb-3">
-              <label for="inputCargo" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputCargo">              
+              <label for="inputEmpresa" class="form-label">Empresa</label>
+              <input type="text" placeholder="inserte nombre de la empresa" class="form-control" id="inputEmpresa" name="inputEmpresa" required>  
+            </div>
+            <div class="mb-3">
+              <label for="inputCargo" class="form-label">Cargo</label>
+              <input type="text" placeholder="inserte cargo" class="form-control" id="inputCargo" name="inputCargo" required>               
             </div>
             <div class="mb-3">
               <label for="textoLargo" class="form-label">Descripción tareas</label>
               <textarea class="form-control" id="textoLargo"></textarea>               
             </div>
             <div class="mb-3">
-              <label for="inputFechaInicio" class="form-label">Desde</label>
-              <input type="date" class="form-control" id="inputFechaInicio">
+              <label for="exampleInputFecha" class="form-label">Desde</label>
+              <input type="date" class="form-control" id="exampleInputFecha">
             </div>
             <div class="mb-3">
-              <label for="inputFechaFin" class="form-label">Hasta</label>
-              <input type="date" class="form-control" id="inputFechaFin">
+              <label for="exampleInputFecha" class="form-label">Hasta</label>
+              <input type="date" class="form-control" id="exampleInputFecha">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
-        </div> 
+        </div>
 
       </div>
     </div>
   </div>  
 
-  <!-- Botón Editar EDUCACIÓN Modal-->
+  <!-- Boton Editar EDUCACION Modal-->
   <div class="modal fade" id="editEducModal" tabindex="-1" aria-labelledby="editEducModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -758,24 +933,28 @@
         <div class="modal-body">             
           <form>
             <div class="mb-3">
+              <label for="logoInstitucion" class="form-label">Logo Institución</label>
+              <input type="url" placeholder="inserte url del logo" id="logoInstitucion" name="logoInstitucion">             
+            </div>
+            <div class="mb-3">
               <label for="inputInstit" class="form-label">Institución</label>
-              <input type="text" class="form-control" id="inputInstit">              
+              <input type="text" placeholder="inserte nombre de la institución"class="form-control" id="inputInstit" name="inputInstit" required>               
             </div>
             <div class="mb-3">
               <label for="inputTitulo" class="form-label">Título</label>
-              <input type="text" class="form-control" id="inputTitutlo">              
+              <input type="text" placeholder="inserte título obtenido"class="form-control" id="inputTitutlo" name="inputTitulo" required>              
             </div>
             <div class="mb-3">
-              <label for="textoLargo" class="form-label">Descripción</label>
+              <label for="textoLargo" class="form-label">Perfil profesional</label>
               <textarea class="form-control" id="textoLargo"></textarea>               
             </div>
             <div class="mb-3">
-              <label for="fechaObt" class="form-label">Fecha de obtención</label>
+              <label for="fechaObt" class="form-label">Fecha de obtención del título</label>
               <input type="date" class="form-control" id="fechaObt">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div> 
@@ -784,7 +963,7 @@
     </div>
   </div>  
   
-  <!-- Botón Agregar EDUCACIÓN Modal-->
+  <!-- Boton Agregar EDUCACION Modal-->
   <div class="modal fade" id="addEducModal" tabindex="-1" aria-labelledby="addEducModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -796,24 +975,28 @@
         <div class="modal-body">             
           <form>
             <div class="mb-3">
+              <label for="logoInstitucion" class="form-label">Logo Institución</label>
+              <input type="url" placeholder="inserte url del logo" id="logoInstitucion" name="logoInstitucion">             
+            </div>
+            <div class="mb-3">
               <label for="inputInstit" class="form-label">Institución</label>
-              <input type="text" class="form-control" id="inputInstit">              
+              <input type="text" placeholder="inserte nombre de la institución"class="form-control" id="inputInstit" name="inputInstit" required>               
             </div>
             <div class="mb-3">
               <label for="inputTitulo" class="form-label">Título</label>
-              <input type="text" class="form-control" id="inputTitutlo">              
+              <input type="text" placeholder="inserte título obtenido"class="form-control" id="inputTitutlo" name="inputTitulo" required>              
             </div>
             <div class="mb-3">
-              <label for="textoLargo" class="form-label">Descripción</label>
+              <label for="textoLargo" class="form-label">Perfil profesional</label>
               <textarea class="form-control" id="textoLargo"></textarea>               
             </div>
             <div class="mb-3">
-              <label for="fechaObt" class="form-label">Fecha de obtención</label>
+              <label for="fechaObt" class="form-label">Fecha de obtención del título</label>
               <input type="date" class="form-control" id="fechaObt">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div>
@@ -821,92 +1004,8 @@
       </div>
     </div>
   </div>  
-  
-  <!-- Botón Editar HABILIDADES Modal-->
-   <div class="modal fade" id="editHabModal" tabindex="-1" aria-labelledby="editHabModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="editHabModalLabel">Editar habilidades</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        
-        <div class="modal-body">             
-          <form>
-            <div class="mb-3">
-              <label for="inputEmpresa" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputEmpresa">              
-            </div>
-            <div class="mb-3">
-              <label for="inputCargo" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputCargo">              
-            </div>
-            <div class="mb-3">
-              <label for="textoLargo" class="form-label">Descripción tareas</label>
-              <textarea class="form-control" id="textoLargo"></textarea>               
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputFecha" class="form-label">Desde</label>
-              <input type="date" class="form-control" id="exampleInputFecha">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputFecha" class="form-label">Hasta</label>
-              <input type="date" class="form-control" id="exampleInputFecha">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
-        </div> 
-
-      </div>
-    </div>
-  </div>  
-  
-  <!-- Botón Agregar HABILIDADES Modal-->
-   <div class="modal fade" id="addHabModal" tabindex="-1" aria-labelledby="addHabModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="addHabModalLabel"> Agregar habilidades</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        
-        <div class="modal-body">             
-          <form>
-            <div class="mb-3">
-              <label for="inputEmpresa" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputEmpresa">              
-            </div>
-            <div class="mb-3">
-              <label for="inputCargo" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="inputCargo">              
-            </div>
-            <div class="mb-3">
-              <label for="textoLargo" class="form-label">Descripción tareas</label>
-              <textarea class="form-control" id="textoLargo"></textarea>               
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputFecha" class="form-label">Desde</label>
-              <input type="date" class="form-control" id="exampleInputFecha">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputFecha" class="form-label">Hasta</label>
-              <input type="date" class="form-control" id="exampleInputFecha">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
-        </div> 
-
-      </div>
-    </div>
-  </div>  
-
-  <!-- Botón Editar PROYECTOS Modal-->
+   
+  <!-- Boton Editar PROYECTOS Modal-->
   <div class="modal fade" id="editProyModal" tabindex="-1" aria-labelledby="editProyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -935,7 +1034,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div> 
@@ -943,9 +1042,9 @@
       </div>
     </div>
   </div>  
-  
-   <!-- Botón Agregar PROYECTOS Modal-->
-   <div class="modal fade" id="addProyModal" tabindex="-1" aria-labelledby="addProyModalLabel" aria-hidden="true">
+
+  <!-- Boton Agregar PROYECTOS Modal-->
+  <div class="modal fade" id="addProyModal" tabindex="-1" aria-labelledby="addProyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -973,7 +1072,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div>  
@@ -982,7 +1081,135 @@
     </div>
   </div>  
 
-  <!-- Botón Editar CONTACTO Modal-->
+  <!-- Boton Editar HABILIDADES Modal-->
+  <div class="modal fade" id="editHabModal" tabindex="-1" aria-labelledby="editHabModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editHabModalLabel">Editar habilidades</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">             
+          <form>
+            <div class="mb-3">
+              <label for="inputIcono" class="form-label">Ícono</label>
+              <input type="text" class="form-control" id="inputEtiqueta">              
+            </div>
+            <div class="mb-3">
+              <label for="inputProgreso" class="form-label">Progreso</label>
+              <input type="text" class="form-control" id="inputProgreso">              
+            </div>
+            <div class="mb-3">
+              <label for="inputEtiqueta" class="form-label">Etiqueta</label>
+              <input type="text" class="form-control" id="inputProgreso">              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div> 
+
+      </div>
+    </div>
+  </div>  
+
+  <!-- Boton Agregar HABILIDADES Modal-->
+  <div class="modal fade" id="addHabModal" tabindex="-1" aria-labelledby="addHabModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addHabModalLabel"> Agregar habilidades</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">             
+          <form>
+            <div class="mb-3">
+              <label for="inputIcono" class="form-label">Ícono</label>
+              <input type="text" class="form-control" id="inputEtiqueta">              
+            </div>
+            <div class="mb-3">
+              <label for="inputProgreso" class="form-label">Progreso</label>
+              <input type="text" class="form-control" id="inputProgreso">              
+            </div>
+            <div class="mb-3">
+              <label for="inputEtiqueta" class="form-label">Etiqueta</label>
+              <input type="text" class="form-control" id="inputProgreso">              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div> 
+
+      </div>
+    </div>
+  </div> 
+
+  <!-- Boton Editar HOBBIES Modal-->
+  <div class="modal fade" id="editHobbiesModal" tabindex="-1" aria-labelledby="editHobbiesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editHobbiesModalLabel">Editar hobbies</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">             
+          <form>
+            <div class="mb-3">
+              <label for="inputIcono" class="form-label">Ícono</label>
+              <input type="text" class="form-control" id="inputEtiqueta">              
+            </div>
+            <div class="mb-3">
+              <label for="inputEtiqueta" class="form-label">Etiqueta</label>
+              <input type="text" class="form-control" id="inputProgreso">              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div> 
+
+      </div>
+    </div>
+  </div>  
+
+  <!-- Boton Agregar HOBBIES Modal-->
+  <div class="modal fade" id="addHobbiesModal" tabindex="-1" aria-labelledby="addHobbiesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addHobbiesModalLabel"> Agregar hobbies</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">             
+          <form>
+            <div class="mb-3">
+              <label for="inputIcono" class="form-label">Ícono</label>
+              <input type="text" class="form-control" id="inputEtiqueta">              
+            </div>
+            <div class="mb-3">
+              <label for="inputEtiqueta" class="form-label">Etiqueta</label>
+              <input type="text" class="form-control" id="inputProgreso">              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div> 
+
+      </div>
+    </div>
+  </div> 
+
+  <!-- Boton Editar CONTACTO Modal-->
   <div class="modal fade" id="editContactoModal" tabindex="-1" aria-labelledby="editContactoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -994,10 +1221,6 @@
         <div class="modal-body">             
           <form>
             <div class="mb-3">
-              <label for="inputNombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="inputNombre">              
-            </div>
-            <div class="mb-3">
               <label for="inputEmail" class="form-label">Email</label>
               <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">              
             </div>
@@ -1013,7 +1236,7 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
 
           </form>
@@ -1023,7 +1246,7 @@
     </div>
   </div>  
   
-   <!-- Botón Agregar CONTACTO Modal-->
+   <!-- Boton Agregar CONTACTO Modal-->
    <div class="modal fade" id="addContactoModal" tabindex="-1" aria-labelledby="addContactoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -1035,10 +1258,6 @@
         <div class="modal-body">             
           <form>
             <div class="mb-3">
-              <label for="inputNombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="inputNombre">              
-            </div>
-            <div class="mb-3">
               <label for="inputEmail" class="form-label">Email</label>
               <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">              
             </div>
@@ -1054,7 +1273,7 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
 
           </form>
@@ -1064,7 +1283,8 @@
     </div>
   </div>
 
-  <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src = "ecma.brw.js"></script> 
 </body>  
 
