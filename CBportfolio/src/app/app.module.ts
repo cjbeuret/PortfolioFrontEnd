@@ -15,6 +15,8 @@ import { HabilidadesComponent } from './components/habilidades/habilidades.compo
 import { HobbiesComponent } from './components/hobbies/hobbies.component';
 import { IndexComponent } from './components/index/index.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { ModalLoginComponent } from './modales/modal-login/modal-login.component';
+import { ModalLogoutComponent } from './modales/modal-logout/modal-logout.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
     HobbiesComponent,
     IndexComponent,
     Pagina404Component,
+    ModalLoginComponent,
+    ModalLogoutComponent,
 
   ],
   imports: [

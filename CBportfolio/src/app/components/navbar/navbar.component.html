@@ -1,4 +1,48 @@
-<p>navbar works!</p>
+<section id="navbar">
+    <nav class="navbar navbar-expand-md rounded">
+      <div class="container-fluid">
+         
+        <!--boton hamburguesa--> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbar-toggler">
+              
+          <!--imagen boton y link a pagina Argentina Programa"--> 
+          <a class="navbar-brand" href="https://argentinaprograma.inti.gob.ar" target="_blank">
+            <img class="logoArgProg"
+            src="./assets/img/aplogo.png" 
+            alt="logo de Argentina Programa"
+            width="180"
+            />
+          </a>
+          
+          <ul class="navbar-nav d-flex justify-content-center align-items-center">
+            <!--lista redes-->
+            <li class="nav-item"><a class="nav-link" href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://web.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="mailto:cecibeuret@micorreo.com" target="_blank"><i class="fa-solid fa-envelope-circle-check"></i></a></li>
+            <!-- links internos a la pagina   --> 
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="#sobre-mi">Sobre mí</a></li>
+            <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contactame">Contacto</a></li>         
+          </ul>
+            
+          <!-- Button Login modal -->
+          
+          <app-login></app-login>
+          
 
-<app-login></app-login>
-<app-logout></app-logout>
+          <!-- Button Logout modal -->
+
+          <app-logout></app-logout>
+          
+
+        </div>
+      </div>
+    </nav>
+
+  </section>
