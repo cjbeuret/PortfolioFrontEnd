@@ -1,0 +1,80 @@
+{
+  
+  "banner": "#",
+  "imagenPerfil":"#",
+  "nombreCompleto": "Cecilia Judith Beuret",
+  "email": "micorreo@gmail.com",
+  "especialidad1": "Gestión Ambiental",
+  "especialidad2": "Desarrollador Web Full Stack Jr",
+  "sobreMi": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi distinctio necessitatibus reprehenderit temporibus dolorem molestias, saepe repellat totam commodi, quos atque sint delectus similique tempora, quaerat dicta asperiores accusamus optio.",
+
+  "experiencias": [
+    {
+      "id": 1,
+      "logoEmpresa": "../assets/img/Enre_logo.png", 
+      "empresa": "ENRE",
+      "cargo": "Profesional",
+      "descripPuesto": "Loremmmm",
+      "inicio": "2000",
+      "fin": "actualidad"
+    },
+    {
+      "id": 2,
+      "logoEmpresa": "../assets/img/800px-UBA.png", 
+      "empresa": "UBA - FFyB",
+      "cargo": "Jefe de trabajos prácticos",
+      "descripPuesto": "Loremmmm",
+      "inicio": "1999",
+      "fin": "2000"
+    },
+    {
+      "id": 3,
+      "logoEmpresa": "", 
+      "empresa": "Proyecto 3",
+      "cargo": "Jefe de trabajos prácticos",
+      "descripPuesto": "Loremmmm",
+      "inicio": "1999",
+      "fin": "2000"
+    },
+    {
+      "id": 4,
+      "logoEmpresa": "./assets/img/isologo-unsl-dos-lineas.png", 
+      "empresa": "UNSL - FQByF",
+      "cargo": "Jefe de trabajos prácticos",
+      "descripPuesto": "Loremmmm",
+      "inicio": "1999",
+      "fin": "2000"
+    }
+  ],
+
+  "educaciones": [
+    {
+      "id": 1,
+      "logoInstitucion": "../assets/img/logo_UNSAM.png", 
+      "universidad": "UNSL - FQByF",
+      "titulo": "Jefe de trabajos prácticos",
+      "descripcion": "Loremmmm",
+      "inicio": "1999",
+      "fin": "2000"
+    },
+    {
+      "id": 2,
+      "logoInstitucion": "../assets/img/isologo-unsl-dos-lineas.png", 
+      "universidad": "UNIVERSIDAD NACIONAL DE SAN LUIS",
+      "titulo": "Licenciatura en Ciencias Biológicas",
+      "descripcion": "Loremmmm",
+      "inicio": "1999",
+      "fin": "2000"
+    },
+    {
+      "id": 3,
+      "logoInstitucion": "./assets/img/isologo-unsl-dos-lineas.png", 
+      "universidad": "UNIVERSIDAD NACIONAL DE SAN LUIS",
+      "titulo": "Profesorado Universitario en Biología",
+      "descripcion": "Loremmmm",
+      "inicio": "1999",
+      "fin": "2000"
+    }
+  ]
+
+}
