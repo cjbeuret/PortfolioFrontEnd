@@ -2,7 +2,7 @@
   
   "banner": "#",
   "imagenPerfil":"#",
-  "nombreCompleto": "Cecilia Judith Beuret",
+  "nombre": "Cecilia Judith Beuret",
   "email": "micorreo@gmail.com",
   "especialidad1": "Gestión Ambiental",
   "especialidad2": "Desarrollador Web Full Stack Jr",
@@ -11,7 +11,9 @@
   "experiencias": [
     {
       "id": 1,
-      "logoEmpresa": "../assets/img/Enre_logo.png", 
+      "logoEmpresa": "../assets/img/Enre_logo.png",
+      "url":"https://www.argentina.gob.ar/enre",
+      "alt": "#", 
       "empresa": "ENRE",
       "cargo": "Profesional",
       "descripPuesto": "Loremmmm",
@@ -21,6 +23,8 @@
     {
       "id": 2,
       "logoEmpresa": "../assets/img/800px-UBA.png", 
+      "url":"https://google.com",
+      "alt": "#",
       "empresa": "UBA - FFyB",
       "cargo": "Jefe de trabajos prácticos",
       "descripPuesto": "Loremmmm",
@@ -30,6 +34,8 @@
     {
       "id": 3,
       "logoEmpresa": "", 
+      "url":"https://google.com",
+      "alt": "logo Proyecto 3",
       "empresa": "Proyecto 3",
       "cargo": "Jefe de trabajos prácticos",
       "descripPuesto": "Loremmmm",
@@ -38,7 +44,9 @@
     },
     {
       "id": 4,
-      "logoEmpresa": "./assets/img/isologo-unsl-dos-lineas.png", 
+      "logoEmpresa": "./assets/img/isologo-unsl-dos-lineas.png",
+      "url":"https://google.com",
+      "alt": "#", 
       "empresa": "UNSL - FQByF",
       "cargo": "Jefe de trabajos prácticos",
       "descripPuesto": "Loremmmm",
@@ -50,31 +58,187 @@
   "educaciones": [
     {
       "id": 1,
-      "logoInstitucion": "../assets/img/logo_UNSAM.png", 
-      "universidad": "UNSL - FQByF",
-      "titulo": "Jefe de trabajos prácticos",
-      "descripcion": "Loremmmm",
+      "logoInstitucion": "../assets/img/logo_UNSAM.png",
+      "url": "https://www.unsam.edu.ar/institutos/3ia/140/3ia/gestion-ambiental",
+      "alt": "#",
+      "universidad": "UNIVERSIDAD NACIONAL DE SAN MARTÍN",
+      "titulo": "Maestría en Gestión Ambiental",
+      "descripcion": "Experiencia 1",
       "inicio": "1999",
-      "fin": "2000"
+      "fin": "inconcluso"
     },
     {
       "id": 2,
-      "logoInstitucion": "../assets/img/isologo-unsl-dos-lineas.png", 
+      "logoInstitucion": "../assets/img/isologo-unsl-dos-lineas.png",
+      "url": "https://carreras.unsl.edu.ar/carreras/lic-cs-bio",
+      "alt": "#", 
       "universidad": "UNIVERSIDAD NACIONAL DE SAN LUIS",
       "titulo": "Licenciatura en Ciencias Biológicas",
-      "descripcion": "Loremmmm",
+      "descripcion": "Experiencia 2",
       "inicio": "1999",
       "fin": "2000"
     },
     {
       "id": 3,
-      "logoInstitucion": "./assets/img/isologo-unsl-dos-lineas.png", 
+      "logoInstitucion": "./assets/img/isologo-unsl-dos-lineas.png",
+      "url": "https://carreras.unsl.edu.ar/carreras/prof-bio",
+      "alt": "#", 
       "universidad": "UNIVERSIDAD NACIONAL DE SAN LUIS",
       "titulo": "Profesorado Universitario en Biología",
-      "descripcion": "Loremmmm",
+      "descripcion": "Experiencia 3",
       "inicio": "1999",
       "fin": "2000"
     }
+  ],
+
+  "proyectos": [
+    {
+      "id": 1,
+      "imagenProyecto": "../assets/img/aplogo.png",
+      "linkProyecto": "https://argentinaprograma.inti.gob.ar", 
+      "alt": "Portfolio Argentina Programa / logo Argentina Programa",
+      "titulo": "Desarrollo de un portfolio Web",
+      "institucion": "ARGENTINA PROGRAMA",
+      "descProyecto": "Elaboración de un porfolio ...",
+      "fecha": "Sept 2022- Mayo 2023"
+    },
+    {
+      "id": 2,
+      "imagenProyecto": "../assets/img/logo_UNSAM.png",
+      "linkProyecto": "https://argentinaprograma.inti.gob.ar", 
+      "alt": "Portfolio Argentina Programa",
+      "titulo": "Portfolio Argentina Programa",
+      "institucion": "XXXX",
+      "descProyecto": "Elaboración de un porfolio ...",
+      "fecha": "Sept 2022- Mayo 2023"
+    },
+    {
+      "id": 3,
+      "imagenProyecto": "../assets/img/logo_UNSAM.png",
+      "linkProyecto": "https://argentinaprograma.inti.gob.ar", 
+      "alt": "Portfolio Argentina Programa",
+      "titulo": "Portfolio Argentina Programa",
+      "institucion": "XXXX",
+      "descProyecto": "Elaboración de un porfolio ...",
+      "fecha": "Sept 2022- Mayo 2023"
+    }
+  ],
+
+  "habilidades": [
+    {
+      "id": 1,
+      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "tituloHab": "HTML5",
+      "porcentaje": 20
+    },
+    {
+      "id": 2,
+      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "tituloHab": "CSS",
+      "porcentaje": 30
+    },
+    {
+      "id": 3,
+      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "tituloHab": "Bootstrap",
+      "porcentaje": 10
+    },
+    {
+      "id": 4,
+      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "tituloHab": "Angular",
+      "porcentaje": 25
+    },
+    {
+      "id": 5,
+      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "tituloHab": "GitHub",
+      "porcentaje": 60
+    },
+    {
+      "id": 6,
+      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "tituloHab": "Base de Datos",
+      "porcentaje": 50
+    }
+  ],
+
+  "idiomas": [
+    {
+      "id": 1,
+      "imagenIdioma": "../assets/img/logo_UNSAM.png", 
+      "tituloIdioma": "Español",
+      "comentario": "(lengua materna)",
+      "porcentaje": 100
+    },
+    {
+      "id": 2,
+      "imagenIdioma": "../assets/img/logo_UNSAM.png", 
+      "tituloIdioma": "Inglés",
+      "comentario": " ",
+      "porcentaje": 70
+    },
+    {
+      "id": 3,
+      "imagenIdioma": "../assets/img/logo_UNSAM.png", 
+      "tituloIdioma": "Francés",
+      "comentario": " ",
+      "porcentaje": 40
+    }
+  ],
+  
+  "hobbies": [
+    {
+      "id": 1,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Leer"
+    },
+    {
+      "id": 2,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Idiomas"
+    },
+    {
+      "id": 3,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Cine"
+    },
+    {
+      "id": 4,
+      "imagenHobbie": ".#", 
+      "descripcionHobbie": "Teatro"
+    },
+    {
+      "id": 5,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Dibujar y pintar"
+    },
+    {
+      "id": 6,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Música"
+    },
+    {
+      "id": 7,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Nadar"
+    },
+    {
+      "id": 8,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Bicicleta"
+    },
+    {
+      "id": 9,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Senderismo"
+    },
+    {
+      "id": 10,
+      "imagenHobbie": "#", 
+      "descripcionHobbie": "Viajar"
+    }
+
   ]
 
 }

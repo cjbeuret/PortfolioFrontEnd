@@ -11,7 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 
 const routes: Routes = [
-  {path: '', component: IndexComponent},
+  {path:'', redirectTo:'/inicio', pathMatch:'full'},  
+  //{path: '', component: IndexComponent},
   {path: 'sobre-mi', component: SobreMiComponent},
   {path: 'experiencia', component: ExperienciaComponent},
   {path: 'education', component: EducacionComponent},

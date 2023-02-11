@@ -4,18 +4,18 @@
     
         <div id="proyectos">
           <h2 class="text mt-4 pb-3">Proyectos</h2>
-          <article class="row"> <!-- ARGENTINA PROGRAMA -->
+          <article class="row" *ngFor="let proyecto of proyectosVar"> <!-- PROYECTOS -->
             <div class="col-2">
-              <a href="https://argentinaprograma.inti.gob.ar" target="_blank">
-                <img id="logoArgProg" src="./assets/img/aplogo.png" alt="logo Argentina Programa"
+              <a [href]="proyecto.linkProyecto" target="_blank">
+                <img id="logoArgProg" [src]="proyecto.imagenProyecto" [alt]="proyecto.alt"
                 width="100%">
               </a>
             </div>
             <div class="col-9">
-                <h3>ARGENTINA PROGRAMA</h3>
-                <h5>Armado de porfolio</h5>
-                <h5>2022-2023</h5>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti impedit accusamus asperiores tempora perferendis magni dolorum, perspiciatis aliquid at consequatur qui consectetur quod dignissimos et corporis modi. Iure, sed facilis?</p>
+                <h3>{{proyecto.titulo}}</h3>
+                <h5>{{proyecto.institucion}}</h5>
+                <h6>{{proyecto.fecha}}</h6>
+                <p>{{proyecto.descProyecto}}</p>
             </div>
             <div class="col-1">
               <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->

@@ -14,7 +14,6 @@
     <div class="btn-group" role="group" aria-label="editarExperiencia">
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
       <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i></button>
     </div>    
   </section>
     
@@ -31,7 +30,6 @@
     <div class="btn-group" role="group" aria-label="editarEducacion">
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editEducModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
       <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addEducModal"><i class="fa-solid fa-plus"></i></button>
     </div>    
   </section>
 
@@ -48,7 +46,6 @@
         <div class="btn-group" role="group" aria-label="editarProyectos">
           <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProyModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
           <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addProyModal"><i class="fa-solid fa-plus"></i></button>
         </div>    
   </section>
     
@@ -65,7 +62,6 @@
     <div class="btn-group" role="group" aria-label="editarHabilidades">
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
       <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHabModal"><i class="fa-solid fa-plus"></i></button>
     </div>    
   </section>
 
@@ -80,7 +76,6 @@
     <div class="btn-group" role="group" aria-label="editarHobbies">
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHobbiesModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
       <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHobbiesModal"><i class="fa-solid fa-plus"></i></button>
     </div>    
   </section>
   
@@ -275,53 +270,7 @@
     
           </div>
         </div>
-      </div>  
-      
-      <!-- Boton Agregar EXPERIENCIA Modal-->
-      <div class="modal fade" id="addExpModal" tabindex="-1" aria-labelledby="addExpModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addExpModalLabel">Agregar experiencia</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <div class="modal-body">             
-              <form>
-                <div class="mb-3">
-                  <label for="logoEmpresa" class="form-label">Logo Empresa</label>
-                  <input type="url" placeholder="inserte url del logo" id="logoEmpresa" name="logoEmpresa">             
-                </div>
-                <div class="mb-3">
-                  <label for="inputEmpresa" class="form-label">Empresa</label>
-                  <input type="text" placeholder="inserte nombre de la empresa" class="form-control" id="inputEmpresa" name="inputEmpresa" required>  
-                </div>
-                <div class="mb-3">
-                  <label for="inputCargo" class="form-label">Cargo</label>
-                  <input type="text" placeholder="inserte cargo" class="form-control" id="inputCargo" name="inputCargo" required>               
-                </div>
-                <div class="mb-3">
-                  <label for="textoLargo" class="form-label">Descripción tareas</label>
-                  <textarea class="form-control" id="textoLargo"></textarea>               
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputFecha" class="form-label">Desde</label>
-                  <input type="date" class="form-control" id="exampleInputFecha">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputFecha" class="form-label">Hasta</label>
-                  <input type="date" class="form-control" id="exampleInputFecha">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-              </form>
-            </div>
-    
-          </div>
-        </div>
-      </div>  
+      </div>   
     
       <!-- Boton Editar EDUCACION Modal-->
       <div class="modal fade" id="editEducModal" tabindex="-1" aria-labelledby="editEducModalLabel" aria-hidden="true">
@@ -363,49 +312,7 @@
     
           </div>
         </div>
-      </div>  
-      
-      <!-- Boton Agregar EDUCACION Modal-->
-      <div class="modal fade" id="addEducModal" tabindex="-1" aria-labelledby="addEducModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addEducModalLabel">Agregar educación</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <div class="modal-body">             
-              <form>
-                <div class="mb-3">
-                  <label for="logoInstitucion" class="form-label">Logo Institución</label>
-                  <input type="url" placeholder="inserte url del logo" id="logoInstitucion" name="logoInstitucion">             
-                </div>
-                <div class="mb-3">
-                  <label for="inputInstit" class="form-label">Institución</label>
-                  <input type="text" placeholder="inserte nombre de la institución"class="form-control" id="inputInstit" name="inputInstit" required>               
-                </div>
-                <div class="mb-3">
-                  <label for="inputTitulo" class="form-label">Título</label>
-                  <input type="text" placeholder="inserte título obtenido"class="form-control" id="inputTitutlo" name="inputTitulo" required>              
-                </div>
-                <div class="mb-3">
-                  <label for="textoLargo" class="form-label">Perfil profesional</label>
-                  <textarea class="form-control" id="textoLargo"></textarea>               
-                </div>
-                <div class="mb-3">
-                  <label for="fechaObt" class="form-label">Fecha de obtención del título</label>
-                  <input type="date" class="form-control" id="fechaObt">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-              </form>
-            </div>
-    
-          </div>
-        </div>
-      </div>  
+      </div>   
        
       <!-- Boton Editar PROYECTOS Modal-->
       <div class="modal fade" id="editProyModal" tabindex="-1" aria-labelledby="editProyModalLabel" aria-hidden="true">
@@ -443,45 +350,7 @@
     
           </div>
         </div>
-      </div>  
-    
-      <!-- Boton Agregar PROYECTOS Modal-->
-      <div class="modal fade" id="addProyModal" tabindex="-1" aria-labelledby="addProyModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addExpProyLabel">Agregar Proyectos</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <div class="modal-body">             
-              <form>
-                <div class="mb-3">
-                  <label for="inputSolicitante" class="form-label">Empresa solicitante</label>
-                  <input type="text" class="form-control" id="inputSolicitante">              
-                </div>
-                <div class="mb-3">
-                  <label for="inputTarea" class="form-label">Tarea requerida</label>
-                  <input type="text" class="form-control" id="inputTarea">              
-                </div>
-                <div class="mb-3">
-                  <label for="descrProy" class="form-label">Descripción tareas</label>
-                  <textarea class="form-control" id="descrProy"></textarea>               
-                </div>
-                <div class="mb-3">
-                  <label for="fechaEjec" class="form-label">Fecha ejecución</label>
-                  <input type="date" class="form-control" id="fechaEjec">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-              </form>
-            </div>  
-    
-          </div>
-        </div>
-      </div>  
+      </div>   
     
       <!-- Boton Editar HABILIDADES Modal-->
       <div class="modal fade" id="editHabModal" tabindex="-1" aria-labelledby="editHabModalLabel" aria-hidden="true">
@@ -515,41 +384,7 @@
     
           </div>
         </div>
-      </div>  
-    
-      <!-- Boton Agregar HABILIDADES Modal-->
-      <div class="modal fade" id="addHabModal" tabindex="-1" aria-labelledby="addHabModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addHabModalLabel"> Agregar habilidades</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <div class="modal-body">             
-              <form>
-                <div class="mb-3">
-                  <label for="inputIcono" class="form-label">Ícono</label>
-                  <input type="text" class="form-control" id="inputEtiqueta">              
-                </div>
-                <div class="mb-3">
-                  <label for="inputProgreso" class="form-label">Progreso</label>
-                  <input type="text" class="form-control" id="inputProgreso">              
-                </div>
-                <div class="mb-3">
-                  <label for="inputEtiqueta" class="form-label">Etiqueta</label>
-                  <input type="text" class="form-control" id="inputProgreso">              
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-              </form>
-            </div> 
-    
-          </div>
-        </div>
-      </div> 
+      </div>   
     
       <!-- Boton Editar HOBBIES Modal-->
       <div class="modal fade" id="editHobbiesModal" tabindex="-1" aria-labelledby="editHobbiesModalLabel" aria-hidden="true">
@@ -580,36 +415,6 @@
           </div>
         </div>
       </div>  
-    
-      <!-- Boton Agregar HOBBIES Modal-->
-      <div class="modal fade" id="addHobbiesModal" tabindex="-1" aria-labelledby="addHobbiesModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addHobbiesModalLabel"> Agregar hobbies</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <div class="modal-body">             
-              <form>
-                <div class="mb-3">
-                  <label for="inputIcono" class="form-label">Ícono</label>
-                  <input type="text" class="form-control" id="inputEtiqueta">              
-                </div>
-                <div class="mb-3">
-                  <label for="inputEtiqueta" class="form-label">Etiqueta</label>
-                  <input type="text" class="form-control" id="inputProgreso">              
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-              </form>
-            </div> 
-    
-          </div>
-        </div>
-      </div> 
     
       <!-- Boton Editar CONTACTO Modal-->
       <div class="modal fade" id="editContactoModal" tabindex="-1" aria-labelledby="editContactoModalLabel" aria-hidden="true">
@@ -655,51 +460,6 @@
           </div>
         </div>
       </div>  
-      
-       <!-- Boton Agregar CONTACTO Modal-->
-       <div class="modal fade" id="addContactoModal" tabindex="-1" aria-labelledby="addContactoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addContactoModalLabel">Agregar contacto</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <div class="modal-body">             
-              <form>
-                
-                <div class="mb-3">
-                  <label for="inputCalle" class="form-label">Calle y número</label>
-                  <input type="text" class="form-control" id="inputCalle" aria-describedby="calleHelp">              
-                </div>
-                <div class="mb-3">
-                  <label for="inputLocalidad" class="form-label">Localidad</label>
-                  <input type="text" class="form-control" id="inputLocalidad" aria-describedby="localidadHelp">              
-                </div>
-                <div class="mb-3">
-                  <label for="inputPhone" class="form-label">Teléfono</label>
-                  <input type="phone" class="form-control" id="inputPhone" aria-describedby="phoneHelp">              
-                </div>
-                <div class="mb-3">
-                  <label for="inputEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">              
-                </div>           
-                <div class="mb-3">
-                  <label for="mapaUbicacion" class="form-label">Nueva ubicación</label>
-                  <input type="url" placeholder="inserte url del mapa" id="mapaUbicacion" name="mapaUbicacion" required>             
-                </div>
-    
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Guardar</button>
-              </div>
-    
-              </form>
-            </div> 
-    
-          </div>
-        </div>
-      </div>
     
       <!--<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>-->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

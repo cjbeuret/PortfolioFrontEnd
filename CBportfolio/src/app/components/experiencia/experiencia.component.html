@@ -1,23 +1,22 @@
 <section id="experiencia"> 
     <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">    
       <div class="row p-3">
-
         <h2 class="text mt-4 pb-8">Experiencia Laboral</h2>
               
-        <article class="row"> <!-- ENRE -->
+        <article class="row" *ngFor="let experiencia of experienciasVar"> <!-- ENRE -->
           <div class="col-2">
-            <a href="https://google.com" target="_blank">
-              <img src="./assets/img/Enre_logo.png" 
-              alt="logo ENRE"
-              width="80%"
-              >                  
+            <a [href]="experiencia.url" target="_blank">
+              <img [src]="experiencia.logoEmpresa" 
+              [alt]="experiencia.alt"
+              width="80%">                  
             </a>
+            <p>{{experiencia.inicio}} / {{experiencia.fin}}</p>
           </div>
                         
           <div class="col-9">
-            <h3>ENRE</h3>
-            <h5>subtítulo</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eius consequatur, excepturi dolorum soluta consectetur explicabo? Vel eveniet, corrupti vero deserunt, assumenda rerum autem consequatur veritatis distinctio debitis quas minima.</p>
+            <h3>{{experiencia.empresa}}</h3>
+            <h5>{{experiencia.cargo}}</h5>
+            <p>{{experiencia.descripPuesto}}</p>
           </div>
           
           <div class="col-1">
@@ -28,62 +27,6 @@
           
         </article>
 
-        <article class="row"> <!-- UBA -->
-          <div class="col-2">
-              <img src="./assets/img/800px-UBA.png" 
-              alt="logo UBA-FFYB"
-              width="50%">
-          </div>
-          <div class="col-9">
-              <h3>UBA</h3>
-              <h5>subtítulo</h5>
-              <p>descripción</p>
-          </div>
-          
-          <div class="col-1">
-            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-            <br>
-            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
-          </div>  
-
-        </article>
-
-        <article class="row"> <!-- PROYECTO3 -->
-            <div class="col-2">
-                <img src=".." alt="logo PROYECTO3">
-            </div>
-            <div class="col-9">
-                <h3>PROYECTO 3</h3>
-                <h5>subtítulo</h5>
-                <p>descripción</p>
-            </div>
-            <div class="col-1">
-              <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-              <br>
-              <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
-            </div>  
-
-        </article>
-
-        <article class="row"> <!-- UNSL -->
-            <div class="col-2">
-                <img src="./assets/img/isologo-unsl-dos-lineas.png" 
-                alt="logo UNSL-FQBYF"
-                width="120%">
-            </div>
-            <div class="col-9">
-                <h3>UNSL</h3>
-                <h5>subtítulo</h5>
-                <p>descripción</p>
-            </div>
-          
-            <div class="col-1">
-              <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-              <br>
-              <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
-            </div>  
-
-        </article>
       </div>
     </div>
   </section>

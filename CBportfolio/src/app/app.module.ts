@@ -19,6 +19,8 @@ import { IndexComponent } from './components/index/index.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { ModalLoginComponent } from './modales/modal-login/modal-login.component';
 import { ModalLogoutComponent } from './modales/modal-logout/modal-logout.component';
+import { IdiomasComponent } from './components/idiomas/idiomas.component';
+
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { ModalLogoutComponent } from './modales/modal-logout/modal-logout.compon
     Pagina404Component,
     ModalLoginComponent,
     ModalLogoutComponent,
+    IdiomasComponent,
+   
 
   ],
   imports: [

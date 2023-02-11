@@ -6,59 +6,10 @@
           <br>
 
           <div class="container text-center">
-            <div class="row">
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-book"></i></h1>
-                <h6>Leer</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-language"></i></h1>
-                <h6>Idiomas</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-clapperboard"></i></h1>
-                <h6>Cine</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1> <i class="fa-solid fa-masks-theater"></i></h1>
-                <h6>Teatro</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1>                      
-                <!--i class="fa-solid fa-paintbrush"></i-->
-                <i class="fa-solid fa-pencil"></i>
-                <i class="fa-solid fa-palette"></i>
-                </h1>
-                <h6>Dibujar y pintar</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-music"></i></h1>
-                <h6>Música</h6>
-              </div>          
-              
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-person-swimming"></i></h1>
-                <h6>Nadar</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-person-biking"></i></h1>
-                <h6>Bici</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-person-hiking"></i></h1>
-                <h6>Senderismo</h6>
-              </div>
-
-              <div class="col-6 col-md-4">
-                <h1><i class="fa-solid fa-plane-departure"></i></h1>
-                <h6>Viajar</h6>
+            <div class="row" >
+              <div class="col-6 col-md-4" *ngFor="let hobbie of hobbiesVar">
+                <h1><i class="fa-solid fa-book"></i> <img [src]="hobbie.imagenHobbie" ></h1>
+                <h6>{{hobbie.descripcionHobbie}}</h6>
               </div>
               
             </div>
