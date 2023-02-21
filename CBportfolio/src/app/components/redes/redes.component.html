@@ -1,25 +1,15 @@
 <!-- REDES  SOCIALES-->
 
-<!-- 
-    <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
-      <a href="https://discord.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-      <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="mailto:cecibeuret@micorreo.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope-circle-check"></i></a> 
-    </div>
-    -->
 
 <!-- BOTÓN EDITAR redes--> 
 <div class="col-1">    
   <button type="button" class="btn btn-light editBanner" data-bs-toggle="modal" data-bs-target="#editRedesModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
 </div>
 
-<!-- REDES  SOCIALES-->
+<!-- LISTADO REDES  SOCIALES-->
 <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
    <div *ngFor="let red of redesList">
-    <a class="nav-link" [href]="red.urlRed" target="_blank" rel="noopener noreferrer">
-      <!--i [ngClass]="red.icoFont"></i-->
-      <img [src]="red.imagenRed" [alt]="red.altImgRed" width="80%">  
+    <a class="nav-link" [href]="red.urlRed" target="_blank" rel="noopener noreferrer"><span><i [ngClass]="red.span"></i></span>
     </a>
   </div>  
 </div>

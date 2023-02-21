@@ -131,39 +131,45 @@
   "habilidades": [
     {
       "id": 1,
-      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "span": "fa-brands fa-html5", 
       "tituloHab": "HTML5",
-      "porcentaje": 20
+      "porcentaje": 60, 
+      "progreso": "progress-60"
     },
     {
       "id": 2,
-      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "span": "fa-brands fa-css3-alt", 
       "tituloHab": "CSS",
-      "porcentaje": 30
+      "porcentaje": 40, 
+      "progreso": "progress-40"
     },
     {
       "id": 3,
-      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "span": "fa-brands fa-bootstrap", 
       "tituloHab": "Bootstrap",
-      "porcentaje": 10
+      "porcentaje": 50, 
+      "progreso": "progress-50"
     },
     {
       "id": 4,
-      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "span": "fa-brands fa-angular", 
       "tituloHab": "Angular",
-      "porcentaje": 25
+      "porcentaje": 35, 
+      "progreso": "progress-35"
     },
     {
       "id": 5,
-      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "span": "fa-brands fa-github-alt", 
       "tituloHab": "GitHub",
-      "porcentaje": 60
+      "porcentaje": 20, 
+      "progreso": "progress-20"
     },
     {
       "id": 6,
-      "imagenHab": "../assets/img/logo_UNSAM.png", 
+      "span": "fa-solid fa-database", 
       "tituloHab": "Base de Datos",
-      "porcentaje": 50
+      "porcentaje": 60, 
+      "progreso": "progress-60"
     }
   ],
 
@@ -172,19 +178,22 @@
       "id": 1,
       "tituloIdioma": "Español",
       "porcentaje": 100,
+      "progreso": "progress-100",
       "comentario": "(lengua materna)"
     },
     {
       "id": 2,
       "tituloIdioma": "Inglés",
-      "comentario": " ",
-      "porcentaje": 70
+      "porcentaje": 70,
+      "progreso": "progress-70",
+      "comentario": " "
     },
     {
       "id": 3, 
       "tituloIdioma": "Francés",
-      "comentario": " ",
-      "porcentaje": 40
+      "porcentaje": 40,
+      "progreso": "progress-40",
+      "comentario": " "
     }
   ],
 
@@ -192,22 +201,19 @@
     {
       "id": 1, 
       "nombreRed": "Discord",
-      "imagenRed": "assets/img/logo_UNSAM.png",
-      "altImgRed": "imagen Discord",
+      "span": "fa-brands fa-discord",
       "urlRed": "https://discord.com"
     },
     {
       "id": 2, 
       "nombreRed": "GitHub",
-      "imagenRed": "assets/img/logo_UNSAM.png",
-      "altImgRed": "imagen GitHub",
+      "span": "fa-brands fa-github",
       "urlRed": "https://github.com"
     },
     {
       "id": 3, 
       "nombreRed": "WhatsApp",
-      "imagenRed": "assets/img/logo_UNSAM.png",
-      "altImgRed": "imagen WhatsApp",
+      "span": "fa-brands fa-whatsapp",
       "urlRed": "https://web.whatsapp.com"
     }
   ],
@@ -215,57 +221,52 @@
   "hobbies": [
     {
       "id": 1,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-book", 
       "descripcionHobbie": "Leer"
     },
     {
       "id": 2,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-language", 
       "descripcionHobbie": "Idiomas"
     },
     {
       "id": 3,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-clapperboard", 
       "descripcionHobbie": "Cine"
     },
     {
       "id": 4,
-      "imagenHobbie": ".#", 
+      "span": "fa-solid fa-masks-theater", 
       "descripcionHobbie": "Teatro"
     },
     {
       "id": 5,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-palette", 
       "descripcionHobbie": "Dibujar y pintar"
     },
     {
       "id": 6,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-music", 
       "descripcionHobbie": "Música"
     },
     {
       "id": 7,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-person-swimming", 
       "descripcionHobbie": "Nadar"
     },
     {
       "id": 8,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-person-biking", 
       "descripcionHobbie": "Bicicleta"
     },
     {
       "id": 9,
-      "imagenHobbie": "#", 
+      "span": "fa-solid fa-person-hiking", 
       "descripcionHobbie": "Senderismo"
     },
     {
       "id": 10,
-      "imagenHobbie": "#", 
-      "descripcionHobbie": "Viajar"
-    },
-    {
-      "id": 11,
-      "imagenHobbie": "fa-solid fa-masks-theater", 
+      "span": "fa-solid fa-plane-departure", 
       "descripcionHobbie": "Viajar"
     }
     

@@ -8,10 +8,9 @@
           <div class="container text-center">
             <div class="row" >
               <div class="col-6 col-md-4" *ngFor="let hobbie of hobbiesList">
-                <h1><i class="fa-solid fa-book"></i> <img [src]="hobbie.imagenHobbie" ></h1>
+                <h1><span><i [ngClass]="hobbie.span"></i></span></h1>
                 <h6>{{hobbie.descripcionHobbie}}</h6>
               </div>
-              
             </div>
           </div>       
             

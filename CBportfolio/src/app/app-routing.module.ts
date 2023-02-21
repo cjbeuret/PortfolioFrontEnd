@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: '', component: IndiceComponent},
   {path: 'sobre-mi', component: SobreMiComponent},
   {path: 'experiencia', component: ExperienciaComponent}, 
-  {path: 'education', component: EducacionComponent},
+  {path: 'educacion', component: EducacionComponent},
   {path: 'proyectos', component: ProyectosComponent},
   {path: 'habilidades', component: HabilidadesComponent},
   {path: 'idiomas', component: IdiomasComponent},
