@@ -1,75 +1,14 @@
 <footer>
     
   <div id="contactame" class="links-redes-pie d-flex flex-column align-items-center justify-content-center">
-    <!-- BOTÓN EDITAR redes--> 
-    <div class="col-1">    
-      <button type="button" class="btn btn-light editBanner" data-bs-toggle="modal" data-bs-target="#editRedesModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
-    </div> 
+   
 
     <p class="footer-texto text-center">Contactame</p>
-    
-    <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
-        <!-- BOTÓN EDITAR redes--> 
-      <a href="https://discord.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-      <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="mailto:cecibeuret@micorreo.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope-circle-check"></i></a>
-    </div>
+    <app-redes></app-redes>
   </div>
   
-  <div> <!-- CONTACTO -->   
-    <div class="contacto container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
-      <div class="row p-3">
-        <div class="col-6">
-          <div id="contacto" class="justify-content-center align-items-center" >
-            
-            <address>
-              <strong>Dirección</strong>
-              <br>
-              Calle, N°
-              <br>
-              Ciudad Autónoma de Buenos Aires
-              <br>
-              Teléfono: +54 9 11 00000000
-              <br>
-              <strong>Correo electrónico: xxxxxxx@gmail.com</strong> 
-            </address>
- 
-            <!-- enviar mensaje -->
-            <div class="mensaje"> 
-              <label for=""> <h6>Dejame tu mensaje</h6></label>
-              <input type="text" name="acá dejá tu mensaje">
-              <button type="submit">Enviar</button>
-            </div>
-
-          </div>  
-        </div>      
-
-        <div class="col-5">
-          <div id="ubicacion"> <!-- mapa -->
-            <address>
-              <strong>Ubicación</strong>
-            </address>
-            <iframe 
-              class="mapa" 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar" 
-              width="300" 
-              height="200" 
-              style="border: 0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>  
-        </div>
-
-        <div class="col-1"> <!-- BOTÓN EDITAR contacto-->  
-          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editContactoModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
-        </div>
-
-      </div>
-    </div>  
-  </div>
+  <!-- CONTACTO --> 
+  <app-contacto></app-contacto>
 
   <!--segunda instancia de link a contenido interno-->
   <div class="links-internos-pie d-flex flex-column align-items-center justify-content-center">

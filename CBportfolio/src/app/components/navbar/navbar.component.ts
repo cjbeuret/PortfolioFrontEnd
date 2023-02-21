@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
     this.datos.obtenerDatos().subscribe(data => {
       console.log(data); 
       this.redesList = data.redes      
-       
     })
   }
 
@@ -27,5 +26,4 @@ export class NavbarComponent implements OnInit {
     this.mostrar=!this.mostrar;
   }
   
-
 }

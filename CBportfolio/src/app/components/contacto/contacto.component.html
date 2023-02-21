@@ -1,0 +1,37 @@
+<div> <!-- CONTACTO -->   
+    <div class="contacto container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+      <app-domicilio></app-domicilio>
+      
+      <div class="row p-3">
+        <div class="col-6">
+          <div id="contacto" class="justify-content-center align-items-center">
+            <div>
+              <strong>Teléfono</strong> {{telefonoVar}}
+              <br>
+              <strong>Correo electrónico</strong>{{emailVar}}
+            </div>
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editContactoModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+          </div>  
+        </div>
+      
+     </div>
+
+      <div class="row p-3">
+        <div class="col-6">
+          <div id="contacto" class="justify-content-center align-items-center"> 
+            <!-- enviar mensaje -->
+            <div class="mensaje"> 
+              <label for=""> <h6>Dejame tu mensaje</h6></label>
+              <br>
+              <input type="text" name="mensaje" placeholder="Acá dejá tu mensaje">
+              <button type="submit">Enviar</button>
+            </div>
+
+          </div>  
+        </div>     
+      </div>
+
+<!-- BOTÓN EDITAR domicilio-->  
+
+    </div>  
+  </div>

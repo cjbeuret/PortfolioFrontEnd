@@ -1,0 +1,39 @@
+<div class="row p-3">
+  <div class="col-6">
+    <div id="contacto" class="justify-content-center align-items-center">          
+       <!--DOMICILIO-->
+      <address *ngFor="let domicilio of domiciliosList">
+        <strong>Dirección</strong>
+        <br>
+        {{domicilio.calle}} {{domicilio.altura}} {{domicilio.piso}} {{domicilio.dpto}}
+        <br>
+        {{domicilio.localidad}} {{domicilio.provincia}}
+      </address>
+    </div>  
+  </div>      
+
+  <div class="col-5">
+    <div id="ubicacion"> <!-- mapa -->
+      <address>
+        <strong>Ubicación</strong>
+      </address>
+      <iframe 
+        class="mapa" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar" 
+        width="300" 
+        height="200" 
+        style="border: 0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>  
+  </div>
+
+  <div class="col-1"> <!-- BOTÓN EDITAR domicilio-->  
+    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editDomicilioModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+  </div>
+
+</div>
+
+<app-modal-domicilio></app-modal-domicilio>

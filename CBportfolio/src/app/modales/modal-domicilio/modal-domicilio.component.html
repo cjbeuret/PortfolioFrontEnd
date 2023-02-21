@@ -1,0 +1,51 @@
+<!-- Boton Editar DOMICILIO Modal-->
+<div class="modal fade" id="editDomicilioModal" tabindex="-1" aria-labelledby="editDomicilioModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editDomicilioModalLabel">Editar Domicilio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">             
+          <form>   
+            <div class="mb-3">
+              <label for="inputCalle" class="form-label">Calle</label>
+              <input type="text" class="form-control" id="inputCalle" name="calleDomicilio" placeholder="Ingrese la calle del domicilio" required>              
+            </div>
+            <div class="mb-3">
+              <label for="inputAltura" class="form-label">Altura</label>
+              <input type="text" class="form-control" id="inputAltura" name="alturaDomicilio" placeholder="Ingrese la altura del domicilio" required>              
+            </div>
+            <div class="mb-3">
+              <label for="inputPiso" class="form-label">Piso</label>
+              <input type="text" class="form-control" id="inputPiso" name="pisoDomicilio" placeholder="Ingrese el piso">              
+            </div>
+            <div class="mb-3">
+              <label for="inputDpto" class="form-label">Departamento</label>
+              <input type="text" class="form-control" id="inputDpto" name="dptoDomicilio" placeholder="Ingrese la departamento">              
+            </div>
+            <div class="mb-3">
+              <label for="inputLocalidad" class="form-label">Localidad</label>
+              <input type="text" class="form-control" id="inputLocalidad" name="localidad" placeholder="Ingrese la localidad" required>              
+            </div>
+            <div class="mb-3">
+              <label for="inputLocalidad" class="form-label">Provincia</label>
+              <input type="text" class="form-control" id="inputLocalidad" name="provincia" placeholder="Ingrese la provincia">              
+            </div>  
+            <div class="mb-3">
+              <label for="mapaUbicacion" class="form-label">Nueva ubicación</label>
+              <input type="url" placeholder="inserte url del mapa" id="mapaUbicacion" name="mapaUbicacion" placeholder="Ingrese la url de la nueva ubicación">             
+            </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+
+          </form>
+        </div> 
+
+      </div>
+    </div>
+</div>

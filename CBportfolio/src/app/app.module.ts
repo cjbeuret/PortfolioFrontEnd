@@ -31,6 +31,10 @@ import { ModalHabilidadesComponent } from './modales/modal-habilidades/modal-hab
 import { ModalContactoComponent } from './modales/modal-contacto/modal-contacto.component';
 import { ModalIdiomasComponent } from './modales/modal-idiomas/modal-idiomas.component';
 import { ModalRedesComponent } from './modales/modal-redes/modal-redes.component';
+import { RedesComponent } from './components/redes/redes.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { DomicilioComponent } from './components/domicilio/domicilio.component';
+import { ModalDomicilioComponent } from './modales/modal-domicilio/modal-domicilio.component';
 
 
 @NgModule({
@@ -60,7 +64,11 @@ import { ModalRedesComponent } from './modales/modal-redes/modal-redes.component
     ModalHabilidadesComponent,
     ModalContactoComponent,
     ModalIdiomasComponent,
-    ModalRedesComponent
+    ModalRedesComponent,
+    RedesComponent,
+    ContactoComponent,
+    DomicilioComponent,
+    ModalDomicilioComponent
   ],
   imports: [
     BrowserModule,    

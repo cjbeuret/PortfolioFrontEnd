@@ -1,43 +1,37 @@
 <section id="proyectos"> 
-    <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
-      <div class="row p-3">
-    
-        <div id="proyectos">
-          <h2 class="text mt-4 pb-3">Proyectos</h2>
-
-        <!-- Modificar PROYECTOS -->        
-        <section id="editProyectos" class="bg-dark p-4">  
-          <div class="btn-group" role="group" aria-label="editarProyectos">
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProyModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
-            <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addProyModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
-          </div>    
-        </section>
-
-          <article class="row" *ngFor="let proyecto of proyectosList"> <!-- PROYECTOS -->
-            <div class="col-2">
-              <a [href]="proyecto.linkProyecto" target="_blank">
-                <img id="logoArgProg" [src]="proyecto.imagenProyecto" 
-                [alt]="proyecto.alt"
-                width="100%">
-              </a>
-            </div>
-            <div class="col-9">
-                <h3>{{proyecto.titulo}}</h3>
-                <h5>{{proyecto.destinatario}}</h5>
-                <h6>{{proyecto.perDesarrollo}}</h6>
-                <p>{{proyecto.descProyecto}}</p>
-            </div>
-            <div class="col-1">
-              <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-              <br>
-              <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
-            </div>
-          </article>
-        </div>
+  <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
+    <div class="row p-3">
       
-      </div>
+      <h2 class="text mt-4 pb-3">Proyectos</h2>
+
+      <!-- Modificar PROYECTOS -->        
+      <article id="editProyectos" class="bg-dark p-3">  
+        <div class="btn-group" role="group" aria-label="editarProyectos">
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProyModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+          <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addProyModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+        </div>    
+      </article>
+      
+      <!-- PROYECTOS -->
+      <article class="row p-3" *ngFor="let proyecto of proyectosList"> 
+        <div class="col-2 d-flex flex-column align-items-center justify-content-center">
+          <a [href]="proyecto.linkProyecto" target="_blank">
+            <img id="logoArgProg" [src]="proyecto.imagenProyecto" 
+            [alt]="proyecto.alt"
+            width="180rem">
+          </a>
+        </div>
+        <div class="col-9">
+            <h3>{{proyecto.titulo}}</h3>
+            <h5>{{proyecto.destinatario}}</h5>
+            <h6>{{proyecto.perDesarrollo}}</h6>
+            <p>{{proyecto.descProyecto}}</p>
+        </div>
+      </article> 
+    
     </div>
+  </div>
 </section>
 
 <app-modal-proyectos></app-modal-proyectos>
