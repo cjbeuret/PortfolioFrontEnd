@@ -1,8 +1,15 @@
 <footer>
     
   <div id="contactame" class="links-redes-pie d-flex flex-column align-items-center justify-content-center">
+    <!-- BOTÓN EDITAR redes--> 
+    <div class="col-1">    
+      <button type="button" class="btn btn-light editBanner" data-bs-toggle="modal" data-bs-target="#editRedesModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+    </div> 
+
     <p class="footer-texto text-center">Contactame</p>
+    
     <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+        <!-- BOTÓN EDITAR redes--> 
       <a href="https://discord.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
       <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
       <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
@@ -27,7 +34,7 @@
               <br>
               <strong>Correo electrónico: xxxxxxx@gmail.com</strong> 
             </address>
-          
+ 
             <!-- enviar mensaje -->
             <div class="mensaje"> 
               <label for=""> <h6>Dejame tu mensaje</h6></label>
@@ -38,7 +45,7 @@
           </div>  
         </div>      
 
-        <div class="col-6">
+        <div class="col-5">
           <div id="ubicacion"> <!-- mapa -->
             <address>
               <strong>Ubicación</strong>
@@ -55,6 +62,11 @@
             </iframe>
           </div>  
         </div>
+
+        <div class="col-1"> <!-- BOTÓN EDITAR contacto-->  
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editContactoModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+        </div>
+
       </div>
     </div>  
   </div>
@@ -79,5 +91,7 @@
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addContactoModal"><i class="fa-solid fa-plus"></i></button>
     </div>    
   </section>
-  
+
+  <app-modal-redes></app-modal-redes>
+  <app-modal-contacto></app-modal-contacto>
 </footer>

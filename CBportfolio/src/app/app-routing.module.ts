@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './components/index/index.component';
+import { RouterModule, Routes} from '@angular/router';
+
+import { IndiceComponent } from './components/indice/indice.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
@@ -9,15 +10,17 @@ import { HabilidadesComponent } from './components/habilidades/habilidades.compo
 import { HobbiesComponent } from './components/hobbies/hobbies.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { IdiomasComponent } from './components/idiomas/idiomas.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/inicio', pathMatch:'full'},  
-  //{path: '', component: IndexComponent},
+  //{path:'', redirectTo:'/indice', pathMatch:'full'},  
+  {path: '', component: IndiceComponent},
   {path: 'sobre-mi', component: SobreMiComponent},
-  {path: 'experiencia', component: ExperienciaComponent},
+  {path: 'experiencia', component: ExperienciaComponent}, 
   {path: 'education', component: EducacionComponent},
   {path: 'proyectos', component: ProyectosComponent},
   {path: 'habilidades', component: HabilidadesComponent},
+  {path: 'idiomas', component: IdiomasComponent},
   {path: 'hobbies', component: HobbiesComponent},
   {path: 'footer', component: FooterComponent},
   {path: '**', component: Pagina404Component}

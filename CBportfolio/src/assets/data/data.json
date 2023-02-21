@@ -1,20 +1,59 @@
 {
   
-  "banner": "#",
-  "imagenPerfil":"#",
-  "nombre": "Cecilia Judith Beuret",
-  "email": "micorreo@gmail.com",
+  "nombres": "Cecilia Judith",
+  "apellidos": "Beuret",
   "especialidad1": "Gestión Ambiental",
   "especialidad2": "Desarrollador Web Full Stack Jr",
   "sobreMi": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi distinctio necessitatibus reprehenderit temporibus dolorem molestias, saepe repellat totam commodi, quos atque sint delectus similique tempora, quaerat dicta asperiores accusamus optio.",
+  "banner": "../assets/img/este.png",
+  "altBanner": "banner",
+  "imagenPerfil": "../assets/img/fotoceci2.png",
+  "altImgPerfil": "imagen de Perfil",
+  "telefono": "+54 1111-1111",
+  "email": "micorreo@gmail.com",
 
+  "domicilios": [
+    {
+      "id": 1,
+      "calle": "Avenida",
+      "altura": 111,
+      "piso": 1,
+      "dpto": "A",
+      "localidad": "Ciudad Autónoma de Buenos Aires",
+      "provincia": " ",
+      "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar"  
+    },
+    {
+      "id": 2,
+      "calle": "Calle",
+      "altura": 222,
+      "piso": 2,
+      "dpto": "B",
+      "localidad": "Haedo",
+      "provincia": "Provincia de Buenos Aires",
+      "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar"   
+    },
+    {
+      "id": 3,
+      "calle": "Pasaje",
+      "altura": 333,
+      "piso": 3,
+      "dpto": "C",
+      "localidad": "Mendoza",
+      "provincia": "Provincia de Mendoza",
+      "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar"   
+    }
+  ],
+
+  
+  
   "experiencias": [
     {
       "id": 1,
-      "logoEmpresa": "../assets/img/Enre_logo.png",
-      "url":"https://www.argentina.gob.ar/enre",
-      "alt": "#", 
       "empresa": "ENRE",
+      "logoEmpresa": "../assets/img/Enre_logo.png",
+      "alt": "logo ENRE",
+      "url":"https://www.argentina.gob.ar/enre",
       "cargo": "Profesional",
       "descripPuesto": "Loremmmm",
       "inicio": "2000",
@@ -22,32 +61,10 @@
     },
     {
       "id": 2,
-      "logoEmpresa": "../assets/img/800px-UBA.png", 
-      "url":"https://google.com",
-      "alt": "#",
       "empresa": "UBA - FFyB",
-      "cargo": "Jefe de trabajos prácticos",
-      "descripPuesto": "Loremmmm",
-      "inicio": "1999",
-      "fin": "2000"
-    },
-    {
-      "id": 3,
-      "logoEmpresa": "", 
+      "logoEmpresa": "../assets/img/800px-UBA.png",
+      "alt": "logo UBA -FFyB", 
       "url":"https://google.com",
-      "alt": "logo Proyecto 3",
-      "empresa": "Proyecto 3",
-      "cargo": "Jefe de trabajos prácticos",
-      "descripPuesto": "Loremmmm",
-      "inicio": "1999",
-      "fin": "2000"
-    },
-    {
-      "id": 4,
-      "logoEmpresa": "./assets/img/isologo-unsl-dos-lineas.png",
-      "url":"https://google.com",
-      "alt": "#", 
-      "empresa": "UNSL - FQByF",
       "cargo": "Jefe de trabajos prácticos",
       "descripPuesto": "Loremmmm",
       "inicio": "1999",
@@ -58,69 +75,56 @@
   "educaciones": [
     {
       "id": 1,
+      "institucion": "UNIVERSIDAD NACIONAL DE SAN MARTÍN",
       "logoInstitucion": "../assets/img/logo_UNSAM.png",
-      "url": "https://www.unsam.edu.ar/institutos/3ia/140/3ia/gestion-ambiental",
-      "alt": "#",
-      "universidad": "UNIVERSIDAD NACIONAL DE SAN MARTÍN",
+      "alt": "logo UNSAM", 
+      "url": "https://www.unsam.edu.ar/institutos/3ia/140/3ia/gestion-ambiental",  
       "titulo": "Maestría en Gestión Ambiental",
-      "descripcion": "Experiencia 1",
-      "inicio": "1999",
-      "fin": "inconcluso"
+      "alcance": "Experiencia 1",
+      "comentario": "Cursada finalizada sin trabajo final"
     },
     {
       "id": 2,
+      "institucion": "UNIVERSIDAD NACIONAL DE SAN LUIS",
       "logoInstitucion": "../assets/img/isologo-unsl-dos-lineas.png",
-      "url": "https://carreras.unsl.edu.ar/carreras/lic-cs-bio",
-      "alt": "#", 
-      "universidad": "UNIVERSIDAD NACIONAL DE SAN LUIS",
+      "alt": "logo UNSL", 
+      "url": "https://carreras.unsl.edu.ar/carreras/lic-cs-bio",     
       "titulo": "Licenciatura en Ciencias Biológicas",
-      "descripcion": "Experiencia 2",
-      "inicio": "1999",
-      "fin": "2000"
+      "alcance": "Experiencia 2",
+      "comentario": "Título obtenido en 1999"
     },
     {
       "id": 3,
+      "institucion": "UNIVERSIDAD NACIONAL DE SAN LUIS",
       "logoInstitucion": "./assets/img/isologo-unsl-dos-lineas.png",
+      "alt": "logo UNSL", 
       "url": "https://carreras.unsl.edu.ar/carreras/prof-bio",
-      "alt": "#", 
-      "universidad": "UNIVERSIDAD NACIONAL DE SAN LUIS",
       "titulo": "Profesorado Universitario en Biología",
-      "descripcion": "Experiencia 3",
-      "inicio": "1999",
-      "fin": "2000"
+      "alcance": "Experiencia 3",
+      "comentario": "CTítulo obtenido en 1998"
     }
   ],
 
   "proyectos": [
     {
       "id": 1,
-      "imagenProyecto": "../assets/img/aplogo.png",
-      "linkProyecto": "https://argentinaprograma.inti.gob.ar", 
-      "alt": "Portfolio Argentina Programa / logo Argentina Programa",
       "titulo": "Desarrollo de un portfolio Web",
-      "institucion": "ARGENTINA PROGRAMA",
-      "descProyecto": "Elaboración de un porfolio ...",
-      "fecha": "Sept 2022- Mayo 2023"
+      "imagenProyecto": "../assets/img/aplogo.png",
+      "alt": "Portfolio Argentina Programa",
+      "linkProyecto": "https://argentinaprograma.inti.gob.ar",      
+      "destinatario": "ARGENTINA PROGRAMA",
+      "descProyecto": "Elaboración de un porfolio Web en el marco del curso de capacitación...",
+      "perDesarrollo": "Sept 2022- Mayo 2023"
     },
     {
-      "id": 2,
-      "imagenProyecto": "../assets/img/logo_UNSAM.png",
-      "linkProyecto": "https://argentinaprograma.inti.gob.ar", 
+      "id": 1,
+      "titulo": "Desarrollo de un portfolio Web",
+      "imagenProyecto": "../assets/img/aplogo.png",
       "alt": "Portfolio Argentina Programa",
-      "titulo": "Portfolio Argentina Programa",
-      "institucion": "XXXX",
+      "linkProyecto": "https://argentinaprograma.inti.gob.ar",      
+      "destinatario": "ARGENTINA PROGRAMA",
       "descProyecto": "Elaboración de un porfolio ...",
-      "fecha": "Sept 2022- Mayo 2023"
-    },
-    {
-      "id": 3,
-      "imagenProyecto": "../assets/img/logo_UNSAM.png",
-      "linkProyecto": "https://argentinaprograma.inti.gob.ar", 
-      "alt": "Portfolio Argentina Programa",
-      "titulo": "Portfolio Argentina Programa",
-      "institucion": "XXXX",
-      "descProyecto": "Elaboración de un porfolio ...",
-      "fecha": "Sept 2022- Mayo 2023"
+      "perDesarrollo": "Sept 2022- Mayo 2023"
     }
   ],
 
@@ -166,24 +170,45 @@
   "idiomas": [
     {
       "id": 1,
-      "imagenIdioma": "../assets/img/logo_UNSAM.png", 
       "tituloIdioma": "Español",
-      "comentario": "(lengua materna)",
-      "porcentaje": 100
+      "porcentaje": 100,
+      "comentario": "(lengua materna)"
     },
     {
       "id": 2,
-      "imagenIdioma": "../assets/img/logo_UNSAM.png", 
       "tituloIdioma": "Inglés",
       "comentario": " ",
       "porcentaje": 70
     },
     {
-      "id": 3,
-      "imagenIdioma": "../assets/img/logo_UNSAM.png", 
+      "id": 3, 
       "tituloIdioma": "Francés",
       "comentario": " ",
       "porcentaje": 40
+    }
+  ],
+
+  "redes": [
+    {
+      "id": 1, 
+      "nombreRed": "Discord",
+      "imagenRed": "assets/img/logo_UNSAM.png",
+      "altImgRed": "imagen Discord",
+      "urlRed": "https://discord.com"
+    },
+    {
+      "id": 2, 
+      "nombreRed": "GitHub",
+      "imagenRed": "assets/img/logo_UNSAM.png",
+      "altImgRed": "imagen GitHub",
+      "urlRed": "https://github.com"
+    },
+    {
+      "id": 3, 
+      "nombreRed": "WhatsApp",
+      "imagenRed": "assets/img/logo_UNSAM.png",
+      "altImgRed": "imagen WhatsApp",
+      "urlRed": "https://web.whatsapp.com"
     }
   ],
   
@@ -237,7 +262,13 @@
       "id": 10,
       "imagenHobbie": "#", 
       "descripcionHobbie": "Viajar"
+    },
+    {
+      "id": 11,
+      "imagenHobbie": "fa-solid fa-masks-theater", 
+      "descripcionHobbie": "Viajar"
     }
+    
 
   ]
 

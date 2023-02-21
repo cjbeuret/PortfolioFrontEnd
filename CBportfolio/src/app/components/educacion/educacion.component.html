@@ -2,20 +2,30 @@
     <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
       <div class="row p-3">
         <h2 class="text mt-4 pb-8">Educación</h2>
+
+            <!-- Modificar EDUCACION -->  
+        <section id="editEducacion" class="bg-dark p-4">  
+          <div class="btn-group" role="group" aria-label="editarEducacion">
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editEducModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+            <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addEducModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+          </div>    
+        </section>
             
-        <article class="row" *ngFor="let educacion of educacionesVar"> <!-- EXPERIENCIAS -->
+        <article class="row" *ngFor="let educacion of educacionesList"> <!-- EDUCACIONES -->
           <div class="col-2">
-            <a href="educacion.url" target="_blank"><img [src]= "educacion.logoInstitucion" 
-              alt="logo UNSAM"
+            <a [href]="educacion.url" target="_blank">
+              <img [src]="educacion.logoInstitucion" 
+              [alt]="educacion.alt"
               width="100%">
             </a>
-            <h6 style="text-align: center;">{{educacion.inicio}} / {{educacion.fin}}</h6>
+            <h6 style="text-align: center;">{{educacion.comentario}}</h6>
 
           </div>
           <div class="col-9">
             <h3>{{educacion.universidad}}</h3>
             <h5>{{educacion.titulo}}</h5>
-            <p>{{educacion.descripcion}}</p>
+            <p>{{educacion.alcance}}</p>
           </div>
           <div class="col-1">
             <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
@@ -26,4 +36,6 @@
       
       </div>
     </div>
-  </section>
+</section>
+
+<app-modal-educacion></app-modal-educacion>

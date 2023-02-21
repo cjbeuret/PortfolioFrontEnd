@@ -2,13 +2,22 @@
     <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">    
       <div class="row p-3">
         <h2 class="text mt-4 pb-8">Experiencia Laboral</h2>
-              
-        <article class="row" *ngFor="let experiencia of experienciasVar"> <!-- ENRE -->
-          <div class="col-2">
+      
+      <!-- Modificar EXPERIENCIA -->  
+      <section id="editExperiencia" class="bg-dark p-4">  
+        <div class="btn-group" role="group" aria-label="editarExperiencia">
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+          <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+        </div>    
+      </section>
+    
+        <article class="row" *ngFor="let experiencia of experienciasList"> <!-- EXPERIENCIAS -->
+          <div class="col-3">
             <a [href]="experiencia.url" target="_blank">
               <img [src]="experiencia.logoEmpresa" 
               [alt]="experiencia.alt"
-              width="80%">                  
+              width="60%">
             </a>
             <p>{{experiencia.inicio}} / {{experiencia.fin}}</p>
           </div>
@@ -17,16 +26,12 @@
             <h3>{{experiencia.empresa}}</h3>
             <h5>{{experiencia.cargo}}</h5>
             <p>{{experiencia.descripPuesto}}</p>
-          </div>
-          
-          <div class="col-1">
-            <button type="button" class="btn btn-light" data-bs-target="#editPerfil"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-            <br>
-            <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> <!-- Eliminar-->
           </div>  
           
         </article>
 
       </div>
     </div>
-  </section>
+</section>
+
+<app-modal-experiencia></app-modal-experiencia>

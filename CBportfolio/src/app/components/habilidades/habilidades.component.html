@@ -3,11 +3,21 @@
       <div class="row p-3">
         <div id="info-apt">
           <h2 class="text-center mt-4 pb-8">Habilidades</h2>
+       
+          <!-- Modificar HABILIDADES -->  
+          <section id="editHabilidades" class="bg-dark p-4">  
+            <div class="btn-group" role="group" aria-label="editarHabilidades">
+              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+              <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHabModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+            </div>    
+          </section>
+
           <br>
 
           <div class="container text-center">
             <div class="row" >
-              <div class="col-6 col-sm-3" *ngFor="let habilidad of habilidadesVar">
+              <div class="col-6 col-sm-3" *ngFor="let habilidad of habilidadesList">
                 <div class="progress-circle progress-30"><span>{{habilidad.porcentaje}}</span></div>
                 <h1><i class="fa-brands fa-html5"></i></h1>
                 <h6>{{habilidad.tituloHab}}</h6>
@@ -15,6 +25,10 @@
             </div>
           </div>
           
+          <app-modal-habilidades></app-modal-habilidades> <!--MODAL HABILIDADES-->
+
+          <hr>
+
           <!-- apartado idiomas-->
           <app-idiomas></app-idiomas>
 

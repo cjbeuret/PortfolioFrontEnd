@@ -18,12 +18,17 @@
             />
           </a>
           
+          <button class="btn seccion" (click)="muestra()">Mostrar/Ocultar</button>
+
           <ul class="navbar-nav d-flex justify-content-center align-items-center">
             <!--lista redes-->
-            <li class="nav-item"><a class="nav-link" href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
-            <li class="nav-item"><a class="nav-link" href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-            <li class="nav-item"><a class="nav-link" href="https://web.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-            <li class="nav-item"><a class="nav-link" href="mailto:cecibeuret@micorreo.com" target="_blank"><i class="fa-solid fa-envelope-circle-check"></i></a></li>
+            <div *ngFor="let red of redesList"> 
+              <li class="nav-item">
+                <a class="nav-link" [href]="red.urlRed" target="_blank">
+                  <i [ngClass]="red.icoFont"></i></a>
+                </li>
+              </div>
+
             <!-- links internos a la pagina   --> 
             <li class="nav-item"><a class="nav-link" aria-current="page" href="#sobre-mi">Sobre mí</a></li>
             <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
@@ -33,16 +38,16 @@
             
           <!-- Button Login modal -->
           
-          <app-login></app-login>
+          <app-login *ngIf="!mostrar"></app-login>
           
 
           <!-- Button Logout modal -->
 
-          <app-logout></app-logout>
+          <app-logout *ngIf="mostrar"></app-logout>
           
 
         </div>
       </div>
     </nav>
 
-  </section>
+</section>

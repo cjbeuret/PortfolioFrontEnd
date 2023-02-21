@@ -1,0 +1,43 @@
+<!-- Boton Editar PERFIL Modal-->
+
+<div class="modal fade" id="editPerfilModal" tabindex="-1" aria-labelledby="editPerfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editPerfilModalLabel">Editar Perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        
+      <!--formulario de PERFIL-->
+      <div class="modal-body">
+        <form> 
+          <div class="mb-3">
+            <label for="nombresPerfil" class="form-label">Modificar nombres</label>
+            <input class="form-control" type="text" placeholder="inserte sus nombres" id="nombresPerfil" name="nombresPerfil" required>             
+          </div>
+          <div class="mb-3">
+            <label for="apellidosPerfil" class="form-label">Modificar apellidos</label>
+            <input class="form-control" type="text" placeholder="inserte sus apellidos" id="apellidosPerfil" name="apellidosPerfil" required>             
+          </div>
+          <div class="mb-3">
+            <label for="especialidad1Perfil" class="form-label">Modificar Especialidad 1</label>
+            <input class="form-control" type="text" placeholder="inserte su principal especialidad" id="especialidad1Perfil" name="especialidad1Perfil" required>             
+          </div>
+          <div class="mb-3">
+            <label for="especialidad2Perfil" class="form-label">Modificar Especialidad 2</label>
+            <input class="form-control" type="text" placeholder="inserte otra especialidad" id="especialidad2Perfil" name="especialidad2Perfil">             
+          </div>
+          <div class="mb-3">
+            <label for="perfilProfesional" class="form-label">Modificar perfil profesional</label>
+            <textarea class="form-control" id="perfilProfesional" rows="3"></textarea>               
+          </div> 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+      </div>
+        
+    </div>
+  </div>
+</div> 

@@ -8,14 +8,14 @@ import { DataService } from 'src/app/servicios/data.service';
 })
 export class HabilidadesComponent implements OnInit {
   //Tbn hay que traer el array, estamos instanciando la variable habilidades p usarla en ngOnInit
-  habilidadesVar : any = [];
+  habilidadesList : any = [];
   //el constructor está trayendo datos del servicio, datos es un alias
   constructor(private datos: DataService) {}
   
   ngOnInit(): void {
     this.datos.obtenerDatos().subscribe(data => {
       console.log(data); 
-      this.habilidadesVar = data.habilidades      
+      this.habilidadesList = data.habilidades      
       
     })
   }

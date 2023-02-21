@@ -1,0 +1,61 @@
+ <!-- Boton Editar EXPERIENCIA Modal-->
+<div class="modal fade" id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editExpModalLabel">Editar experiencia</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        
+      <form name="experienciaForm">             <!--formulario de EXPERIENCIA-->
+        <div class="modal-body">             
+          
+          <div class="mb-3">
+            <select class="form-select" id="experienciaId">
+              <option selected>Seleccionar Experiencia</option>
+              <option value="1">id1</option>
+              <option value="2">id2</option>
+              <option value="3">id3</option>
+            </select>
+
+          </div>
+
+          <div class="mb-3">
+            <label for="inputEmpresa" class="form-label">Modificar Empresa</label>
+            <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" name="inputEmpresa" required>  
+          </div>
+          <div class="mb-3">
+            <label for="logoEmpresa" class="form-label">Modificar logo de Empresa</label>
+            <input class="form-control" type="url" placeholder="inserte url del logo" id="logoEmpresa" name="logoEmpresa">             
+          </div>
+          <div class="mb-3">
+            <label for="urlEmpresa" class="form-label">Modificar url de Empresa</label>
+            <input class="form-control" type="url" placeholder="inserte url de empresa" id="urlEmpresa" name="urlEmpresa">             
+          </div>
+          <div class="mb-3">
+            <label for="inputCargo" class="form-label">Modificar Cargo</label>
+            <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo">               
+          </div>
+          <div class="mb-3">
+            <label for="experienciaInfo" class="form-label">Modificar descripción de puesto</label>
+            <textarea class="form-control" id="experienciaInfo" rows="3"></textarea>               
+          </div>
+          <div class="mb-3">
+            <label for="experienciaFechaInicio" class="form-label">Modificar Fecha de Inicio</label>
+            <input type="date" class="form-control" id="experienciaFechaInicio">
+          </div>
+          <div class="mb-3">
+            <label for="experienciaFechaFin" class="form-label"> Modificar Fecha de Fin</label>
+            <input type="date" class="form-control" id="experienciaFechaFin">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+          
+        </div>
+      </form>
+       
+    </div>
+  </div>
+</div> 

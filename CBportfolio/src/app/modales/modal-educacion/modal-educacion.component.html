@@ -1,0 +1,41 @@
+<!-- Boton Editar EDUCACION Modal-->
+<div class="modal fade" id="editEducModal" tabindex="-1" aria-labelledby="editEducModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editEducModalLabel">editar educación</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">             
+        <form>
+          <div class="mb-3">
+            <label for="logoInstitucion" class="form-label">Logo Institución</label>
+            <input type="url" placeholder="inserte url del logo" id="logoInstitucion" name="logoInstitucion">             
+          </div>
+          <div class="mb-3">
+            <label for="inputInstit" class="form-label">Institución</label>
+            <input type="text" placeholder="inserte nombre de la institución"class="form-control" id="inputInstit" name="inputInstit" required>               
+          </div>
+          <div class="mb-3">
+            <label for="inputTitulo" class="form-label">Título</label>
+            <input type="text" placeholder="inserte título obtenido"class="form-control" id="inputTitutlo" name="inputTitulo" required>              
+          </div>
+          <div class="mb-3">
+            <label for="textoLargo" class="form-label">Perfil profesional</label>
+            <textarea class="form-control" id="textoLargo"></textarea>               
+          </div>
+          <div class="mb-3">
+            <label for="fechaObt" class="form-label">Fecha de obtención del título</label>
+            <input type="date" class="form-control" id="fechaObt">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+      </div> 
+
+    </div>
+  </div>
+</div>

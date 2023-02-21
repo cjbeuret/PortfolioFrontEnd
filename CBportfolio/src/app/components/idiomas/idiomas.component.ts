@@ -8,14 +8,14 @@ import { DataService } from 'src/app/servicios/data.service';
 })
 export class IdiomasComponent implements OnInit {
   //Tbn hay que traer el array, estamos instanciando la variable idiomas p usarla en ngOnInit
-  idiomasVar : any = [];
+  idiomasList : any = [];
   //el constructor está trayendo datos del servicio, datos es un alias
   constructor(private datos: DataService) {}
   
   ngOnInit(): void {
     this.datos.obtenerDatos().subscribe(data => {
       console.log(data); 
-      this.idiomasVar = data.idiomas      
+      this.idiomasList = data.idiomas      
       
     })
   }

@@ -4,17 +4,28 @@
     
         <div id="proyectos">
           <h2 class="text mt-4 pb-3">Proyectos</h2>
-          <article class="row" *ngFor="let proyecto of proyectosVar"> <!-- PROYECTOS -->
+
+        <!-- Modificar PROYECTOS -->        
+        <section id="editProyectos" class="bg-dark p-4">  
+          <div class="btn-group" role="group" aria-label="editarProyectos">
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProyModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+            <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addProyModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+          </div>    
+        </section>
+
+          <article class="row" *ngFor="let proyecto of proyectosList"> <!-- PROYECTOS -->
             <div class="col-2">
               <a [href]="proyecto.linkProyecto" target="_blank">
-                <img id="logoArgProg" [src]="proyecto.imagenProyecto" [alt]="proyecto.alt"
+                <img id="logoArgProg" [src]="proyecto.imagenProyecto" 
+                [alt]="proyecto.alt"
                 width="100%">
               </a>
             </div>
             <div class="col-9">
                 <h3>{{proyecto.titulo}}</h3>
-                <h5>{{proyecto.institucion}}</h5>
-                <h6>{{proyecto.fecha}}</h6>
+                <h5>{{proyecto.destinatario}}</h5>
+                <h6>{{proyecto.perDesarrollo}}</h6>
                 <p>{{proyecto.descProyecto}}</p>
             </div>
             <div class="col-1">
@@ -27,4 +38,6 @@
       
       </div>
     </div>
-  </section>
+</section>
+
+<app-modal-proyectos></app-modal-proyectos>
