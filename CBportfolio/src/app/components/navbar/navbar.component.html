@@ -14,7 +14,7 @@
             <img class="logoArgProg"
             src="./assets/img/aplogo.png" 
             alt="logo de Argentina Programa"
-            width="180"
+            width="190"
             />
           </a>
           
@@ -22,18 +22,15 @@
 
           <ul class="navbar-nav d-flex justify-content-center align-items-center">
             <!--lista redes-->
-            <div *ngFor="let red of redesList"> 
-              <li class="nav-item">
-                <a class="nav-link" [href]="red.urlRed" target="_blank">
-                  <i [ngClass]="red.icoFont"></i></a>
-              </li>
-            </div>
+            
+            <div><app-redes></app-redes> </div>
+            
 
             <!-- links internos a la pagina   --> 
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="#sobre-mi">Sobre mí</a></li>
-            <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-            <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contactame">Contacto</a></li>         
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="#sobre-mi"><h5>Sobre mí</h5></a></li>
+            <li class="nav-item"><a class="nav-link" href="#habilidades"><h5>Habilidades</h5></a></li>
+            <li class="nav-item"><a class="nav-link" href="#proyectos"><h5>Proyectos</h5></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contactame"><h5>Contacto</h5></a></li>         
           </ul>
             
           <!-- Button Login modal -->
