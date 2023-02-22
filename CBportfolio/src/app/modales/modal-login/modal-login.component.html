@@ -7,6 +7,42 @@
       </div>
       
       <div class="modal-body">             
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+          <div class="mb-3">
+            <label for="email">Email:</label>
+            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="correo electrónico" required>              
+          </div>
+          
+          <!--Gracias al getter q configuramos en el controlador-->
+          <div *ngIf="Mail?.errors && (Mail?.touched || Mail?.dirty)">
+            <p *ngIf="Mail?.hasError('required')" class="error">El mail es requerido</p>
+            <p *ngIf="Mail?.hasError('email')" class="error">El formato del mail debe ser válido</p>
+          </div>
+
+          <br>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+            <input formControlName="password" type="password" class="form-control" [class.border-danger]="PasswordValid" id="exampleInputPassword1" placeholder="Contraseña" required>
+          </div>
+
+          <!--Gracias al getter q configuramos en el controlador-->
+          <div *ngIf="Password?.errors && (Password?.touched ||Password?.dirty)">
+            <p *ngIf="Password?.hasError('required')" class="error">El password es requerido</p>
+            <p *ngIf="Password?.errors?.['minlength']" class="error">El password debe tener 8 o más caracteres</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+          </div>
+        </form>
+        <!--<a routerLink="/">Volver</a>-->
+
+      </div> 
+
+      <!-- 
+      <div class="modal-body">             
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -22,6 +58,7 @@
           </div>
         </form>
       </div> 
+      -->
 
     </div>
   </div>

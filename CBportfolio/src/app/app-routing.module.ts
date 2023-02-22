@@ -11,10 +11,12 @@ import { HobbiesComponent } from './components/hobbies/hobbies.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { IdiomasComponent } from './components/idiomas/idiomas.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   //{path:'', redirectTo:'/indice', pathMatch:'full'},  
   {path: '', component: IndiceComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'sobre-mi', component: SobreMiComponent},
   {path: 'experiencia', component: ExperienciaComponent}, 
   {path: 'educacion', component: EducacionComponent},

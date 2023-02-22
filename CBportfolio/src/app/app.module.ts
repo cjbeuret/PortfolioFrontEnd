@@ -75,7 +75,7 @@ import { ModalDomicilioComponent } from './modales/modal-domicilio/modal-domicil
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   //agregamos el servicio al array de providers
   providers: [],
