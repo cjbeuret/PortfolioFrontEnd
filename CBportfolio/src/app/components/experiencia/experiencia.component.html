@@ -7,9 +7,9 @@
       <!-- Modificar EXPERIENCIA -->  
       <article id="editExperiencia" class="bg-dark p-2">  
         <div class="btn-group" role="group" aria-label="editarExperiencia">
-          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
-          <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+          <button type="submit" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button type="submit" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
         </div>    
       </article>
 
@@ -17,9 +17,9 @@
       <article class="row p-3" *ngFor="let experiencia of experienciasList"> 
         <div class="col-2 d-flex flex-column align-items-center justify-content-center">
           <a [href]="experiencia.url" target="_blank">
-            <img [src]="experiencia.logoEmpresa" 
-            [alt]="experiencia.alt"
-            width="150rem">
+            <img [src]="experiencia.logo" 
+            alt="imagenLogoEmpresa"
+            width="150rem"> <!--[alt]="experiencia.alt"-->
           </a>
         </div>
        
@@ -27,9 +27,19 @@
           <h3>{{experiencia.empresa}}</h3>
           <h5>{{experiencia.cargo}}</h5>
           <h6>{{experiencia.inicio}} / {{experiencia.fin}}</h6>
-          <p>{{experiencia.descripPuesto}}</p>
+          <p>{{experiencia.descPuesto}}</p>
         </div>  
+        
+        <div class="col-1">
+          <button type="button" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+          <!--falta agregar *ngIf="isLogged"-->
+          <br>
+          <button type="submit" class="btn btn-light"><i class="fa-solid fa-trash"></i></button><!-- Eliminar-->
+          <!--falta agregar *ngIf="isLogged" (click)="delete(experiencia.id)"-->
+        </div> 
+
       </article>
+
 
     </div>
   </div>

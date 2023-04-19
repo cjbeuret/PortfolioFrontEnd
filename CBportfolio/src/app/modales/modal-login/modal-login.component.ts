@@ -27,15 +27,21 @@ export class ModalLoginComponent implements OnInit {
   get Password() {
     return this.form.get("password");
   }
+
+  get PasswordInvalid() {
+    return this.Password?.touched && !this.Password?.valid;
+  }
+
   get Mail() {
     return this.form.get("email");
   }
 
-  get PasswordValid() {
-    return this.Password?.touched && !this.Password?.valid;
-  }
-  get MailValid() {
-    return false
+  //get MailValid() {
+  //  return false
+  //}
+
+  get MailInvalid() {
+    return this.Mail?.touched && !this.Mail?.valid;
   }
 
   onEnviar(event: Event) {

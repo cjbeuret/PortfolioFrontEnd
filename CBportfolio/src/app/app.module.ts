@@ -35,6 +35,7 @@ import { RedesComponent } from './components/redes/redes.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { DomicilioComponent } from './components/domicilio/domicilio.component';
 import { ModalDomicilioComponent } from './modales/modal-domicilio/modal-domicilio.component';
+import { ModalExperienciaAddComponent } from './modales/modal-experiencia-add/modal-experiencia-add.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { ModalDomicilioComponent } from './modales/modal-domicilio/modal-domicil
     RedesComponent,
     ContactoComponent,
     DomicilioComponent,
-    ModalDomicilioComponent
+    ModalDomicilioComponent,
+    ModalExperienciaAddComponent
   ],
   imports: [
     BrowserModule,    

@@ -18,8 +18,8 @@
         <div class="col-2 d-flex flex-column align-items-center justify-content-center">
           <a [href]="educacion.url" target="_blank">
             <img [src]="educacion.logoInstitucion" 
-            [alt]="educacion.alt"
-            width="200rem">
+            alt="imagenLogoInstitución"
+            width="200rem"> <!--[alt]="educacion.alt"-->
           </a>
         </div>
         <div class="col-9">
@@ -28,6 +28,11 @@
           <h6>{{educacion.comentario}}</h6>
           <p>{{educacion.alcance}}</p>
         </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editEducModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+          <br>
+          <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> 
+        </div> 
       </article>
     
     </div>

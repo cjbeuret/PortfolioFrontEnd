@@ -1,0 +1,71 @@
+<!-- Boton Agregar EXPERIENCIA Modal-->
+
+<div class="modal fade" id="addExpModal" tabindex="-1" aria-labelledby="addExpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addExpModalLabel">Agregar experiencia</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+        </div>
+          
+        <!--form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate name="experienciaFormAdd"-->             
+        <form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaFormAdd">   
+            <!--formulario de EXPERIENCIA-->
+          <div class="modal-body">             
+            <div class="mb-3">
+              <label for="inputEmpresa" class="form-label">Agregar Empresa</label>
+              <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
+              name="inputEmpresa" formControlName="empresa" [(ngModel)]="empresa" [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': ! Empresa?.errors && Empresa?.touched}"> <!--required-->  
+              <div *ngIf="Empresa?.errors && Empresa?.touched">
+                <p *ngIf="Empresa?.hasError('required')" class="text-danger">
+                  La empresa es un dato requerido
+                </p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="logoEmpresa" class="form-label">Agregar logo de Empresa</label>
+              <input class="form-control" type="url" placeholder="inserte url del logo" id="logoEmpresa" 
+              name="logoEmpresa" formControlName="logo" [(ngModel)]="logo">             
+            </div>
+            <div class="mb-3">
+              <label for="urlEmpresa" class="form-label">Agregar url de Empresa</label>
+              <input class="form-control" type="url" placeholder="inserte url de empresa" id="urlEmpresa" 
+              name="urlEmpresa" formControlName="url" [(ngModel)]="url">             
+            </div>
+            <div class="mb-3">
+              <label for="inputCargo" class="form-label">Agregar Cargo</label>
+              <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" 
+              name="inputCargo" formControlName="cargo" [(ngModel)]="cargo" [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.touched, 'is-valid': ! Cargo?.errors && Cargo?.touched}"> 
+              <div *ngIf="Cargo?.errors && Cargo?.touched">
+                <p *ngIf="Cargo?.hasError('required')" class="text-danger">
+                  El cargo es un dato requerido.
+                </p>
+              </div>              
+            </div>
+            <div class="mb-3">
+              <label for="inputDescrPuesto" class="form-label">Agregar descripción de puesto</label>
+              <textarea class="form-control" id="inputDescrPuesto" rows="3" 
+              name="descrPuesto" formControlName="descPuesto" [(ngModel)]="descPuesto"></textarea>               
+            </div>
+            <div class="mb-3">
+              <label for="experienciaFechaInicio" class="form-label">Agregar Fecha de Inicio</label>
+              <input type="date" class="form-control" id="experienciaFechaInicio" name="inicio"
+              formControlName="inicio" [(ngModel)]="inicio">
+            </div>
+            <div class="mb-3">
+              <label for="experienciaFechaFin" class="form-label"> Agregar Fecha de Fin</label>
+              <input type="date" class="form-control" id="experienciaFechaFin" name="fin" 
+              formControlName="fin" [(ngModel)]="fin">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="limpiar()">Limpiar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div> 
+          
+        </form>
+         
+      </div>
+    </div>
+  </div> 
+  

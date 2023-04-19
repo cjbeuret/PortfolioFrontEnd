@@ -51,22 +51,22 @@
     {
       "id": 1,
       "empresa": "ENRE",
-      "logoEmpresa": "../assets/img/Enre_logo.png",
+      "logo": "../assets/img/Enre_logo.png",
       "alt": "logo ENRE",
       "url":"https://www.argentina.gob.ar/enre",
       "cargo": "Profesional",
-      "descripPuesto": "Loremmmm",
+      "descPuesto": "Loremmmm",
       "inicio": "2000",
       "fin": "actualidad"
     },
     {
       "id": 2,
       "empresa": "UBA - FFyB",
-      "logoEmpresa": "../assets/img/800px-UBA.png",
+      "logo": "../assets/img/800px-UBA.png",
       "alt": "logo UBA -FFyB", 
       "url":"https://google.com",
       "cargo": "Jefe de trabajos prácticos",
-      "descripPuesto": "Loremmmm",
+      "descPuesto": "Loremmmm",
       "inicio": "1999",
       "fin": "2000"
     }
