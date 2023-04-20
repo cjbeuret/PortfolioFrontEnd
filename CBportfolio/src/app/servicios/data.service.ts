@@ -11,16 +11,33 @@ import { HttpClient } from '@angular/common/http';
 
 //es una clase que tiene un constructor adentro
 export class DataService {
-  
+  //crea una variable para conexión a la API
+  url:string="http://localhost:8080";
   // siempre usar un alias. http = alias. Es el alias de HttpClient. Podría poner otro
   constructor(private http:HttpClient) { }
 
   //metodo observable que devuelve datos
-  obtenerDatos():Observable<any> {
+  obtenerDatos():Observable<any>  
+  {
+    //acá reemplaza la conexión al JSON x conexión a la API
+    //en el metodo GET llama a la API persona (tengo 1 x cada compoentne del Backend)
+    return this.http.get<any>(this.url+"persona");
     
-    //retorno de datos utilizando el metodo get de HttpClient q llama a la base de datos JSON o a una URL
-    return this.http.get('./assets/data/data.json');
+  }  
     
-    //acá podría poner un callback p ver la opción de problema de conexión del servidor
-  }
+    
+    /* ESTO ES LO DEL JSON - no borrar hasta q la conexión a las APIs esté ok
+      constructor(private http:HttpClient) { }
+
+      //metodo observable que devuelve datos
+      obtenerDatos():Observable<any> 
+      {
+    
+      //retorno de datos utilizando el metodo get de HttpClient q llama a la base de datos JSON o a una URL
+      return this.http.get<any>('./assets/data/data.json');
+  
+      //acá podría poner un callback p ver la opción de problema de conexión del servidor
+      }
+    */
+  
 }

@@ -12,16 +12,18 @@ import { AuthService } from 'src/app/servicios/auth.service';
 
 
 export class LoginComponent implements OnInit {
-  
+  /*
   email = '';
   password = '';
-
+*/
   constructor(private router:Router, private authService: AuthService) {}
 
   login(){
     //El servicio authService.login redirecciona en caso de inicio de sesión pósitivo
-    this.router.navigate(['/login'])
-    this.authService.login(this.email, this.password)
+    this.router.navigate(['/iniciar-sesion'])
+    //this.authService.login(this.email, this.password)
   }
+
+
   ngOnInit() { }
 }
