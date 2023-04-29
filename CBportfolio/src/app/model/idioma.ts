@@ -1,18 +1,18 @@
-export class Habilidad {
+export class Idioma {
     //insertar atributos y tipo de datos y el contructor sin id
 
     id: number; 
-    imagen : string;
-    nombreHab : string;
+    idioma : string;
     porcentaje : number;
+    comentario : string;
     personaid : number; //esto no sé si va
     
-    constructor(/*id: number,*/ imagen : string, nombreHab: string, porcentaje: number, personaid: number){
+    constructor(/*id: number,*/ idioma : string, porcentaje: number, comentario: string, personaid: number){
         /*this.id = id;*/
-        this.imagen = imagen;
-        this.nombreHab = nombreHab;
+        this.idioma = idioma;
         this.porcentaje = porcentaje;
+        this.comentario = comentario;
         this.personaid = personaid;
     }
-    
+
 }

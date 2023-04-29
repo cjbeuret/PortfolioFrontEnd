@@ -13,7 +13,9 @@ export class InterceptorService implements HttpInterceptor {
   constructor(private autenticacionSevicio: AuthService) { }
   
   //la interfaz me obliga a implementqar el metodo intercept
-  //intercepta el request, le agrega el token y luego deja q siga su curso
+
+  /* en MASTER CLASS: intercepta el request, le agrega el token y luego deja q siga su curso
+  
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
   
     //variable para acceder a la propiedad UsuarioAutenticado q nos devuelve el último estado
@@ -34,4 +36,27 @@ export class InterceptorService implements HttpInterceptor {
     //al final tiene q tener un return. Usa el manejador (handle) p q le permita seguir su curso al request
     return next.handle(req);
   }
+  */
+
+  /*en NUESTRO CASO: intercepta el request, le agrega el ID y luego deja q siga su curso*/
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
+      //variable para acceder a la propiedad UsuarioAutenticado q nos devuelve el último estado
+      var currentUser=this.autenticacionSevicio.UsuarioAutenticado;
+      
+      //verificar si el ID del currentUser almacenado
+      if(currentUser && currentUser.id) {
+        //si el valor existe, clonamos el request p poder setearle en el encabezado el token
+        req=req.clone({
+          setHeaders:{
+            Authorization: `Bearer ${currentUser.id}`
+          }
+        })
+      }
+      //envia a la consola p ver si funciona nuestro interceptor
+      console.log("interceptor corriendo" + JSON.stringify(currentUser));
+      //al final tiene q tener un return. Usa el manejador (handle) p q le permita seguir su curso al request
+      return next.handle(req);
+    }
+  
 }

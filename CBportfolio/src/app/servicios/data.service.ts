@@ -12,7 +12,11 @@ import { HttpClient } from '@angular/common/http';
 //es una clase que tiene un constructor adentro
 export class DataService {
   //crea una variable para conexión a la API
-  url:string="http://localhost:8080";
+  url:string="http://localhost:8080/";     
+  
+  /*si no funciona poner directamente esta http://localhost:8080/persona/lista
+  en ese caso sacar "persona" del return */
+
   // siempre usar un alias. http = alias. Es el alias de HttpClient. Podría poner otro
   constructor(private http:HttpClient) { }
 

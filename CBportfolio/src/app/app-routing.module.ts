@@ -14,6 +14,8 @@ import { IdiomasComponent } from './components/idiomas/idiomas.component';
 import { LoginComponent } from './components/login/login.component';
 import { ModalLoginComponent } from './modales/modal-login/modal-login.component';
 import { GuardGuard } from './servicios/guard.guard';
+import { ModalExperienciaAddComponent } from './modales/modal-experiencia-add/modal-experiencia-add.component';
+import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
 
 const routes: Routes = [
   {path: 'indice', component: IndiceComponent}, 
@@ -24,7 +26,9 @@ const routes: Routes = [
   {path: 'iniciar-sesion', component: LoginComponent}, //ojo me redirecciona al botón
   {path:'', redirectTo:'/indice', pathMatch:'full'},
   {path: 'sobre-mi', component: SobreMiComponent},
-  {path: 'experiencia', component: ExperienciaComponent}, 
+  {path: 'experiencia', component: ExperienciaComponent},
+  //{path: 'nuevaexpe', component: ModalExperienciaAddComponent}, esto con los modales no haría falta
+  {path: 'editarexpe/:id', component: ModalExperienciaComponent}, //esto con los modales no haría falta
   {path: 'educacion', component: EducacionComponent},
   {path: 'proyectos', component: ProyectosComponent},
   {path: 'habilidades', component: HabilidadesComponent},

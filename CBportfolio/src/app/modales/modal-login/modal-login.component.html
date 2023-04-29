@@ -7,7 +7,7 @@
       </div>
       
       <div class="modal-body">             
-        <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <form [formGroup]="loginForm" (ngSubmit)="onEnviar($event)"> <!--(ngSubmit)="login()"-->
           <div class="mb-3">
             <label for="email">Email:</label>
             <input type="email" formControlName="email" 

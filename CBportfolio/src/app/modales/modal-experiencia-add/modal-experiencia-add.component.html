@@ -5,20 +5,21 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="addExpModalLabel">Agregar experiencia</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
           
-        <!--form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate name="experienciaFormAdd"-->             
-        <form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaFormAdd">   
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="experienciaFormAdd">             
+        <!--form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaFormAdd"-->   
             <!--formulario de EXPERIENCIA-->
           <div class="modal-body">             
             <div class="mb-3">
               <label for="inputEmpresa" class="form-label">Agregar Empresa</label>
               <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
-              name="inputEmpresa" formControlName="empresa" [(ngModel)]="empresa" [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': ! Empresa?.errors && Empresa?.touched}"> <!--required-->  
+              name="inputEmpresa" formControlName="empresa" [(ngModel)]="empresa" 
+              [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': !Empresa?.errors && Empresa?.touched}"> <!--required-->  
               <div *ngIf="Empresa?.errors && Empresa?.touched">
                 <p *ngIf="Empresa?.hasError('required')" class="text-danger">
-                  La empresa es un dato requerido
+                  El nombre de la empresa es un dato requerido.
                 </p>
               </div>
             </div>
@@ -35,7 +36,8 @@
             <div class="mb-3">
               <label for="inputCargo" class="form-label">Agregar Cargo</label>
               <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" 
-              name="inputCargo" formControlName="cargo" [(ngModel)]="cargo" [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.touched, 'is-valid': ! Cargo?.errors && Cargo?.touched}"> 
+              name="inputCargo" formControlName="cargo" [(ngModel)]="cargo" 
+              [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.touched, 'is-valid': ! Cargo?.errors && Cargo?.touched}"> 
               <div *ngIf="Cargo?.errors && Cargo?.touched">
                 <p *ngIf="Cargo?.hasError('required')" class="text-danger">
                   El cargo es un dato requerido.
@@ -57,10 +59,13 @@
               <input type="date" class="form-control" id="experienciaFechaFin" name="fin" 
               formControlName="fin" [(ngModel)]="fin">
             </div>
+            <div>
+              <input type="hidden" formControlName="personaid" [(ngModel)]="personaid" id="">
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="limpiar()">Limpiar</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Agregar</button>
           </div> 
           
         </form>

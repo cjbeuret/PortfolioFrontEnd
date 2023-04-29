@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router, private authService: AuthService) {}
 
   login(){
-    //El servicio authService.login redirecciona en caso de inicio de sesión pósitivo
+    //El servicio authService.login redirecciona en caso de inicio de sesión positivo
     this.router.navigate(['/iniciar-sesion'])
     //this.authService.login(this.email, this.password)
   }
