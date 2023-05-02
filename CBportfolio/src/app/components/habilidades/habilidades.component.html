@@ -7,9 +7,9 @@
           <!-- Modificar HABILIDADES -->  
           <section id="editHabilidades" class="bg-dark p-2">  
             <div class="btn-group" role="group" aria-label="editarHabilidades">
-              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
-              <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHabModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+              <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button-->
+              <!--button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button-->
+              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHabModal"><i class="fa-solid fa-plus"></i>AGREGAR HABILIDAD</button> <!-- Agregar-->
             </div>    
           </section>
 
@@ -18,10 +18,14 @@
           <div class="container text-center">
             <div class="row" >
               <div class="col-6 col-sm-3" *ngFor="let habilidad of habilidadesList">
-                <div [ngClass]="habilidad.progreso" class="progress-circle"><span>{{habilidad.porcentaje}}</span></div>
-                <h4><span><i [ngClass]="habilidad.span"></i></span></h4> 
-                <h6>{{habilidad.tituloHab}}</h6>
-              </div>
+                <div [ngClass]="habilidad.progreso" class="progress-circle">
+                  <!--span>{{habilidad.porcentaje}}</span-->
+                  <span><i [ngClass]="habilidad.span"></i></span>
+                </div>
+                <h5>{{habilidad.nombreHab}}</h5>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+                <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> 
+              </div> 
             </div>
           </div>
           

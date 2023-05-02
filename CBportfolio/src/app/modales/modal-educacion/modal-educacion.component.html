@@ -1,41 +1,53 @@
 <!-- Boton Editar EDUCACION Modal-->
-<div class="modal fade" id="editEducModal" tabindex="-1" aria-labelledby="editEducModalLabel" aria-hidden="true">
+<div class="modal fade" *ngIf="educ" id="editEducModal" tabindex="-1" aria-labelledby="editEducModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="editEducModalLabel">editar educación</h1>
+        <h1 class="modal-title fs-5" id="editEducModalLabel">Editar educación</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
-      <div class="modal-body">             
-        <form>
+      <!--formulario de EDUCACION-->         
+      <form [formGroup]="educForm" (ngSubmit)="onEnviar($event)" name="educacionFormEdit">
+        <div class="modal-body"> 
+          <div class="mb-3"> 
+            <input type="hidden" formControlName="id" [(ngModel)]="educ.id" id="">
+          </div> 
           <div class="mb-3">
             <label for="logoInstitucion" class="form-label">Logo Institución</label>
-            <input type="url" placeholder="inserte url del logo" id="logoInstitucion" name="logoInstitucion">             
+            <input type="url" placeholder="inserte url del logo" id="logoInstitucion" 
+            name="logoInstitucion" formControlName="logoInstitucion" [(ngModel)]="educ.logo">             
           </div>
           <div class="mb-3">
             <label for="inputInstit" class="form-label">Institución</label>
-            <input type="text" placeholder="inserte nombre de la institución"class="form-control" id="inputInstit" name="inputInstit" required>               
+            <input type="text" placeholder="inserte nombre de la institución"class="form-control" id="inputInstit" 
+            name="inputInstit" required formControlName="Institucion" [(ngModel)]="educ.institucion">               
           </div>
           <div class="mb-3">
             <label for="inputTitulo" class="form-label">Título</label>
-            <input type="text" placeholder="inserte título obtenido"class="form-control" id="inputTitutlo" name="inputTitulo" required>              
+            <input type="text" placeholder="inserte título obtenido"class="form-control" id="inputTitutlo" 
+            name="inputTitulo" required formControlName="Titulo" [(ngModel)]="educ.titulo">              
           </div>
           <div class="mb-3">
             <label for="textoLargo" class="form-label">Perfil profesional</label>
-            <textarea class="form-control" id="textoLargo"></textarea>               
+            <textarea class="form-control" id="textoLargo" 
+            formControlName="AlcanceTitulo" [(ngModel)]="educ.alcanceTitulo"></textarea>               
           </div>
           <div class="mb-3">
             <label for="fechaObt" class="form-label">Fecha de obtención del título</label>
-            <input type="date" class="form-control" id="fechaObt">
+            <input type="date" class="form-control" id="fechaObt" formControlName="FechaObt" [(ngModel)]="educ.fechaObt">
+          </div>
+          <div class="mb-3">
+            <label for="inputTitulo" class="form-label">Comentarios</label>
+            <input type="text" placeholder="Comentarios"class="form-control" id="inputComent" 
+            name="inputComent" required formControlName="Comentario" [(ngModel)]="educ.comentario">              
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
-        </form>
-      </div> 
-
+        </div> 
+      </form>
     </div>
   </div>
 </div>

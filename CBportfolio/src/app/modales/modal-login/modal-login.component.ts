@@ -15,11 +15,10 @@ export class ModalLoginComponent implements OnInit {
   loginForm:FormGroup;
     
   //Como FormBuilder es un servicio lo inyectamos en el constructor
-  constructor(private formBuilder: FormBuilder, private autenticacionService: AuthService, private ruta:Router) {
+  constructor(private formBuilder: FormBuilder, private autenticacionService: AuthService, private router:Router) {
     
     //inicializamos el formulario utilizando el servicio de FormBuilder 
-    this.loginForm= this.formBuilder.group(
-      {
+    this.loginForm= this.formBuilder.group({
         //debemos especificar el grupo de formControls (controles p/el form de login)
         //respetar el modelo del Body del JSON 
         //los formsControl dentro del FormGrup deben tener los mismos nombres q el modelo
@@ -32,8 +31,7 @@ export class ModalLoginComponent implements OnInit {
           deviceType: ["DEVICE_TYPE_ANDROID"],
           notificationToken: ["67657575eececc34"]
         })  */      
-      }
-    )
+      })
   }
 
   ngOnInit(): void {}
@@ -67,17 +65,41 @@ export class ModalLoginComponent implements OnInit {
     event.preventDefault;
     
     //llamamos al metodo del servicio y le enviamos las credenciales q están def en "value" del form, xq usamos forms reactivos
-    this.autenticacionService.IniciarSesion(this.loginForm.value).subscribe(data=>{
-      //console.log("DATA:" + JSON.stringify(data));
+    this.autenticacionService.iniciarSesion(this.loginForm.value).subscribe(data=>{
+      console.log("DATA:" + JSON.stringify(data));
       
       //si el iniciar sesión me devuelve los datos signif q está OK
       //debemos redirigir al usuario a la ruta del porfolio p edicion (inyecto servicio Router)
       //this.ruta.navigate(['/indice']) --> está adentro de la llave xq en el ejemplo solo se ve el porfolio si está loggeado
     })
     //losacamos de la llave xq en nuestro caso el porfolio se ve siempre y lo q cambia es la posibilidad de editarlo 
-    this.ruta.navigate(['/indice']);
+    this.router.navigate(['/indice']);
     
   }
+
+   
+
+/* onEnviar ORIGINAL
+
+  onEnviar(event: Event){
+    // Detenemos la propagación o ejecución del compotamiento submit de un form
+    event.preventDefault; 
+ 
+    if (this.form.valid){
+      // Llamamos a nuestro servicio para enviar los datos al servidor
+      // También podríamos ejecutar alguna lógica extra
+      alert("Todo salio bien ¡Enviar formuario!")
+    }else{
+      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
+      this.form.markAllAsTouched(); 
+    }
+ 
+  }
+*/
+
+
+
+
 
   //OJO TENGO OTRO MÉTODO LOGIN EN EL SERVICIO DE AUTENTICACIÓN! no sé si va acá o si esto está pasable
   /*login() {

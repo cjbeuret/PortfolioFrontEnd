@@ -1,5 +1,7 @@
  <!-- Boton Editar EXPERIENCIA Modal-->
-<div class="modal fade" *ngIf="expe" id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
+<div class="modal fade"  id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
+  <!-- saque del div de arriba *ngIf="expe" se pone xq significa que el div va a ser siempre y cuando contega una experiencia-->
+  
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,24 +10,27 @@
       </div>
         
       <!--formulario de EXPERIENCIA-->  
-      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="experienciaFormEdit">             
+      <form [formGroup]="expForm" (ngSubmit)="onEnviar($event)" name="experienciaFormEdit">             
         <!--form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaForm"-->       
         <div class="modal-body"> 
-          <!-- creo q al poner el ngIf de línea 2 no haría falta
-          <div> 
+          <!-- creo q al poner el ngIf de línea 2 no haría falta -->  
+          <div class="mb-3"> 
             <input type="hidden" formControlName="id" [(ngModel)]="expe.id" id="">
           </div> 
-        -->           
+                
           <div class="mb-3">
             <label for="inputEmpresa" class="form-label">Modificar Empresa</label>
             <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
+            name="inputEmpresa" formControlName="empresa" [(ngModel)]="expe.empresa">
+
+            <!--<input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
             name="inputEmpresa" formControlName="empresa" [(ngModel)]="expe.empresa" 
-            [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': !Empresa?.errors && Empresa?.touched}"> <!--required-->  
+            [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': !Empresa?.errors && Empresa?.touched}">   
             <div *ngIf="Empresa?.errors && Empresa?.touched">
               <p *ngIf="Empresa?.hasError('required')" class="text-danger">
                 El nombre de la empresa es un dato requerido.
               </p>
-            </div>
+            </div>-->
           </div>
           <div class="mb-3">
             <label for="logoEmpresa" class="form-label">Modificar logo de Empresa</label>
@@ -40,13 +45,16 @@
           <div class="mb-3">
             <label for="inputCargo" class="form-label">Modificar Cargo</label>
             <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
+            formControlName="cargo" [(ngModel)]="expe.cargo">
+
+            <!--<input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
             formControlName="cargo" [(ngModel)]="expe.cargo"
             [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.touched, 'is-valid': ! Cargo?.errors && Cargo?.touched}"> 
               <div *ngIf="Cargo?.errors && Cargo?.touched">
                 <p *ngIf="Cargo?.hasError('required')" class="text-danger">
                   El cargo es un dato requerido.
                 </p>
-              </div> >               
+              </div> -->               
           </div>
           <div class="mb-3">
             <label for="experienciaInfo" class="form-label">Modificar descripción de puesto</label>

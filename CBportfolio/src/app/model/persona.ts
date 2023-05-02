@@ -12,7 +12,6 @@ export class Persona {
     email : string;
     password : string;
     fechaNac : string;
-    fin : string;
     personaid : number; //esto no sé si va
 
     constructor (/*id: number,*/ nombre: string, apellido: string, especialidad1 : string, especialidad2 : string, 

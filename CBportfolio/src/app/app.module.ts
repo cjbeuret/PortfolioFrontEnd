@@ -8,8 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { IndiceComponent } from './components/indice/indice.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LoginComponent } from './components/login/login.component';
-import { LogoutComponent } from './components/logout/logout.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
@@ -45,8 +43,6 @@ import { InterceptorService } from './servicios/interceptor.service';
     AppComponent,
     IndiceComponent,
     NavbarComponent,
-    LoginComponent,
-    LogoutComponent,
     SobreMiComponent,
     ExperienciaComponent,
     EducacionComponent,

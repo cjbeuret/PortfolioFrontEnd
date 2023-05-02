@@ -3,11 +3,12 @@
     <br>
   
     <!-- SOBRE MI --> 
-    <section id="sobre-mi" class="sobre-mi text-white">    
+    <section id="sobre-mi" class="sobre-mi text-white" *ngFor="let persona of personasList">    
       
       <div class="acercaDe container-fluid text-center rounded shadow-sm mb-5 bg-body-transparent p-0"> 
         <!-- Banner--> 
-        <img [src]="bannerVar" 
+        <!--img [src]="bannerVar"--> 
+        <img [src]="persona.banner" 
         alt="imagenBanner" width="100%" height="500vh" class="rounded-top-banner"> <!--[alt]="altBannerVar"-->
         
         <!-- BOTÓN EDITAR banner-->  
@@ -16,23 +17,23 @@
       <!-- mi foto-->         
         <div class="row p-3">
           <div class="col-3">
-            <img [src]="imagenPerfilVar" class="miFoto rounded-circle" width=200 height=auto 
+            <!--img [src]="imagenPerfilVar"--> <img [src]="persona.imagen" class="miFoto rounded-circle" width=200 height=auto 
             alt="imagenPerfil"> <!--[alt]="altImgPerfilVar"-->
             
             <!-- BOTÓN EDITAR foto perfil-->  
             <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#imgPerfilModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
 
             <br>
-            <h2 class="nombrePerfil">{{nombresVar}}{{apellidosVar}}</h2>
+            <h2 class="nombrePerfil">{{persona.nombre}} {{persona.apellido}}</h2>
             
           </div>
   
           <div class="col-8 text-center">
-            <button class="btn btn-light titulo">{{especialidad1Var}}</button>
-            <button class="btn btn-light titulo">{{especialidad2Var}}</button>
+            <button class="btn btn-light titulo">{{persona.especialidad1}}</button>
+            <button class="btn btn-light titulo">{{persona.especialidad2}}</button>
             <p>  </p>     
             <h3 style="font-style: italic;">mi perfil ...</h3>
-            <h6 class="sobreMiPerfil">{{sobreMiVar}}</h6>
+            <h6 class="sobreMiPerfil">{{persona.sobreMi}}</h6>
           </div>  
           
           <div class="col-1">

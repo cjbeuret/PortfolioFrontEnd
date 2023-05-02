@@ -1,16 +1,17 @@
 {
   
-  "nombres": "Cecilia Judith",
-  "apellidos": "Beuret",
+  "nombre": "Cecilia Judith",
+  "apellido": "Beuret",
   "especialidad1": "Gestión Ambiental",
   "especialidad2": "Desarrollador Web Full Stack Jr",
   "sobreMi": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi distinctio necessitatibus reprehenderit temporibus dolorem molestias, saepe repellat totam commodi, quos atque sint delectus similique tempora, quaerat dicta asperiores accusamus optio.",
   "banner": "../assets/img/este.png",
   "altBanner": "banner",
-  "imagenPerfil": "../assets/img/fotoceci2.png",
+  "imagen": "../assets/img/fotoceci2.png",
   "altImgPerfil": "imagen de Perfil",
   "telefono": "+54 1111-1111",
-  "email": "micorreo@gmail.com",
+  "email": "ceci@ceci.com",
+  "password": "12345678",
   "fechaNac": "1973",
 
 
@@ -20,7 +21,6 @@
       "calle": "Avenida",
       "altura": 111,
       "piso": 1,
-      "dpto": "A",
       "localidad": "Ciudad Autónoma de Buenos Aires",
       "provincia": " ",
       "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar"  
@@ -30,7 +30,6 @@
       "calle": "Calle",
       "altura": 222,
       "piso": 2,
-      "dpto": "B",
       "localidad": "Haedo",
       "provincia": "Provincia de Buenos Aires",
       "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar"   
@@ -40,7 +39,6 @@
       "calle": "Pasaje",
       "altura": 333,
       "piso": 3,
-      "dpto": "C",
       "localidad": "Mendoza",
       "provincia": "Provincia de Mendoza",
       "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.728578517503!2d-58.440832399966624!3d-34.60587732122991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca688994eb61%3A0xd055df0a7dafa86e!2sParque%20Centenario!5e0!3m2!1ses-419!2sar!4v1673699058150!5m2!1ses-419!2sar"   
@@ -78,31 +76,31 @@
     {
       "id": 1,
       "institucion": "UNIVERSIDAD NACIONAL DE SAN MARTÍN",
-      "logoInstitucion": "../assets/img/logo_UNSAM.png",
+      "logo": "../assets/img/logo_UNSAM.png",
       "alt": "logo UNSAM", 
       "url": "https://www.unsam.edu.ar/institutos/3ia/140/3ia/gestion-ambiental",  
       "titulo": "Maestría en Gestión Ambiental",
-      "alcance": "Experiencia 1",
+      "alcanceTitulo": "Experiencia 1",
       "comentario": "Cursada finalizada sin trabajo final"
     },
     {
       "id": 2,
       "institucion": "UNIVERSIDAD NACIONAL DE SAN LUIS",
-      "logoInstitucion": "../assets/img/isologo-unsl-dos-lineas.png",
+      "logo": "../assets/img/isologo-unsl-dos-lineas.png",
       "alt": "logo UNSL", 
       "url": "https://carreras.unsl.edu.ar/carreras/lic-cs-bio",     
       "titulo": "Licenciatura en Ciencias Biológicas",
-      "alcance": "Experiencia 2",
+      "alcanceTitulo": "Experiencia 2",
       "comentario": "Título obtenido en 1999"
     },
     {
       "id": 3,
       "institucion": "UNIVERSIDAD NACIONAL DE SAN LUIS",
-      "logoInstitucion": "./assets/img/isologo-unsl-dos-lineas.png",
+      "logo": "./assets/img/isologo-unsl-dos-lineas.png",
       "alt": "logo UNSL", 
       "url": "https://carreras.unsl.edu.ar/carreras/prof-bio",
       "titulo": "Profesorado Universitario en Biología",
-      "alcance": "Experiencia 3",
+      "alcanceTitulo": "Experiencia 3",
       "comentario": "CTítulo obtenido en 1998"
     }
   ],
@@ -110,23 +108,23 @@
   "proyectos": [
     {
       "id": 1,
-      "titulo": "Desarrollo de un portfolio Web",
-      "imagenProyecto": "../assets/img/aplogo.png",
+      "tituloProyecto": "Desarrollo de un portfolio Web",
+      "imagen": "../assets/img/aplogo.png",
       "alt": "Portfolio Argentina Programa",
-      "linkProyecto": "https://argentinaprograma.inti.gob.ar",      
+      "url": "https://argentinaprograma.inti.gob.ar",      
       "destinatario": "ARGENTINA PROGRAMA",
       "descProyecto": "Elaboración de un porfolio Web en el marco del curso de capacitación...",
-      "perDesarrollo": "Sept 2022- Mayo 2023"
+      "periodoDesarrollo": "Sept 2022- Mayo 2023"
     },
     {
       "id": 1,
-      "titulo": "Desarrollo de un portfolio Web",
-      "imagenProyecto": "../assets/img/aplogo.png",
+      "tituloProyecto": "Desarrollo de un portfolio Web",
+      "imagen": "../assets/img/aplogo.png",
       "alt": "Portfolio Argentina Programa",
-      "linkProyecto": "https://argentinaprograma.inti.gob.ar",      
+      "url": "https://argentinaprograma.inti.gob.ar",      
       "destinatario": "ARGENTINA PROGRAMA",
       "descProyecto": "Elaboración de un porfolio ...",
-      "perDesarrollo": "Sept 2022- Mayo 2023"
+      "periodoDesarrollo": "Sept 2022- Mayo 2023"
     }
   ],
 
@@ -134,21 +132,21 @@
     {
       "id": 1,
       "span": "fa-brands fa-html5", 
-      "tituloHab": "HTML5",
+      "nombreHab": "HTML5",
       "porcentaje": 60, 
       "progreso": "progress-60"
     },
     {
       "id": 2,
       "span": "fa-brands fa-css3-alt", 
-      "tituloHab": "CSS",
+      "nombreHab": "CSS",
       "porcentaje": 40, 
       "progreso": "progress-40"
     },
     {
       "id": 3,
       "span": "fa-brands fa-bootstrap", 
-      "tituloHab": "Bootstrap",
+      "nombreHab": "Bootstrap",
       "porcentaje": 50, 
       "progreso": "progress-50"
     },
@@ -178,21 +176,21 @@
   "idiomas": [
     {
       "id": 1,
-      "tituloIdioma": "Español",
+      "idioma": "Español",
       "porcentaje": 100,
       "progreso": "progress-100",
       "comentario": "(lengua materna)"
     },
     {
       "id": 2,
-      "tituloIdioma": "Inglés",
+      "idioma": "Inglés",
       "porcentaje": 70,
       "progreso": "progress-70",
       "comentario": " "
     },
     {
       "id": 3, 
-      "tituloIdioma": "Francés",
+      "idioma": "Francés",
       "porcentaje": 40,
       "progreso": "progress-40",
       "comentario": " "
@@ -204,19 +202,19 @@
       "id": 1, 
       "nombreRed": "Discord",
       "span": "fa-brands fa-discord",
-      "urlRed": "https://discord.com"
+      "url": "https://discord.com"
     },
     {
       "id": 2, 
       "nombreRed": "GitHub",
       "span": "fa-brands fa-github",
-      "urlRed": "https://github.com"
+      "url": "https://github.com"
     },
     {
       "id": 3, 
       "nombreRed": "WhatsApp",
       "span": "fa-brands fa-whatsapp",
-      "urlRed": "https://web.whatsapp.com"
+      "url": "https://web.whatsapp.com"
     }
   ],
   

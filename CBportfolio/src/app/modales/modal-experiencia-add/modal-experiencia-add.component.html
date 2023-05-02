@@ -8,14 +8,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
           
-        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" name="experienciaFormAdd">             
+        <form [formGroup]="expeAddForm" (ngSubmit)="onEnviar($event)" name="experienciaFormAdd">             
         <!--form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaFormAdd"-->   
             <!--formulario de EXPERIENCIA-->
           <div class="modal-body">             
             <div class="mb-3">
               <label for="inputEmpresa" class="form-label">Agregar Empresa</label>
               <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
-              name="inputEmpresa" formControlName="empresa" [(ngModel)]="empresa" 
+              name="inputEmpresa" formControlName="empresa" [(ngModel)]="empresa" required 
               [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': !Empresa?.errors && Empresa?.touched}"> <!--required-->  
               <div *ngIf="Empresa?.errors && Empresa?.touched">
                 <p *ngIf="Empresa?.hasError('required')" class="text-danger">
@@ -36,7 +36,7 @@
             <div class="mb-3">
               <label for="inputCargo" class="form-label">Agregar Cargo</label>
               <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" 
-              name="inputCargo" formControlName="cargo" [(ngModel)]="cargo" 
+              name="inputCargo" formControlName="cargo" [(ngModel)]="cargo" required
               [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.touched, 'is-valid': ! Cargo?.errors && Cargo?.touched}"> 
               <div *ngIf="Cargo?.errors && Cargo?.touched">
                 <p *ngIf="Cargo?.hasError('required')" class="text-danger">
@@ -60,7 +60,10 @@
               formControlName="fin" [(ngModel)]="fin">
             </div>
             <div>
-              <input type="hidden" formControlName="personaid" [(ngModel)]="personaid" id="">
+              <!--<label for="experienciaPerosnaId" class="form-label"> Indicar persona asociada</label>
+              <input type="number" class="form-control" id="experienciaPersonaId" name="personaid" 
+              formControlName="personaid" [(ngModel)]="personaid"-->
+              <input formControlName="personaid" [(ngModel)]="personaid" id="">
             </div>
           </div>
           <div class="modal-footer">

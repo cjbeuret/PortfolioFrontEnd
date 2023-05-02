@@ -13,14 +13,65 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 
 export class ModalExperienciaComponent implements OnInit {
-  form:FormGroup;
-  //id: number;
+  expForm: FormGroup;
+  id: number;
   expe: Experiencia = null;
+  //expe: Experiencia;
+
+//MGB computacion
+/*
+  constructor(
+    private formBuilder: FormBuilder, 
+    private sExperience: ExperienciaService, 
+    private activatedRouter: ActivatedRoute, 
+    private router: Router) {}
+  
+
+
+ngOnInit(): void {
+  const id = this.activatedRouter.snapshot.params['id']; //captura id de la experiencia q queremos modificar
+  this.sExperience.getById(id).subscribe(
+    data => {
+      this.expe = data;
+      //window.location.reload();
+      //this.router.navigate(['']);
+  }, err =>{
+    //alert("Error al modificar la experiencia");
+    //window.location.reload(); --> está en el método original pero me deja recargando la página y con e error
+    //this.router.navigate(['']);
+  })
+}
+
+onUpdate():void {
+  //crea una ctte experiencia para capturar el id de la experiencia 
+  const id = this.activatedRouter.snapshot.params['id'];
+  //llama el metodo del servicio
+  this.sExperience.editById(id, this.expe).subscribe(
+  //this.sExperience.edit(id).subscribe( 
+    data => {
+      alert("Experiencia modificada"); 
+      this.router.navigate(['']);
+      //window.location.reload();  
+    }, err =>{
+      alert("Error al modificar la experiencia");
+      //window.location.reload();
+      this.router.navigate(['']);
+    });
+  } 
+
+ */
  
-  constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaService, private insert:ExperienciaComponent,
-    private activatedRouter: ActivatedRoute, private router: Router) {
+ // heber
+
+  constructor(
+    private formBuilder: FormBuilder, 
+    private sExperience: ExperienciaService, 
+    private insert: ExperienciaComponent,
+    private activatedRouter: ActivatedRoute, 
+    private router: Router) {
     //creamos el grupo de controles para el formulario
-    this.form= this.formBuilder.group({
+    this.expForm= this.formBuilder.group({
+      id:[''],
       empresa: ['',[Validators.required]],
       logo: [''],
       url: [''],
@@ -28,17 +79,17 @@ export class ModalExperienciaComponent implements OnInit {
       descPuesto: [''],
       inicio: [''],
       fin: [''],
-      personaid: [1] // o personaid: 1,
+      personaid: [1], // o personaid: 1,
     })
   }
 
   //Declarar para las validaciones
   get Empresa(){
-    return this.form.get("empresa");
+    return this.expForm.get("empresa");
   }
 
   get Cargo(){
-    return this.form.get("cargo");
+    return this.expForm.get("cargo");
   }
 
    //Validaciones
@@ -49,11 +100,9 @@ export class ModalExperienciaComponent implements OnInit {
   get CargoValid(){
     return this.Cargo?.touched && !this.Cargo.valid;
   }
-
-  //Métodos Heber
-  /* 
  
-  ngOnInit(): void {
+ 
+  /*ngOnInit(): void {
     this.info();
   }
 
@@ -69,77 +118,60 @@ export class ModalExperienciaComponent implements OnInit {
   onUpdate(): void{
     this.sExperience.edit(this.expe).subscribe(data=>{})
   } 
-  
-  onEnviar(event:Event){
-    event.preventDefault;
-    if(this.form.valid){
-      this.onUpdate(); //toma el método onUpdate
-      alert("OK.Datos modificados");
-      window.location.reload();
-    }else{
-      alert("Error de carga. Intente nuevamente");
-      this.form.markAllAsTouched();
-    }
-  }
-  
-  */
-
-  //MGB computacion
+*/ 
+  /*onUpdate(): void{
+    this.sExperience.editById(this.id, this.expe).subscribe(data=>{})
+  } */
 
   ngOnInit(): void {
+    this.miInfo();
+  }
+
+  miInfo():void {
     const id = this.activatedRouter.snapshot.params['id']; //captura id de la experiencia q queremos modificar
     this.sExperience.getById(id).subscribe(
       data => {
         this.expe = data;
+        //window.location.reload();
+        //this.router.navigate(['']);
+      }
+    )} 
+
+  miOnUpdate(): void{
+  const id = this.activatedRouter.snapshot.params['id'];
+  this.sExperience.editById(id, this.expe).subscribe(
+    //this.sExperience.edit(id).subscribe( 
+      data => {
         alert("Experiencia modificada"); 
-    //window.location.reload();
-    //this.router.navegate([''];)
-  }, err =>{
-    alert("Error al modificar la experiencia");
-    window.location.reload();
-    //this.router.navegate([''];)
-  });
-  }
-
-  onUpdate():void {
-    //crea una ctte experiencia y llama el metodo create del servicio
-    const id = this.activatedRouter.snapshot.params['id'];
-      //this.sExperience.edit(id, this.expe).subscribe( así me da error!
-      this.sExperience.edit(id).subscribe(
-        data => {
-          //alert("Experiencia creada"); 
-      window.location.reload();
-      //this.router.navegate([''];)
-    }, err =>{
-      alert("Error al modificar la experiencia");
-      window.location.reload();
-      //this.router.navegate([''];)
-    });
-  } 
-
+        this.router.navigate(['']);
+        //window.location.reload();
+      }
+    )}     
+  
   onEnviar(event:Event){
-    event.preventDefault;
-    if(this.form.valid){
-      this.onUpdate(); //toma el método onUpdate
-      alert("OK.Datos modificados");
-      window.location.reload();
-    }else{
-      alert("Error de carga. Intente nuevamente");
-      this.form.markAllAsTouched();
-    }
+  event.preventDefault;
+  if(this.expForm.valid){
+    this.miOnUpdate(); //toma el método onUpdate
+    alert("OK.Datos modificados");
+    //this.router.navigate(['']);
+    window.location.reload();
+  }else{
+    alert("Error de carga. Intente nuevamente");
+    this.expForm.markAllAsTouched();
   }
-
+}
 
   cerrar(): void{
     window.location.reload();
   }
 
   limpiar(): void{
-    this.form.reset();
+    this.expForm.reset();
   }
 
-  
 
+
+  
 
 
 }

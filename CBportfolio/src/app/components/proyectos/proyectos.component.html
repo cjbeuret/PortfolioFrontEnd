@@ -9,24 +9,29 @@
         <div class="btn-group" role="group" aria-label="editarProyectos">
           <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProyModal"><i class="fa-sharp fa-solid fa-pen"></i></button-->
           <!--button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button-->
-          <button type="submit" *ngIf="" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addProyModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+          <button type="submit" *ngIf="" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addProyModal"><i class="fa-solid fa-plus"></i> AGREGAR PROYECTO </button> <!-- Agregar-->
         </div>    
       </article>
       
       <!-- PROYECTOS -->
       <article class="row p-3" *ngFor="let proyecto of proyectosList"> 
         <div class="col-2 d-flex flex-column align-items-center justify-content-center">
-          <a [href]="proyecto.linkProyecto" target="_blank">
-            <img id="logoArgProg" [src]="proyecto.imagenProyecto" 
-            [alt]="proyecto.alt"
+          <a [href]="proyecto.url" target="_blank">
+            <img id="logoArgProg" [src]="proyecto.imagen" 
+            alt="imagenProyecto"
             width="180rem">
           </a>
         </div>
         <div class="col-9">
-            <h3>{{proyecto.titulo}}</h3>
+            <h3>{{proyecto.tituloProyecto}}</h3>
             <h5>{{proyecto.destinatario}}</h5>
-            <h6>{{proyecto.perDesarrollo}}</h6>
+            <h6>{{proyecto.periodoDesarrollo}}</h6>
             <p>{{proyecto.descProyecto}}</p>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProyModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+          <br>
+          <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button> 
         </div>
       </article> 
     

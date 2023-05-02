@@ -11,7 +11,6 @@ import { HobbiesComponent } from './components/hobbies/hobbies.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { IdiomasComponent } from './components/idiomas/idiomas.component';
-import { LoginComponent } from './components/login/login.component';
 import { ModalLoginComponent } from './modales/modal-login/modal-login.component';
 import { GuardGuard } from './servicios/guard.guard';
 import { ModalExperienciaAddComponent } from './modales/modal-experiencia-add/modal-experiencia-add.component';
@@ -23,16 +22,20 @@ const routes: Routes = [
   Agregar canActivate:[GuardGuard] p proteger página inicio p EDICION si no estoy loggeado
   está asociado a línea 25 del guard.guards.ts (redirecciona al "inciar-sesion") 
   Pero no me funciona el botón Enviar del formulario de login*/
-  {path: 'iniciar-sesion', component: LoginComponent}, //ojo me redirecciona al botón
+  {path: 'iniciar-sesion', component: ModalLoginComponent}, 
   {path:'', redirectTo:'/indice', pathMatch:'full'},
   {path: 'sobre-mi', component: SobreMiComponent},
   {path: 'experiencia', component: ExperienciaComponent},
-  //{path: 'nuevaexpe', component: ModalExperienciaAddComponent}, esto con los modales no haría falta
-  {path: 'editarexpe/:id', component: ModalExperienciaComponent}, //esto con los modales no haría falta
+  //estas rutas de abajo no sé si hacen falta al tener los modales q redireccionand con #id
+  //{path: 'nuevaexpe', component: ModalExperienciaAddComponent, canActivate: [AuthGuard]} no sé si se usa CanActivate
+  //{path: 'nuevaexpe', component: ModalExperienciaAddComponent}
+  //{path: 'editarexpe/:id', component: ModalExperienciaComponent}, 
+  {path: 'editarexpe', component: ModalExperienciaComponent}, 
   {path: 'educacion', component: EducacionComponent},
-  {path: 'proyectos', component: ProyectosComponent},
-  {path: 'habilidades', component: HabilidadesComponent},
-  {path: 'idiomas', component: IdiomasComponent},
+  {path: 'proyecto', component: ProyectosComponent},
+  {path: 'habilidad', component: HabilidadesComponent},
+  {path: 'idiom', component: IdiomasComponent},
+  {path: 'domicilio', component: IdiomasComponent},
   {path: 'hobbies', component: HobbiesComponent},
   {path: 'contacto', component: FooterComponent},
   {path: '**', component: Pagina404Component}

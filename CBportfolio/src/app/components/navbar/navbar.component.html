@@ -1,50 +1,58 @@
 <section id="navbar">
-    <nav class="navbar navbar-expand-md rounded">
-      <div class="container-fluid">
-         
-        <!--boton hamburguesa--> 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-md rounded">
+    <div class="container-fluid">
         
-        <div class="collapse navbar-collapse" id="navbar-toggler">
-              
-          <!--imagen boton y link a pagina Argentina Programa"--> 
-          <a class="navbar-brand" href="https://argentinaprograma.inti.gob.ar" target="_blank">
-            <img class="logoArgProg"
-            src="./assets/img/aplogo.png" 
-            alt="logo de Argentina Programa"
-            width="190"
-            />
-          </a>
-          
-          <button class="btn seccion" (click)="muestra()">Mostrar/Ocultar</button>
-
-          <ul class="navbar-nav d-flex justify-content-center align-items-center">
-            <!--lista redes-->
+      <!--boton hamburguesa--> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbar-toggler">
             
-            <div><app-redes></app-redes> </div>
-            
+        <!--imagen boton y link a pagina Argentina Programa"--> 
+        <a class="navbar-brand" href="https://argentinaprograma.inti.gob.ar" target="_blank">
+          <img class="logoArgProg"
+          src="./assets/img/aplogo.png" 
+          alt="logo de Argentina Programa"
+          width="190"
+          />
+        </a>
 
-            <!-- links internos a la pagina   --> 
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="#sobre-mi"><h5>Sobre mí</h5></a></li>
-            <li class="nav-item"><a class="nav-link" href="#habilidades"><h5>Habilidades</h5></a></li>
-            <li class="nav-item"><a class="nav-link" href="#proyectos"><h5>Proyectos</h5></a></li>
-            <li class="nav-item"><a class="nav-link" href="#contactame"><h5>Contacto</h5></a></li>         
-          </ul>
-            
-          <!-- Button Login modal -->
+        <ul class="navbar-nav d-flex justify-content-center align-items-center">
+          <!--lista redes-->
           
-          <app-login *ngIf="!mostrar"></app-login>
+          <div><app-redes></app-redes> </div>
           
+          <!-- links internos a la pagina   --> 
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="#sobre-mi"><h5>Sobre mí</h5></a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades"><h5>Habilidades</h5></a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos"><h5>Proyectos</h5></a></li>
+          <li class="nav-item"><a class="nav-link" href="#contactame"><h5>Contacto</h5></a></li>         
+        </ul>
+      
+      
+        <!-- Button Login modal -->
+        
+        <!--Creo que (click)="login()" hay que sacarlo (tb del *.ts) xq con el modal no hace falta-->
+        <!--button type="button" class="btn btn-light" (click)="login()" *ngIf="!modoEdit"> INICIAR SESION</button--> <!--SACAR ESTE BOTÓN-->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal" > 
+          <!--<i class="fa-sharp fa-solid fa-lock"></i>-->
+          Login <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+        <app-modal-login></app-modal-login>
+                
 
-          <!-- Button Logout modal -->
+        <!-- Button Logout modal -->
+        
+        <button type="button" class="btn btn-light" (click)="onLogOut()" *ngIf="modoEdit"> CERRAR SESION</button><!--TAL VEZ HAY Q SACAR ESTE BOTÓN-->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#logoutModal">
+          <!-- <i class="fa-solid fa-lock-open"></i>-->
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+        <app-modal-logout></app-modal-logout>
 
-          <app-logout *ngIf="mostrar"></app-logout>
-          
-
-        </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
 </section>

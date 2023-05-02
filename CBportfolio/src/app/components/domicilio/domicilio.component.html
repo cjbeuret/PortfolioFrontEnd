@@ -3,11 +3,11 @@
     <div id="contacto" class="justify-content-center align-items-center">          
        <!--DOMICILIO-->
       <address *ngFor="let domicilio of domiciliosList">
-        <strong>Dirección</strong>
+        <h4><strong>Dirección</strong></h4>
         <br>
-        {{domicilio.calle}} {{domicilio.altura}} {{domicilio.piso}} {{domicilio.dpto}}
-        <br>
-        {{domicilio.localidad}} {{domicilio.provincia}}
+        <h5>{{domicilio.calle}} {{domicilio.altura}} {{domicilio.piso}}</h5>
+        
+        <h5>{{domicilio.localidad}} {{domicilio.provincia}}</h5>
       </address>
     </div>  
   </div>      
@@ -15,7 +15,7 @@
   <div class="col-5">
     <div id="ubicacion"> <!-- mapa -->
       <address>
-        <strong>Ubicación</strong>
+        <h5> <strong>Ubicación</strong> </h5>
       </address>
       <iframe 
         class="mapa" 

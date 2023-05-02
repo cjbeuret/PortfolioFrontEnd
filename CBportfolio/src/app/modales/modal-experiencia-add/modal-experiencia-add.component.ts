@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ModalExperienciaAddComponent implements OnInit{
 
-  form: FormGroup;
+  expeAddForm: FormGroup;
   //id: number;
   empresa: string='';
   logo: string='';
@@ -24,7 +24,7 @@ export class ModalExperienciaAddComponent implements OnInit{
 
 constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaService, private router:Router){
 //Creamos el grupo de controles p el formulario
-  this.form= this.formBuilder.group({
+  this.expeAddForm= this.formBuilder.group({
     empresa: ['',[Validators.required]],
     logo: [''],
     url: [''],
@@ -32,13 +32,13 @@ constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaSe
     descPuesto: [''],
     inicio: [''],
     fin: ['']
-    //personaid: 1
+    //personaid: 1 --> no sé por que no lo agrega en la BD
   })
 }
 
   //Declarar para las validaciones
   get Empresa(){
-    return this.form.get("empresa");
+    return this.expeAddForm.get("empresa");
   }
   /*get Logo(){
     return this.form.get("logo");
@@ -47,7 +47,7 @@ constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaSe
     return this.form.get("url");
   }*/
   get Cargo(){
-    return this.form.get("cargo");
+    return this.expeAddForm.get("cargo");
   }
   /*get DescPuesto(){
     return this.form.get("descPuesto");
@@ -70,46 +70,32 @@ constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaSe
   
   ngOnInit(): void {}
 
-  /*onCreate():void {
-    //crea una ctte experiencia y llama el metodo create del servicio
-    const experiencia = new Experiencia(this.empresa, this.logo, this.url, this.cargo, this.descPuesto, this.inicio, this.fin, this.personaid);
-      this.sExperience.create(experiencia).subscribe(data => {
-      alert("Experiencia creada"); 
-      window.location.reload();
-    } , err =>{
-      alert("Falló la carga, intente nuevamente");
-      this.form.reset();
-      //window.location.reload();
-    }); 
-  }*/
   
-  //saca la parte del error del onCreate porque agrega el evento onEnviar
-
   onCreate():void {
     //crea una ctte experiencia y llama el metodo create del servicio
     const expe = new Experiencia(this.empresa, this.logo, this.url, this.cargo, this.descPuesto, this.inicio, this.fin, this.personaid);
       this.sExperience.create(expe).subscribe(
         data => {
           alert("Experiencia creada"); 
-      window.location.reload();
-      //this.router.navegate([''];)
     });
   } 
 
-
-  limpiar(): void{
-    this.form.reset();
-  }
-
   onEnviar(event:Event){
     event.preventDefault;
-    if(this.form.valid){
+    if(this.expeAddForm.valid){
       alert("OK. Enviar formulario");
       this.onCreate(); //toma el método onCreate
+      //this.router.navigate(['']);
+      window.location.reload();
     }else{
       alert("Error de carga. Intente nuevamente");
-      this.form.markAllAsTouched();
+      this.expeAddForm.markAllAsTouched();
     }
+  }
+
+  //!! OJO NO LIMPIA sino q cierra el form
+  limpiar(): void{
+    this.expeAddForm.reset();
   }
 
 }

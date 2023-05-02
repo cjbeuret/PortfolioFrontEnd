@@ -9,7 +9,10 @@
         <div class="btn-group" role="group" aria-label="editarExperiencia" >
           <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
           <!--button type="submit" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button-->
-          <button type="submit" *ngIf="modoEdit" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i></button> <!-- Agregar-->
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i> AGREGAR EXPERIENCIA</button> <!-- Agregar-->
+          
+          
+        
         </div> 
         
       </article>
@@ -32,11 +35,18 @@
         </div>  
         
         <div class="col-1" >
-          <!--button type="button" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal" *ngIf="modoEdit" (click)="idEdit(experiencia.id)"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
-          <button type="button" class="btn btn-light" routerLink="/editarexpe/{{experiencia.id}}" *ngIf="modoEdit" ><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+         
+          <button type="submit" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal" (click)="idEdit(experiencia.id)" >
+            <i class="fa-sharp fa-solid fa-pen" ></i>
+          </button> <!--    Editar-->
+        
+          <!--button type="button" class="btn btn-light" routerLink="/editarexpe/{{experiencia.id}}"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
+          <!--button type="button" class="btn btn-light" routerLink="editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
           <br>
-          <button type="submit" class="btn btn-light" *ngIf="modoEdit" (click)="delete(experiencia.id)"><i class="fa-solid fa-trash"></i></button><!-- Eliminar-->
-          <!--falta agregar *ngIf="isLogged" (click)="delete(experiencia.id)"-->
+          <button type="submit" class="btn btn-light" (click)="delete(experiencia.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button><!-- Eliminar-->
+          <!--falta agregar luego de submit *ngIf="isLogged" (o "modoEdit") (click)="delete(experiencia.id)"-->
         </div> 
 
       </article>
@@ -45,5 +55,7 @@
     </div>
   </div>
 </section>
-
-<app-modal-experiencia></app-modal-experiencia>
+<div *ngIf="isTrue">
+  <app-modal-experiencia></app-modal-experiencia>
+</div>
+<app-modal-experiencia-add></app-modal-experiencia-add>

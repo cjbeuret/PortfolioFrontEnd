@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Experiencia } from 'src/app/model/experiencia';
+//import { DataService } from 'src/app/servicios/data.service';
 import { Router } from '@angular/router';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
@@ -12,11 +13,12 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 export class ExperienciaComponent implements OnInit {
   //se llama al modelo que es un array
   //usar nombre lista del *ngFor del html p no tener q modificar eso tb
-  //experienciasList: any = [];
   experienciasList: Experiencia[]=[]
+  //experienciasList: any = []; --> esta era la del JSON
+
   //isLogged = false;
   modoEdit: any;
-  // idEditar: number;
+  idEditar: number;
   isTrue = false;
    
   constructor(private sExperiencia: ExperienciaService, private router:Router) {} 
@@ -62,6 +64,7 @@ export class ExperienciaComponent implements OnInit {
       this.sExperiencia.list().subscribe(data => {this.experienciasList=data});
     } //llama al método list del servicio
     
+
   //CON ESTE DE ABAJO FUNCIONA. REVISAR!
 
 //  constructor(private sExperiencia: ExperienciaService, /*tokenService:TokenService*/) {} 
@@ -90,24 +93,24 @@ export class ExperienciaComponent implements OnInit {
   */ 
 
 
- /* idEdit(id:number){
+ idEdit(id:number){
     this.isTrue = true;
     this.idEditar = id;
-  }*/
+  }
   
-  /*
+ /* 
   delete(id:number){
     this.sExperiencia.delete(id).subscribe(data =>{
-     //alert("Se eliminó correctamente")
+     alert("Se eliminó correctamente")
      this.cargarExperiencia();
     });
   }
   */
 
-  delete(id?:number){
+  delete(id:number){
     if(id !=undefined){
       this.sExperiencia.delete(id).subscribe(data =>{
-        //alert("Se eliminó correctamente")
+        alert("Se eliminó correctamente")
         this.cargarExperiencia();
       },err =>{
         alert("No se pudo eliminar la experiencia");
@@ -116,8 +119,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
 
-    
-  } 
+} 
 
   
   

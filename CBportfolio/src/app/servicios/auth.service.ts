@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   //creamos una variable donde vamosa tener la url de nuetra API
-  url='http://localhost:8080/autenticacion/login'; //La url q corresponda en cada caso
+  autURL='http://localhost:8080/autenticacion/login'; //La url q corresponda en cada caso
   //tb crea un objeto dde va a especifica el BehaviorSubject
   currentUserSubject: BehaviorSubject<any>
   //token: any;
@@ -24,9 +24,8 @@ export class AuthService {
     this.currentUserSubject= new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')|| '{}'));
   }
 
-  //creamos el método Iniciar Sesion
-  //ponemos Observable p q los controladores puedan suscribir 
-  IniciarSesion(credenciales:any):Observable<any> { 
+  //creamos el método Iniciar Sesion - ponemos Observable p q los controladores puedan suscribir 
+  iniciarSesion(credenciales:any):Observable<any> { 
   
   //esto no estaba en masterclass
     var httpOptions = {
@@ -36,7 +35,7 @@ export class AuthService {
     }
   //esto sí es igual a masterclass
   
-    return this.http.post<any>(this.url, credenciales,httpOptions).pipe(map(data=>{
+    return this.http.post<any>(this.autURL, credenciales,httpOptions).pipe(map(data=>{
       //llevamos al storage la data (lo q devuelve la API): (en master class token en nuestro caso usuario completo) 
       sessionStorage.setItem('currentUser', JSON.stringify(data));
       //usar el metodo next para pasarle la data, para asignarle los datos
@@ -50,6 +49,10 @@ export class AuthService {
   get UsuarioAutenticado()
   {
     return this.currentUserSubject.value;
+  }
+
+  public logOut(): void{
+    window.sessionStorage.clear();
   }
 
  
