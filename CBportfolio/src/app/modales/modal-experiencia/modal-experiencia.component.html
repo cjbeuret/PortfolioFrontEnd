@@ -1,27 +1,28 @@
  <!-- Boton Editar EXPERIENCIA Modal-->
-<div class="modal fade"  id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
-  <!-- saque del div de arriba *ngIf="expe" se pone xq significa que el div va a ser siempre y cuando contega una experiencia-->
+<div class="modal fade" id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
+  <!-- *ngIf="expeEditar" se coloca xque significa que el div va a ser siempre y cuando contega una experiencia-->
   
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="editExpModalLabel">Editar experiencia</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cerrar()"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button> <!--(click)="cerrar()"-->
       </div>
         
       <!--formulario de EXPERIENCIA-->  
       <form [formGroup]="expForm" (ngSubmit)="onEnviar($event)" name="experienciaFormEdit">             
-        <!--form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaForm"-->       
+        <!--form [formGroup]="expform" (ngSubmit)="form.valid && onCreate()" name="experienciaForm"-->       
         <div class="modal-body"> 
-          <!-- creo q al poner el ngIf de línea 2 no haría falta -->  
+          
           <div class="mb-3"> 
-            <input type="hidden" formControlName="id" [(ngModel)]="expe.id" id="">
+            <input class="form-control" type="number" formControlName="id" [(ngModel)]="expeEditar.id_experiencia" id="">
+          <!-- ?type="hidden"-->
           </div> 
                 
           <div class="mb-3">
             <label for="inputEmpresa" class="form-label">Modificar Empresa</label>
             <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
-            name="inputEmpresa" formControlName="empresa" [(ngModel)]="expe.empresa">
+            name="inputEmpresa" formControlName="empresa" [(ngModel)]="expeEditar.empresa">
 
             <!--<input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
             name="inputEmpresa" formControlName="empresa" [(ngModel)]="expe.empresa" 
@@ -35,17 +36,17 @@
           <div class="mb-3">
             <label for="logoEmpresa" class="form-label">Modificar logo de Empresa</label>
             <input class="form-control" type="url" placeholder="inserte url del logo" id="logoEmpresa" name="logoEmpresa" 
-            formControlName="logo" [(ngModel)]="expe.logo">             
+            formControlName="logo" [(ngModel)]="expeEditar.logo">             
           </div>
           <div class="mb-3">
             <label for="urlEmpresa" class="form-label">Modificar url de Empresa</label>
             <input class="form-control" type="url" placeholder="inserte url de empresa" id="urlEmpresa" name="urlEmpresa"
-            formControlName="empresa" [(ngModel)]="expe.empresa">             
+            formControlName="empresa" [(ngModel)]="expeEditar.empresa">             
           </div>
           <div class="mb-3">
             <label for="inputCargo" class="form-label">Modificar Cargo</label>
             <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
-            formControlName="cargo" [(ngModel)]="expe.cargo">
+            formControlName="cargo" [(ngModel)]="expeEditar.cargo">
 
             <!--<input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
             formControlName="cargo" [(ngModel)]="expe.cargo"
@@ -58,23 +59,23 @@
           </div>
           <div class="mb-3">
             <label for="experienciaInfo" class="form-label">Modificar descripción de puesto</label>
-            <textarea class="form-control" id="experienciaInfo" rows="3" formControlName="descPuesto" [(ngModel)]="expe.descPuesto"></textarea>               
+            <textarea class="form-control" id="experienciaInfo" rows="3" formControlName="descPuesto" [(ngModel)]="expeEditar.descPuesto"></textarea>               
           </div>
           <div class="mb-3">
             <label for="experienciaFechaInicio" class="form-label">Modificar Fecha de Inicio</label>
-            <input type="date" class="form-control" id="experienciaFechaInicio" formControlName="inicio" [(ngModel)]="expe.inicio">
+            <input type="date" class="form-control" id="experienciaFechaInicio" formControlName="inicio" [(ngModel)]="expeEditar.inicio">
           </div>
           <div class="mb-3">
             <label for="experienciaFechaFin" class="form-label"> Modificar Fecha de Fin</label>
-            <input type="date" class="form-control" id="experienciaFechaFin" formControlName="fin" [(ngModel)]="expe.fin">
+            <input type="date" class="form-control" id="experienciaFechaFin" formControlName="fin" [(ngModel)]="expeEditar.fin">
           </div>
           <div>
-            <input type="hidden" formControlName="personaid" [(ngModel)]="expe.personaid" id="">
+            <input type="hidden" formControlName="personaid" [(ngModel)]="expeEditar.id_persona" id="">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="limpiar()">Limpiar</button>
-          <button type="submit" class="btn btn-primary">Actualizar</button>
+          <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" >Limpiar</button> <!--(click)="limpiar()"-->
+          <button type="submit" class="btn btn-primary" value="Submit">Actualizar</button>
         </div>
           
         

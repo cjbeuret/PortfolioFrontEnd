@@ -15,10 +15,117 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 export class ModalExperienciaComponent implements OnInit {
   expForm: FormGroup;
   id: number;
-  expe: Experiencia = null;
-  //expe: Experiencia;
+  
+  //expeEditar: Experiencia = null;
+  expeEditar: Experiencia = new Experiencia (0,'','','','','','','',1);
 
-//MGB computacion
+  constructor(
+    private formBuilder: FormBuilder, 
+    private sExperience: ExperienciaService, 
+    private insert: ExperienciaComponent,
+    private activatedRouter: ActivatedRoute, 
+    private router: Router) {
+
+    //creamos el grupo de controles para el formulario
+    this.expForm= this.formBuilder.group({
+      id_experiencia:[''],
+      empresa: ['',[Validators.required]],
+      logo: [''],
+      url: [''],
+      cargo: ['',[Validators.required]],
+      descPuesto: [''],
+      inicio: [''],
+      fin: [''],
+      id_persona: [1]
+    })
+  }
+
+  //Declarar para las validaciones
+  get Empresa(){
+    return this.expForm.get("empresa");
+  }
+
+  get Cargo(){
+    return this.expForm.get("cargo");
+  }
+
+   //Validaciones
+   get EmpresaValid(){
+    return this.Empresa?.touched && !this.Empresa.valid;
+  }
+
+  get CargoValid(){
+    return this.Cargo?.touched && !this.Cargo.valid;
+  }
+ 
+
+  ngOnInit(): void {
+    this.traerExperiencia();
+  }
+
+  traerExperiencia():void {
+    const id = this.activatedRouter.snapshot.params['id']; //captura id de la experiencia q queremos modificar
+    this.sExperience.getById(id).subscribe(
+      data => {
+        this.expeEditar = data;
+        //window.location.reload();
+        //this.router.navigate(['']);
+      }
+    )} 
+
+  onUpdate(): void{
+  //const id = this.activatedRouter.snapshot.params['id'];
+  this.sExperience.edit(this.expeEditar).subscribe(
+      data => {
+        alert("Experiencia modificada"); 
+        this.router.navigate(['']);
+        //window.location.reload();
+      }
+    )}     
+  
+  onEnviar(event:Event){
+    event.preventDefault;
+    if(this.expForm.valid){
+      this.onUpdate(); //toma el método onUpdate
+      alert("OK.Datos modificados");
+      //this.router.navigate(['']);
+      window.location.reload();
+    }else{
+      alert("Error de carga. Intente nuevamente");
+      this.expForm.markAllAsTouched();
+    }
+  }
+
+  /*cerrar(): void{
+    window.location.reload();
+  }*/
+
+  /*limpiar(): void{
+    this.expForm.reset();
+  }*/
+
+/*ngOnInit(): void {
+    this.info();
+  }
+
+  info():void {
+    //this.id = this.insert.idEditar;
+    this.sExperience.getById(this.id).subscribe(data =>
+      {this.expe=data},
+      err =>{
+        alert("Error al llamar a los datos");
+      });
+  }
+
+  onUpdate(): void{
+    this.sExperience.edit(this.expe).subscribe(data=>{})
+  } 
+*/ 
+  /*onUpdate(): void{
+    this.sExperience.editById(this.id, this.expe).subscribe(data=>{})
+  } */
+
+  //MGB computacion
 /*
   constructor(
     private formBuilder: FormBuilder, 
@@ -60,118 +167,6 @@ onUpdate():void {
   } 
 
  */
- 
- // heber
-
-  constructor(
-    private formBuilder: FormBuilder, 
-    private sExperience: ExperienciaService, 
-    private insert: ExperienciaComponent,
-    private activatedRouter: ActivatedRoute, 
-    private router: Router) {
-    //creamos el grupo de controles para el formulario
-    this.expForm= this.formBuilder.group({
-      id:[''],
-      empresa: ['',[Validators.required]],
-      logo: [''],
-      url: [''],
-      cargo: ['',[Validators.required]],
-      descPuesto: [''],
-      inicio: [''],
-      fin: [''],
-      personaid: [1], // o personaid: 1,
-    })
-  }
-
-  //Declarar para las validaciones
-  get Empresa(){
-    return this.expForm.get("empresa");
-  }
-
-  get Cargo(){
-    return this.expForm.get("cargo");
-  }
-
-   //Validaciones
-   get EmpresaValid(){
-    return this.Empresa?.touched && !this.Empresa.valid;
-  }
-
-  get CargoValid(){
-    return this.Cargo?.touched && !this.Cargo.valid;
-  }
- 
- 
-  /*ngOnInit(): void {
-    this.info();
-  }
-
-  info():void {
-    //this.id = this.insert.idEditar;
-    this.sExperience.getById(this.id).subscribe(data =>
-      {this.expe=data},
-      err =>{
-        alert("Error al llamar a los datos");
-      });
-  }
-
-  onUpdate(): void{
-    this.sExperience.edit(this.expe).subscribe(data=>{})
-  } 
-*/ 
-  /*onUpdate(): void{
-    this.sExperience.editById(this.id, this.expe).subscribe(data=>{})
-  } */
-
-  ngOnInit(): void {
-    this.miInfo();
-  }
-
-  miInfo():void {
-    const id = this.activatedRouter.snapshot.params['id']; //captura id de la experiencia q queremos modificar
-    this.sExperience.getById(id).subscribe(
-      data => {
-        this.expe = data;
-        //window.location.reload();
-        //this.router.navigate(['']);
-      }
-    )} 
-
-  miOnUpdate(): void{
-  const id = this.activatedRouter.snapshot.params['id'];
-  this.sExperience.editById(id, this.expe).subscribe(
-    //this.sExperience.edit(id).subscribe( 
-      data => {
-        alert("Experiencia modificada"); 
-        this.router.navigate(['']);
-        //window.location.reload();
-      }
-    )}     
-  
-  onEnviar(event:Event){
-  event.preventDefault;
-  if(this.expForm.valid){
-    this.miOnUpdate(); //toma el método onUpdate
-    alert("OK.Datos modificados");
-    //this.router.navigate(['']);
-    window.location.reload();
-  }else{
-    alert("Error de carga. Intente nuevamente");
-    this.expForm.markAllAsTouched();
-  }
-}
-
-  cerrar(): void{
-    window.location.reload();
-  }
-
-  limpiar(): void{
-    this.expForm.reset();
-  }
-
-
-
-  
 
 
 }

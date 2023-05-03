@@ -20,15 +20,15 @@ export class HabilidadService {
   }
 
   public create(habilidad: Habilidad):Observable<any>{
-    return this.httpClient.post<any>(this.habURL + `alta`, habilidad); //le pasamos el objeto experiencia para crear nuevo registro en BD
-  }
+    return this.httpClient.post<any>(this.habURL + 'alta', habilidad); //le pasamos el objeto experiencia para crear nuevo registro en BD
+  } //ojo en experiencia puse tilde grave y funciona
 
   public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.habURL + `baja/${id}`);
   }
 
   public edit(habilidad: Habilidad):Observable<any>{
-    return this.httpClient.put<any>(this.habURL + `edicion`, habilidad);
+    return this.httpClient.put<any>(this.habURL + 'edicion', habilidad);
   }
 
   public editById (id:number, habilidad: Habilidad): Observable<any>{

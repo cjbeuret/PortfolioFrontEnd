@@ -20,9 +20,12 @@ export class ModalExperienciaAddComponent implements OnInit{
   descPuesto: string='';
   inicio: string='';
   fin: string='';
-  personaid: number =1;   //cuando es número Ej porcentaje se inicializa en cero
+  id_persona: number =1;   //cuando es número Ej porcentaje se inicializa en cero
 
-constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaService, private router:Router){
+constructor(
+  private formBuilder: FormBuilder, 
+  private sExperience: ExperienciaService, 
+  private router:Router){
 //Creamos el grupo de controles p el formulario
   this.expeAddForm= this.formBuilder.group({
     empresa: ['',[Validators.required]],
@@ -31,8 +34,8 @@ constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaSe
     cargo: ['',[Validators.required]],
     descPuesto: [''],
     inicio: [''],
-    fin: ['']
-    //personaid: 1 --> no sé por que no lo agrega en la BD
+    fin: [''],
+    id_persona: [1],
   })
 }
 
@@ -73,10 +76,13 @@ constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaSe
   
   onCreate():void {
     //crea una ctte experiencia y llama el metodo create del servicio
-    const expe = new Experiencia(this.empresa, this.logo, this.url, this.cargo, this.descPuesto, this.inicio, this.fin, this.personaid);
-      this.sExperience.create(expe).subscribe(
+    const nuevaExpe = new Experiencia(0, this.empresa, this.logo, this.url, this.cargo, this.descPuesto, 
+      this.inicio, this.fin, this.id_persona);
+      console.log(nuevaExpe)
+      
+      this.sExperience.create(nuevaExpe).subscribe(
         data => {
-          alert("Experiencia creada"); 
+          alert("Experiencia creada");
     });
   } 
 
@@ -93,9 +99,9 @@ constructor(private formBuilder: FormBuilder, private sExperience: ExperienciaSe
     }
   }
 
-  //!! OJO NO LIMPIA sino q cierra el form
+  /*!! OJO NO LIMPIA sino q cierra el form
   limpiar(): void{
     this.expeAddForm.reset();
-  }
+  }*/
 
 }

@@ -93,10 +93,10 @@ export class ExperienciaComponent implements OnInit {
   */ 
 
 
- idEdit(id:number){
+ /*idEdit(id:number){
     this.isTrue = true;
     this.idEditar = id;
-  }
+  }*/
   
  /* 
   delete(id:number){

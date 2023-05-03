@@ -8,8 +8,8 @@ export class Habilidad {
     progreso : string;
     personaid : number; //esto no sé si va
     
-    constructor(/*id: number,*/ span : string, nombreHab: string, porcentaje: number, progreso: string, personaid: number){
-        /*this.id = id;*/
+    constructor(id: number, span : string, nombreHab: string, porcentaje: number, progreso: string, personaid: number){
+        this.id = id;
         this.span = span;
         this.nombreHab = nombreHab;
         this.porcentaje = porcentaje;

@@ -1,6 +1,6 @@
 export class Experiencia {
 
-    id: number; 
+    id_experiencia: number; 
     empresa: string;
     logo: string;
     url : string;
@@ -8,10 +8,10 @@ export class Experiencia {
     descPuesto : string;
     inicio : string;
     fin : string;
-    personaid : number; //esto no sé si va
+    id_persona : number; //esto no sé si va
 
-    constructor (/*id: number,*/ empresa: string, logo: string, url : string, cargo : string, descPuesto : string, inicio : string, fin : string, personaid : number){
-        /*this.id = id;*/
+    constructor (id_experiencia: number, empresa: string, logo: string, url : string, cargo : string, descPuesto : string, inicio : string, fin : string, id_persona : number){
+        this.id_experiencia = id_experiencia;
         this.empresa = empresa;
         this.logo = logo;
         this.url = url;
@@ -19,7 +19,7 @@ export class Experiencia {
         this.descPuesto = descPuesto;
         this.inicio = inicio;
         this.fin = fin;
-        this.personaid = personaid; //o personaId?
+        this.id_persona = id_persona; 
     }
         
 }

@@ -36,6 +36,16 @@ export class HabilidadesComponent implements OnInit {
       this.sHabilidad.list().subscribe(data => {this.habilidadesList=data});
     } //llama al método list del servicio
 
+    delete(id:number){
+      if(id !=undefined){
+        this.sHabilidad.delete(id).subscribe(data =>{
+          alert("Se eliminó correctamente")
+          //this.cargarExperiencia();
+        },err =>{
+          alert("No se pudo eliminar la experiencia");
+        })
+      }
+    }
 
 
 

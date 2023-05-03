@@ -63,11 +63,11 @@
               <!--<label for="experienciaPerosnaId" class="form-label"> Indicar persona asociada</label>
               <input type="number" class="form-control" id="experienciaPersonaId" name="personaid" 
               formControlName="personaid" [(ngModel)]="personaid"-->
-              <input formControlName="personaid" [(ngModel)]="personaid" id="">
+              <input formControlName="personaid" [(ngModel)]="id_persona" id="">
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="limpiar()">Limpiar</button>
+            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" >Limpiar</button> <!--(click)="limpiar()"-->
             <button type="submit" class="btn btn-primary">Agregar</button>
           </div> 
           
