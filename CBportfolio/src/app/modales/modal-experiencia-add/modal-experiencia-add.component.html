@@ -1,17 +1,19 @@
 <!-- Boton Agregar EXPERIENCIA Modal-->
 
 <div class="modal fade" id="addExpModal" tabindex="-1" aria-labelledby="addExpModalLabel" aria-hidden="true">
+    
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="addExpModalLabel">Agregar experiencia</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-          
-        <form [formGroup]="expeAddForm" (ngSubmit)="onEnviar($event)" name="experienciaFormAdd">             
-        <!--form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaFormAdd"-->   
-            <!--formulario de EXPERIENCIA-->
+        
+        <!--formulario AGREGAR EXPERIENCIA-->
+        <form [formGroup]="expeAddForm" (ngSubmit)="onEnviar($event)" name="expeFormAdd">             
+        <!--form [formGroup]="expeAddForm" (ngSubmit)="form.valid && onCreate()" name="experienciaFormAdd"-->   
           <div class="modal-body">             
+            
             <div class="mb-3">
               <label for="inputEmpresa" class="form-label">Agregar Empresa</label>
               <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
@@ -60,10 +62,9 @@
               formControlName="fin" [(ngModel)]="fin">
             </div>
             <div>
-              <!--<label for="experienciaPerosnaId" class="form-label"> Indicar persona asociada</label>
-              <input type="number" class="form-control" id="experienciaPersonaId" name="personaid" 
-              formControlName="personaid" [(ngModel)]="personaid"-->
-              <input formControlName="personaid" [(ngModel)]="id_persona" id="">
+              <label for="expeIdPersona" class="form-label"> Persona asociada</label>
+              <input type="number" class="form-control" id="expeIdPersona" name="id_persona" 
+              formControlName="id_persona" [(ngModel)]="id_persona" id="">             
             </div>
           </div>
           <div class="modal-footer">

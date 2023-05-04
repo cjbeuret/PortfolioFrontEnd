@@ -13,12 +13,15 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 
 export class ModalExperienciaComponent implements OnInit {
-  expForm: FormGroup;
-  id: number;
+  
+  expeForm: FormGroup;
+  
+  //id: number;
   
   //expeEditar: Experiencia = null;
   expeEditar: Experiencia = new Experiencia (0,'','','','','','','',1);
 
+    
   constructor(
     private formBuilder: FormBuilder, 
     private sExperience: ExperienciaService, 
@@ -27,8 +30,8 @@ export class ModalExperienciaComponent implements OnInit {
     private router: Router) {
 
     //creamos el grupo de controles para el formulario
-    this.expForm= this.formBuilder.group({
-      id_experiencia:[''],
+    this.expeForm= this.formBuilder.group({
+      //id_experiencia:[''],
       empresa: ['',[Validators.required]],
       logo: [''],
       url: [''],
@@ -42,11 +45,11 @@ export class ModalExperienciaComponent implements OnInit {
 
   //Declarar para las validaciones
   get Empresa(){
-    return this.expForm.get("empresa");
+    return this.expeForm.get("empresa");
   }
 
   get Cargo(){
-    return this.expForm.get("cargo");
+    return this.expeForm.get("cargo");
   }
 
    //Validaciones
@@ -75,6 +78,7 @@ export class ModalExperienciaComponent implements OnInit {
 
   onUpdate(): void{
   //const id = this.activatedRouter.snapshot.params['id'];
+  
   this.sExperience.edit(this.expeEditar).subscribe(
       data => {
         alert("Experiencia modificada"); 
@@ -85,14 +89,14 @@ export class ModalExperienciaComponent implements OnInit {
   
   onEnviar(event:Event){
     event.preventDefault;
-    if(this.expForm.valid){
+    if(this.expeForm.valid){
       this.onUpdate(); //toma el método onUpdate
       alert("OK.Datos modificados");
       //this.router.navigate(['']);
       window.location.reload();
     }else{
       alert("Error de carga. Intente nuevamente");
-      this.expForm.markAllAsTouched();
+      this.expeForm.markAllAsTouched();
     }
   }
 

@@ -10,14 +10,13 @@
       </div>
         
       <!--formulario de EXPERIENCIA-->  
-      <form [formGroup]="expForm" (ngSubmit)="onEnviar($event)" name="experienciaFormEdit">             
+      <form [formGroup]="expeForm" (ngSubmit)="onEnviar($event)" name="expeFormEdit">             
         <!--form [formGroup]="expform" (ngSubmit)="form.valid && onCreate()" name="experienciaForm"-->       
         <div class="modal-body"> 
           
-          <div class="mb-3"> 
+          <!--div class="mb-3"> 
             <input class="form-control" type="number" formControlName="id" [(ngModel)]="expeEditar.id_experiencia" id="">
-          <!-- ?type="hidden"-->
-          </div> 
+          </div--> <!--?type="hidden"-->
                 
           <div class="mb-3">
             <label for="inputEmpresa" class="form-label">Modificar Empresa</label>
@@ -70,7 +69,7 @@
             <input type="date" class="form-control" id="experienciaFechaFin" formControlName="fin" [(ngModel)]="expeEditar.fin">
           </div>
           <div>
-            <input type="hidden" formControlName="personaid" [(ngModel)]="expeEditar.id_persona" id="">
+            <input type="hidden" formControlName="id_persona" [(ngModel)]="expeEditar.id_persona" id="">
           </div>
         </div>
         <div class="modal-footer">

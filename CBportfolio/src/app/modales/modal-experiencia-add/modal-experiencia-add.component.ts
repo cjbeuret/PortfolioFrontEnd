@@ -27,11 +27,12 @@ constructor(
   private sExperience: ExperienciaService, 
   private router:Router){
 //Creamos el grupo de controles p el formulario
-  this.expeAddForm= this.formBuilder.group({
+  this.expeAddForm= this.formBuilder.group(
+    {
     empresa: ['',[Validators.required]],
     logo: [''],
     url: [''],
-    cargo: ['',[Validators.required]],
+    cargo: ['',[Validators.required]], 
     descPuesto: [''],
     inicio: [''],
     fin: [''],

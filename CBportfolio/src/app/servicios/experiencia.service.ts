@@ -23,23 +23,23 @@ export class ExperienciaService {
       return this.httpClient.get<Experiencia>(this.expURL + `detalle/${id}`); //o this.expURL + 'buscar'+ '${id}' 
     }
 
-    /*public create(nuevaExperiencia: Experiencia):Observable<any>{
-      return this.httpClient.post<any>(this.expURL + 'alta', nuevaExperiencia); //le pasamos el objeto experiencia para crear nuevo registro en BD
-    }*/
+    public create(nuevaExpe: Experiencia):Observable<any>{
+      return this.httpClient.post<any>(this.expURL + 'alta', nuevaExpe); //le pasamos el objeto experiencia para crear nuevo registro en BD
+    }
 
     //si no camina el otro probar este
-    public create(nuevaExperiencia: Experiencia):Observable<any>{
+    /*public create(nuevaExperiencia: Experiencia):Observable<any>{
       console.log(JSON.stringify(nuevaExperiencia));
          
       return this.httpClient.post<any>(this.expURL + 'alta', JSON.stringify(nuevaExperiencia),this.httpOptions);
-      };
+      }*/
 
     public delete(id: number): Observable<Experiencia> {
       return this.httpClient.delete<Experiencia>(this.expURL + `baja/${id}`);
     }
 
-    public edit(experienciaAActualizar: Experiencia):Observable<Experiencia>{
-      return this.httpClient.put<Experiencia>(this.expURL + `edicion`, experienciaAActualizar);
+    public edit(expeAActualizar: Experiencia):Observable<Experiencia>{
+      return this.httpClient.put<Experiencia>(this.expURL + 'edicion', expeAActualizar);
     }
 
     /*public editById (id:number, experiencia: Experiencia): Observable<any>{
