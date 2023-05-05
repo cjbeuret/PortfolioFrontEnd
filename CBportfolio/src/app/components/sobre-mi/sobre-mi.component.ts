@@ -72,7 +72,17 @@ export class SobreMiComponent implements OnInit {
     this.sPersona.list().subscribe(data => {this.personasList=data});
   } //llama al método list del servicio
   
-
+  delete(id:number){
+    if(id !=undefined){
+      this.sPersona.delete(id).subscribe(data =>{
+        alert("Se eliminó correctamente")
+        this.cargarPersona();
+      },err =>{
+        //alert("No se pudo eliminar la experiencia");
+        window.location.reload();
+      })
+    }
+  }
   /* ESTO era del JSON, hay que sacarlo
 
   bannerVar: any ='';

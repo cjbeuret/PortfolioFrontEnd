@@ -24,14 +24,14 @@ export class ModalExperienciaComponent implements OnInit {
     
   constructor(
     private formBuilder: FormBuilder, 
-    private sExperience: ExperienciaService, 
+    private sExperiencia: ExperienciaService, 
     private insert: ExperienciaComponent,
     private activatedRouter: ActivatedRoute, 
     private router: Router) {
 
     //creamos el grupo de controles para el formulario
     this.expeForm= this.formBuilder.group({
-      //id_experiencia:[''],
+      id_experiencia:[''],
       empresa: ['',[Validators.required]],
       logo: [''],
       url: [''],
@@ -67,8 +67,8 @@ export class ModalExperienciaComponent implements OnInit {
   }
 
   traerExperiencia():void {
-    const id = this.activatedRouter.snapshot.params['id']; //captura id de la experiencia q queremos modificar
-    this.sExperience.getById(id).subscribe(
+    const id = this.activatedRouter.snapshot.params['id_experiencia']; //captura id de la experiencia q queremos modificar
+    this.sExperiencia.getById(id).subscribe(
       data => {
         this.expeEditar = data;
         //window.location.reload();
@@ -77,9 +77,9 @@ export class ModalExperienciaComponent implements OnInit {
     )} 
 
   onUpdate(): void{
-  //const id = this.activatedRouter.snapshot.params['id'];
+  const id = this.activatedRouter.snapshot.params['id_experiencia'];
   
-  this.sExperience.edit(this.expeEditar).subscribe(
+  this.sExperiencia.edit(this.expeEditar).subscribe(
       data => {
         alert("Experiencia modificada"); 
         this.router.navigate(['']);

@@ -15,22 +15,25 @@ import { ModalLoginComponent } from './modales/modal-login/modal-login.component
 import { GuardGuard } from './servicios/guard.guard';
 import { ModalExperienciaAddComponent } from './modales/modal-experiencia-add/modal-experiencia-add.component';
 import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
+import { ExperienciaEditComponent } from './components/experiencia-edit/experiencia-edit.component';
 
 const routes: Routes = [
-  {path: 'indice', component: IndiceComponent}, 
+  //{path: 'indice', component: IndiceComponent}, 
   /*por ahora la pag inicio es Indice.
   Agregar canActivate:[GuardGuard] p proteger página inicio p EDICION si no estoy loggeado
   está asociado a línea 25 del guard.guards.ts (redirecciona al "inciar-sesion") 
   Pero no me funciona el botón Enviar del formulario de login*/
   {path: 'iniciar-sesion', component: ModalLoginComponent}, 
-  {path:'', redirectTo:'/indice', pathMatch:'full'},
+  {path: '', component: IndiceComponent}, 
+  //{path:'', redirectTo:'/indice', pathMatch:'full'},
   {path: 'sobre-mi', component: SobreMiComponent},
   {path: 'experiencia', component: ExperienciaComponent},
   //estas rutas de abajo no sé si hacen falta al tener los modales q redireccionand con #id
   //{path: 'nuevaexpe', component: ModalExperienciaAddComponent, canActivate: [AuthGuard]} no sé si se usa CanActivate
   //{path: 'nuevaexpe', component: ModalExperienciaAddComponent}
   //{path: 'editarexpe/:id', component: ModalExperienciaComponent}, 
-  {path: 'editarexpe', component: ModalExperienciaComponent}, 
+  //{path: 'editarexpe', component: ModalExperienciaComponent}, 
+  {path: 'editarexpe', component: ExperienciaEditComponent}, 
   {path: 'educacion', component: EducacionComponent},
   {path: 'proyecto', component: ProyectosComponent},
   {path: 'habilidad', component: HabilidadesComponent},

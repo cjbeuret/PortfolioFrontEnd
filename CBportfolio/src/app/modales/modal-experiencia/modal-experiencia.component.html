@@ -1,5 +1,5 @@
  <!-- Boton Editar EXPERIENCIA Modal-->
-<div class="modal fade" id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
+ <div class="modal fade" id="editExpModal" tabindex="-1" aria-labelledby="editExpModalLabel" aria-hidden="true">
   <!-- *ngIf="expeEditar" se coloca xque significa que el div va a ser siempre y cuando contega una experiencia-->
   
   <div class="modal-dialog">
@@ -11,7 +11,7 @@
         
       <!--formulario de EXPERIENCIA-->  
       <form [formGroup]="expeForm" (ngSubmit)="onEnviar($event)" name="expeFormEdit">             
-        <!--form [formGroup]="expform" (ngSubmit)="form.valid && onCreate()" name="experienciaForm"-->       
+        <!--form [formGroup]="expeForm" (ngSubmit)="form.valid && onCreate()" name="experienciaForm"-->       
         <div class="modal-body"> 
           
           <!--div class="mb-3"> 
@@ -20,8 +20,8 @@
                 
           <div class="mb-3">
             <label for="inputEmpresa" class="form-label">Modificar Empresa</label>
-            <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
-            name="inputEmpresa" formControlName="empresa" [(ngModel)]="expeEditar.empresa">
+            <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEdEmpresa" 
+            name="inputEdEmpresa" formControlName="empresa" [(ngModel)]="expeEditar.empresa">
 
             <!--<input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
             name="inputEmpresa" formControlName="empresa" [(ngModel)]="expe.empresa" 
@@ -40,7 +40,7 @@
           <div class="mb-3">
             <label for="urlEmpresa" class="form-label">Modificar url de Empresa</label>
             <input class="form-control" type="url" placeholder="inserte url de empresa" id="urlEmpresa" name="urlEmpresa"
-            formControlName="empresa" [(ngModel)]="expeEditar.empresa">             
+            formControlName="empresa" [(ngModel)]="expeEditar.url">             
           </div>
           <div class="mb-3">
             <label for="inputCargo" class="form-label">Modificar Cargo</label>

@@ -1,0 +1,69 @@
+<div class="container" >
+    <div class="row">
+        <div>
+          <h1 class="modal-title fs-5" id="editExpModalLabel">Editar experiencia</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            <form [formGroup]="expeForm" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                  <div class="mb-3">
+                    <label for="inputEmpresa" class="form-label">Modificar Empresa</label>
+                                       
+                    <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
+                    name="inputEmpresa" formControlName="empresa" [(ngModel)]="expEditar.empresa">
+        
+                    <!--input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
+                    name="inputEmpresa" formControlName="empresa" [(ngModel)]="expEditar.empresa" 
+                    [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': !Empresa?.errors && Empresa?.touched}">   
+                    <div *ngIf="Empresa?.errors && Empresa?.touched">
+                      <p *ngIf="Empresa?.hasError('required')" class="text-danger">
+                        El nombre de la empresa es un dato requerido.
+                      </p>
+                    </div-->
+                  </div>
+                  <div class="mb-3">
+                    <label for="logoEmpresa" class="form-label">Modificar logo de Empresa</label>
+                    <input class="form-control" type="url" placeholder="inserte url del logo" id="logoEmpresa" name="logoEmpresa" 
+                    formControlName="logo" [(ngModel)]="expEditar.logo">             
+                  </div>
+                  <div class="mb-3">
+                    <label for="urlEmpresa" class="form-label">Modificar url de Empresa</label>
+                    <input class="form-control" type="url" placeholder="inserte url de empresa" id="urlEmpresa" name="urlEmpresa"
+                    formControlName="empresa" [(ngModel)]="expEditar.url">             
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputCargo" class="form-label">Modificar Cargo</label>
+                    <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
+                    formControlName="cargo" [(ngModel)]="expEditar.cargo">
+        
+                    <!--input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
+                    formControlName="cargo" [(ngModel)]="expEditar.cargo"
+                    [ngClass]="{'is-invalid': Cargo?.errors && Cargo?.touched, 'is-valid': ! Cargo?.errors && Cargo?.touched}"> 
+                      <div *ngIf="Cargo?.errors && Cargo?.touched">
+                        <p *ngIf="Cargo?.hasError('required')" class="text-danger">
+                          El cargo es un dato requerido.
+                        </p>
+                      </div-->               
+                  </div>
+                  <div class="mb-3">
+                    <label for="experienciaInfo" class="form-label">Modificar descripción de puesto</label>
+                    <textarea class="form-control" id="experienciaInfo" rows="3" formControlName="descPuesto" [(ngModel)]="expEditar.descPuesto"></textarea>               
+                  </div>
+                  <div class="mb-3">
+                    <label for="experienciaFechaInicio" class="form-label">Modificar Fecha de Inicio</label>
+                    <input type="date" class="form-control" id="experienciaFechaInicio" formControlName="inicio" [(ngModel)]="expEditar.inicio">
+                  </div>
+                  <div class="mb-3">
+                    <label for="experienciaFechaFin" class="form-label"> Modificar Fecha de Fin</label>
+                    <input type="date" class="form-control" id="experienciaFechaFin" formControlName="fin" [(ngModel)]="expEditar.fin">
+                  </div>
+                  <div>
+                    <input type="number" formControlName="id_persona" [(ngModel)]="expEditar.id_persona" id="">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" value="Submit">Actualizar</button>
+                
+            </form>
+            
+
+        </div>
+    </div>
+</div>

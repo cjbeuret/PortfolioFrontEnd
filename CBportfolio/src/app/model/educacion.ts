@@ -1,6 +1,6 @@
 export class Educacion {
 
-    id: number; 
+    id_educacion: number; 
     institucion: string;
     logo: string;
     url : string;
@@ -8,10 +8,10 @@ export class Educacion {
     alcanceTitulo : string;
     fechaObt : string;
     comentario : string;
-    personaid : number; //esto no sé si va
+    id_persona : number; //esto no sé si va
 
-    constructor (/*id: number,*/ institucion: string, logo: string, url : string, titulo : string, alcanceTitulo : string, fechaObt : string, comentario : string, personaid : number){
-        /*this.id = id;*/
+    constructor (id_educacion: number, institucion: string, logo: string, url : string, titulo : string, alcanceTitulo : string, fechaObt : string, comentario : string, id_persona : number){
+        this.id_educacion = this.id_educacion;
         this.institucion = institucion;
         this.logo = logo;
         this.url = url;
@@ -19,7 +19,7 @@ export class Educacion {
         this.alcanceTitulo = alcanceTitulo;
         this.fechaObt = fechaObt;
         this.comentario = comentario;
-        this.personaid = personaid; //o personaId?
+        this.id_persona = id_persona; 
     }
 
 }

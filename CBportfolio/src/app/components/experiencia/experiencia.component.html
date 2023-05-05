@@ -1,21 +1,22 @@
 <section id="experiencia"> 
   <div class="carrera container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">    
     <div class="row p-3">
-
-      <h2 class="text mt-4 pb-8">Experiencia Laboral</h2>
-     
+      
+      <h2 class="text mt-4 pb-8">Experiencia Laboral</h2> 
+      
       <!-- Modificar EXPERIENCIA -->  
-      <article id="editExperiencia" class="bg-dark p-2">  
-        <div class="btn-group" role="group" aria-label="editarExperiencia" >
-          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+      <div id="editExperiencia" class="bg-dark p-2">  
+        <a href="#top"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-arrow-turn-up"></i></button></a>
+        <div class="btn-group" role="group" aria-label="agregarExperiencia" >
+          <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
           <!--button type="submit" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar"><i class="fa-solid fa-trash"></i></button-->
-          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i> AGREGAR EXPERIENCIA</button> <!-- Agregar-->
+          <button type="submit" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i> AGREGAR EXPERIENCIA</button> <!-- Agregar-->
         </div> 
         
-      </article>
+      </div>
 
       <!-- EXPERIENCIAS -->
-      <article class="row p-3" *ngFor="let experiencia of experienciasList"> 
+      <div class="row p-3" *ngFor="let experiencia of experienciasList"> 
         <div class="col-2 d-flex flex-column align-items-center justify-content-center">
           <a [href]="experiencia.url" target="_blank">
             <img [src]="experiencia.logo" 
@@ -32,29 +33,34 @@
         </div>  
         
         <div class="col-1" >
-         
-          <button type="button" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal">
-            <i class="fa-sharp fa-solid fa-pen" ></i>
-          </button> <!--Editar--> <!-- no sé si hace falta (click)="idEdit(experiencia.id_experiencia)-->
-        
-          <!--button type="button" class="btn btn-light" routerLink="/editarexpe/{{experiencia.id}}"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
-          <!--button type="button" class="btn btn-light" routerLink="editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
+          <div class="btn-group" role="group" aria-label="editarExperiencia"> 
+            <button type="button" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal">
+              <i class="fa-sharp fa-solid fa-pen" ></i>
+            </button> <!--Editar--> <!-- no sé si hace falta (click)="idEdit(experiencia.id_experiencia)-->
           
-          <br>
-          <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar" (click)="delete(experiencia.id_experiencia)">
-            <i class="fa-solid fa-trash"></i>
-          </button><!-- Eliminar-->
-          <!--falta agregar luego de submit *ngIf="isLogged" o "modoEdit" -->
+            <button type="button" class="btn btn-light" routerLink="/editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+            <!--button type="button" class="btn btn-light" routerLink="editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
+            
+            <br>
+            <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar" (click)="delete(experiencia.id_experiencia)">
+              <i class="fa-solid fa-trash"></i>
+            </button><!-- Eliminar-->
+            <!--falta agregar luego de submit *ngIf="isLogged" o "modoEdit" -->
+          </div>  
         </div> 
-
-      </article>
+      </div>
 
 
     </div>
   </div>
 </section>
 
-<div> <!--*ngIf="isTrue"-->
+ <!--*ngIf="isTrue"-->
+
 <app-modal-experiencia></app-modal-experiencia>
-</div>
 <app-modal-experiencia-add></app-modal-experiencia-add>
+
+
+
+
+

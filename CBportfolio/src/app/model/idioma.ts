@@ -1,20 +1,20 @@
 export class Idioma {
     //insertar atributos y tipo de datos y el contructor sin id
 
-    id: number; 
+    id_idioma: number; 
     idioma : string;
     porcentaje : number;
     progreso: string;
     comentario : string;
-    personaid : number; //esto no sé si va
+    id_persona : number; //esto no sé si va
     
-    constructor(/*id: number,*/ idioma : string, porcentaje: number, comentario: string, progreso: string, personaid: number){
-        /*this.id = id;*/
+    constructor(id_idioma: number, idioma : string, porcentaje: number, comentario: string, progreso: string, id_persona: number){
+        this.id_idioma = id_idioma;
         this.idioma = idioma;
         this.porcentaje = porcentaje;
         this.progreso = progreso;
         this.comentario = comentario;
-        this.personaid = personaid;
+        this.id_persona = id_persona;
     }
 
 }

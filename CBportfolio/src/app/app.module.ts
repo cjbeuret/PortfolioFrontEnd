@@ -26,16 +26,15 @@ import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-exp
 import { ModalEducacionComponent } from './modales/modal-educacion/modal-educacion.component';
 import { ModalProyectosComponent } from './modales/modal-proyectos/modal-proyectos.component';
 import { ModalHabilidadesComponent } from './modales/modal-habilidades/modal-habilidades.component';
-import { ModalContactoComponent } from './modales/modal-contacto/modal-contacto.component';
 import { ModalIdiomasComponent } from './modales/modal-idiomas/modal-idiomas.component';
 import { ModalRedesComponent } from './modales/modal-redes/modal-redes.component';
 import { RedesComponent } from './components/redes/redes.component';
-import { ContactoComponent } from './components/contacto/contacto.component';
 import { DomicilioComponent } from './components/domicilio/domicilio.component';
 import { ModalDomicilioComponent } from './modales/modal-domicilio/modal-domicilio.component';
 import { ModalExperienciaAddComponent } from './modales/modal-experiencia-add/modal-experiencia-add.component';
 import { DataService } from './servicios/data.service';
 import { InterceptorService } from './servicios/interceptor.service';
+import { ExperienciaEditComponent } from './components/experiencia-edit/experiencia-edit.component';
 
 
 @NgModule({
@@ -61,14 +60,14 @@ import { InterceptorService } from './servicios/interceptor.service';
     ModalEducacionComponent,
     ModalProyectosComponent,
     ModalHabilidadesComponent,
-    ModalContactoComponent,
     ModalIdiomasComponent,
     ModalRedesComponent,
     RedesComponent,
-    ContactoComponent,
     DomicilioComponent,
     ModalDomicilioComponent,
-    ModalExperienciaAddComponent
+    ModalExperienciaAddComponent,
+    ExperienciaEditComponent,
+  
   ],
   imports: [
     BrowserModule,    

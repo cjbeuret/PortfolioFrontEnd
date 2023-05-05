@@ -15,11 +15,16 @@ export class ExperienciaComponent implements OnInit {
   //usar nombre lista del *ngFor del html p no tener q modificar eso tb
   experienciasList: Experiencia[]=[]
   //experienciasList: any = []; --> esta era la del JSON
+  
+  //esto es del modal
+  expeForm: FormGroup;
+  expeEditar: Experiencia = new Experiencia (0,'','','','','','','',1);
 
   //isLogged = false;
   modoEdit: any;
   idEditar: number;
-  isTrue = false;
+  //isTrue = false;
+  activatedRouter: any;
    
   constructor(private sExperiencia: ExperienciaService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
@@ -115,11 +120,23 @@ export class ExperienciaComponent implements OnInit {
         alert("Se eliminó correctamente")
         this.cargarExperiencia();
       },err =>{
-        alert("No se pudo eliminar la experiencia");
+        //alert("No se pudo eliminar la experiencia");
+        window.location.reload();
       })
     }
   }
 
+
+  onUpdate(): void{
+    const id = this.activatedRouter.snapshot.params['id_experiencia'];
+    
+    this.sExperiencia.edit(this.expeEditar).subscribe(
+        data => {
+          alert("Experiencia modificada"); 
+          this.router.navigate(['']);
+          //window.location.reload();
+        }
+      )} 
 
 } 
 

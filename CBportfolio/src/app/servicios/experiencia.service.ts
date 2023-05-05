@@ -38,11 +38,11 @@ export class ExperienciaService {
       return this.httpClient.delete<Experiencia>(this.expURL + `baja/${id}`);
     }
 
-    public edit(expeAActualizar: Experiencia):Observable<Experiencia>{
-      return this.httpClient.put<Experiencia>(this.expURL + 'edicion', expeAActualizar);
+    public edit(expeEdit: Experiencia):Observable<Experiencia>{
+      return this.httpClient.put<Experiencia>(this.expURL + 'edicion', expeEdit);
     }
 
     /*public editById (id:number, experiencia: Experiencia): Observable<any>{
       return this.httpClient.put<any>(this.expURL + `edicion/${id}`, experiencia);
-    } */
+    }*/
 }

@@ -3,12 +3,15 @@
   <div id="contactame" class="links-redes-pie d-flex flex-column align-items-center justify-content-center">
    
 
-    <p class="footer-texto text-center">Contactame</p>
+    <p class="footer-texto text-center">Contactame</p> 
+    
     <app-redes></app-redes>
   </div>
   
   <!-- CONTACTO --> 
-  <app-contacto></app-contacto>
+
+  <app-domicilio></app-domicilio>
+  
 
   <!--segunda instancia de link a contenido interno-->
   <div class="links-internos-pie d-flex flex-column align-items-center justify-content-center">
@@ -20,17 +23,8 @@
     </ul>
   </div>
 
-  <div class="derechos-de-autor d-flex flex-column align-items-center justify-content-center">Creado por Cecilia Beuret (2023) &#169;</div>  
-
-  <section id="editContacto" class="bg-dark p-4">  <!-- Modificar CONTACTO -->  
-    <h6 style="color: aliceblue;">Modificar contacto </h6>
-    <div class="btn-group" role="group" aria-label="editContacto">
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editContactoModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addContactoModal"><i class="fa-solid fa-plus"></i></button>
-    </div>    
-  </section>
+  <div class="derechos-de-autor d-flex flex-column align-items-center justify-content-center bg-white p-2">Creado por Cecilia Beuret (2023) &#169;</div>  
 
   <app-modal-redes></app-modal-redes>
-  <app-modal-contacto></app-modal-contacto>
+  
 </footer>

@@ -1,7 +1,3 @@
-
-  
-    <br>
-  
     <!-- SOBRE MI --> 
     <section id="sobre-mi" class="sobre-mi text-white" *ngFor="let persona of personasList">    
       
@@ -9,10 +5,10 @@
         <!-- Banner--> 
         <!--img [src]="bannerVar"--> 
         <img [src]="persona.banner" 
-        alt="imagenBanner" width="100%" height="500vh" class="rounded-top-banner"> <!--[alt]="altBannerVar"-->
+        alt="imagenBanner" width="100%" height="350vh" class="rounded-top-banner"> <!--[alt]="altBannerVar"-->
         
         <!-- BOTÓN EDITAR banner-->  
-        <button type="button" class="btn btn-light editBanner" data-bs-toggle="modal" data-bs-target="#imgBannerModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+        <!--button type="button" class="btn btn-light editBanner" data-bs-toggle="modal" data-bs-target="#imgBannerModal"><i class="fa-sharp fa-solid fa-pen"></i></button-->
       
       <!-- mi foto-->         
         <div class="row p-3">
@@ -21,14 +17,14 @@
             alt="imagenPerfil"> <!--[alt]="altImgPerfilVar"-->
             
             <!-- BOTÓN EDITAR foto perfil-->  
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#imgPerfilModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
+            <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#imgPerfilModal"><i class="fa-sharp fa-solid fa-pen"></i></button-->
 
             <br>
             <h2 class="nombrePerfil">{{persona.nombre}} {{persona.apellido}}</h2>
             
           </div>
   
-          <div class="col-8 text-center">
+          <div class="col-7 text-center">
             <button class="btn btn-light titulo">{{persona.especialidad1}}</button>
             <button class="btn btn-light titulo">{{persona.especialidad2}}</button>
             <p>  </p>     
@@ -36,11 +32,11 @@
             <h6 class="sobreMiPerfil">{{persona.sobreMi}}</h6>
           </div>  
           
-          <div class="col-1">
+          <div class="col-2">
             <div class="btn-group" role="group" aria-label="editarPerfil"> 
-              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editPerfilModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!--Modificar Perfil-->
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editPerfilModal">Editar Perfil</button> <!--Modificar Perfil-->
               <br>
-              <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button><!--Eliminar Perfil-->
+              <!--button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button--><!--Eliminar Perfil-->
             </div>    
           </div>  
 
@@ -49,8 +45,8 @@
       </div>
     </section>
     
-    <app-modal-banner></app-modal-banner>
-    <app-modal-foto-perfil></app-modal-foto-perfil>
+    <!--app-modal-banner></app-modal-banner-->
+    <!--app-modal-foto-perfil></app-modal-foto-perfil-->
     <app-modal-datos-perfil></app-modal-datos-perfil>
 
 

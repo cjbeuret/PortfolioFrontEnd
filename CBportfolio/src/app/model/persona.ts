@@ -12,11 +12,12 @@ export class Persona {
     email : string;
     password : string;
     fechaNac : string;
-    personaid : number; //esto no sé si va
+    
+    
 
-    constructor (/*id: number,*/ nombre: string, apellido: string, especialidad1 : string, especialidad2 : string, 
-    sobreMi : string, banner : string, imagen : string, telefono : string, email : string, password : string, fechaNac : string,personaid : number){
-        /*this.id = id;*/
+    constructor (id: number, nombre: string, apellido: string, especialidad1 : string, especialidad2 : string, 
+    sobreMi : string, banner : string, imagen : string, telefono : string, email : string, password : string, fechaNac : string){
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidad1 = especialidad1;
@@ -28,7 +29,7 @@ export class Persona {
         this.email = email;
         this.password = password;
         this.fechaNac = fechaNac;
-        this.personaid = personaid; //o personaId?
+        
     }
     
   
