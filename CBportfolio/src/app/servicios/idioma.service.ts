@@ -11,6 +11,10 @@ export class IdiomaService {
 
   constructor(private httpClient:HttpClient) { }
 
+  public obtenerDatos():Observable<any>  {
+    return this.httpClient.get<any>(this.idiURL);
+  }
+
   public list(): Observable<Idioma[]> {
     return this.httpClient.get<Idioma[]>(this.idiURL + 'lista');
   }

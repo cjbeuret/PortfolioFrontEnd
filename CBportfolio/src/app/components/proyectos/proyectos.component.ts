@@ -16,7 +16,8 @@ export class ProyectosComponent implements OnInit {
   //isLogged = false;
   modoEdit: any;
   // idEditar: number;
-  isTrue = false;
+  //isTrue = false;
+  activatedRouter: any;
 
   constructor(private sProyecto: ProyectoService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
@@ -36,6 +37,18 @@ export class ProyectosComponent implements OnInit {
       this.sProyecto.list().subscribe(data => {this.proyectosList=data});
     } //llama al método list del servicio
 
+    delete(id:number){
+      if(id !=undefined){
+        this.sProyecto.delete(id).subscribe(data =>{
+          alert("Se eliminó correctamente")
+          this.cargarProyecto();
+        },err =>{
+          //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
+            window.location.reload();
+        })
+      }
+    }
+  
   /* ESTO era del JSON, hay que sacarlo
 
   //Tbn hay que traer el array, estamos instanciando la variable proyectos p usarla en ngOnInit

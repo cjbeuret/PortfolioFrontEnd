@@ -12,6 +12,10 @@ export class DomicilioService {
 
   constructor(private httpClient:HttpClient) { }
 
+  public obtenerDatos():Observable<any>  {
+    return this.httpClient.get<any>(this.domURL);
+  }
+
   public list(): Observable<Domicilio[]> {
     return this.httpClient.get<Domicilio[]>(this.domURL + 'lista');
   }

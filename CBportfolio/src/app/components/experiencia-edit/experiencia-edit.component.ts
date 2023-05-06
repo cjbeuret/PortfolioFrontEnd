@@ -52,16 +52,16 @@ get CargoValid(){
     )
   }*/
 
-  onUpdate(): void{
+onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id_experiencia'];
     this.sExperiencia.edit(this.expEditar).subscribe(
       data => {
         this.router.navigate(['']);
          alert("OK");
       }, err =>{
-         alert("Error al modificar experiencia");
-         this.router.navigate(['']);
-      }
+        alert("Error al modificar experiencia");
+        this.router.navigate(['']);
+     }
     )
   }
 

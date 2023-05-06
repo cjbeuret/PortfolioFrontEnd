@@ -14,7 +14,11 @@ export class ExperienciaService {
     };
 
   constructor(private httpClient:HttpClient) { }
-
+  
+    public obtenerDatos():Observable<any>  {
+      return this.httpClient.get<any>(this.expURL);
+    }
+  
     public list(): Observable<Experiencia[]> {
       return this.httpClient.get<Experiencia[]>(this.expURL + 'lista');
     }

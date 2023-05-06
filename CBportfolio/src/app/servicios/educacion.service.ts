@@ -12,6 +12,9 @@ export class EducacionService {
 
   constructor(private httpClient:HttpClient) { }
 
+  public obtenerDatos():Observable<any>  {
+    return this.httpClient.get<any>(this.eduURL);
+  }
   public list(): Observable<Educacion[]> {
     return this.httpClient.get<Educacion[]>(this.eduURL + 'lista');
   }

@@ -35,6 +35,7 @@ import { ModalExperienciaAddComponent } from './modales/modal-experiencia-add/mo
 import { DataService } from './servicios/data.service';
 import { InterceptorService } from './servicios/interceptor.service';
 import { ExperienciaEditComponent } from './components/experiencia-edit/experiencia-edit.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { ExperienciaEditComponent } from './components/experiencia-edit/experien
     ModalDomicilioComponent,
     ModalExperienciaAddComponent,
     ExperienciaEditComponent,
+    LoginComponent,
   
   ],
   imports: [

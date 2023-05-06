@@ -16,13 +16,15 @@ import { GuardGuard } from './servicios/guard.guard';
 import { ModalExperienciaAddComponent } from './modales/modal-experiencia-add/modal-experiencia-add.component';
 import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
 import { ExperienciaEditComponent } from './components/experiencia-edit/experiencia-edit.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  //{path: 'indice', component: IndiceComponent}, 
+  {path: 'indice', component: IndiceComponent}, 
   /*por ahora la pag inicio es Indice.
   Agregar canActivate:[GuardGuard] p proteger página inicio p EDICION si no estoy loggeado
   está asociado a línea 25 del guard.guards.ts (redirecciona al "inciar-sesion") 
   Pero no me funciona el botón Enviar del formulario de login*/
+  {path:'login', component:LoginComponent},
   {path: 'iniciar-sesion', component: ModalLoginComponent}, 
   {path: '', component: IndiceComponent}, 
   //{path:'', redirectTo:'/indice', pathMatch:'full'},

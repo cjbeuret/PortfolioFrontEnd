@@ -16,7 +16,8 @@ export class RedesComponent implements OnInit {
   //isLogged = false;
   modoEdit: any;
   // idEditar: number;
-  isTrue = false;
+  //isTrue = false;
+  activatedRouter: any;
 
   constructor(private sRed: RedService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
@@ -36,6 +37,17 @@ export class RedesComponent implements OnInit {
       this.sRed.list().subscribe(data => {this.redesList=data});
     } //llama al método list del servicio
 
+    delete(id:number){
+      if(id !=undefined){
+        this.sRed.delete(id).subscribe(data =>{
+          alert("Se eliminó correctamente")
+          this.cargarRed();
+        },err =>{
+          //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
+          window.location.reload();
+        })
+      }
+    }
 
   /* ESTO era del JSON, hay que sacarlo
 

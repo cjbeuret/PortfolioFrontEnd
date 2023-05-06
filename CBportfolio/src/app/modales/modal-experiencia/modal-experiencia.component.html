@@ -21,7 +21,7 @@
           <div class="mb-3">
             <label for="inputEmpresa" class="form-label">Modificar Empresa</label>
             <input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEdEmpresa" 
-            name="inputEdEmpresa" formControlName="empresa" [(ngModel)]="expeEditar.empresa">
+            name="inputEdEmpresa" formControlName="empresa" [(ngModel)]="expe.empresa">
 
             <!--<input class="form-control" type="text" placeholder="inserte nombre de la empresa" id="inputEmpresa" 
             name="inputEmpresa" formControlName="empresa" [(ngModel)]="expe.empresa" 
@@ -35,17 +35,17 @@
           <div class="mb-3">
             <label for="logoEmpresa" class="form-label">Modificar logo de Empresa</label>
             <input class="form-control" type="url" placeholder="inserte url del logo" id="logoEmpresa" name="logoEmpresa" 
-            formControlName="logo" [(ngModel)]="expeEditar.logo">             
+            formControlName="logo" [(ngModel)]="expe.logo">             
           </div>
           <div class="mb-3">
             <label for="urlEmpresa" class="form-label">Modificar url de Empresa</label>
             <input class="form-control" type="url" placeholder="inserte url de empresa" id="urlEmpresa" name="urlEmpresa"
-            formControlName="empresa" [(ngModel)]="expeEditar.url">             
+            formControlName="empresa" [(ngModel)]="expe.url">             
           </div>
           <div class="mb-3">
             <label for="inputCargo" class="form-label">Modificar Cargo</label>
             <input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
-            formControlName="cargo" [(ngModel)]="expeEditar.cargo">
+            formControlName="cargo" [(ngModel)]="expe.cargo">
 
             <!--<input class="form-control" type="text" placeholder="inserte cargo" id="inputCargo" name="inputCargo"
             formControlName="cargo" [(ngModel)]="expe.cargo"
@@ -58,18 +58,18 @@
           </div>
           <div class="mb-3">
             <label for="experienciaInfo" class="form-label">Modificar descripción de puesto</label>
-            <textarea class="form-control" id="experienciaInfo" rows="3" formControlName="descPuesto" [(ngModel)]="expeEditar.descPuesto"></textarea>               
+            <textarea class="form-control" id="experienciaInfo" rows="3" formControlName="descPuesto" [(ngModel)]="expe.descPuesto"></textarea>               
           </div>
           <div class="mb-3">
             <label for="experienciaFechaInicio" class="form-label">Modificar Fecha de Inicio</label>
-            <input type="date" class="form-control" id="experienciaFechaInicio" formControlName="inicio" [(ngModel)]="expeEditar.inicio">
+            <input type="date" class="form-control" id="experienciaFechaInicio" formControlName="inicio" [(ngModel)]="expe.inicio">
           </div>
           <div class="mb-3">
             <label for="experienciaFechaFin" class="form-label"> Modificar Fecha de Fin</label>
-            <input type="date" class="form-control" id="experienciaFechaFin" formControlName="fin" [(ngModel)]="expeEditar.fin">
+            <input type="date" class="form-control" id="experienciaFechaFin" formControlName="fin" [(ngModel)]="expe.fin">
           </div>
           <div>
-            <input type="hidden" formControlName="id_persona" [(ngModel)]="expeEditar.id_persona" id="">
+            <input type="hidden" formControlName="id_persona" [(ngModel)]="expe.id_persona" id="">
           </div>
         </div>
         <div class="modal-footer">

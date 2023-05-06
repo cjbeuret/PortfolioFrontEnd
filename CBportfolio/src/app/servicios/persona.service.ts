@@ -11,6 +11,10 @@ export class PersonaService {
 
   constructor(private httpClient:HttpClient) { }
 
+  public obtenerDatos():Observable<any>  {
+    return this.httpClient.get<any>(this.perURL);
+  }
+
  /*
  El BACKEND tiene este método, pero en el FRONT está en el auth.service.ts
  

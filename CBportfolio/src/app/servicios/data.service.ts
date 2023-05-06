@@ -24,8 +24,9 @@ export class DataService {
   obtenerDatos():Observable<any>  
   {
     //acá reemplaza la conexión al JSON x conexión a la API
-    //en el metodo GET llama a la API persona (tengo 1 x cada compoentne del Backend)
-    return this.http.get<any>(this.url+"persona");
+    //en el metodo GET llama a la API persona (tengo 1 x cada componente del Backend)
+    //return this.http.get<any>(this.url+"persona");
+    return this.http.get<any>(this.url);
     
   }  
     

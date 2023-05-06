@@ -28,15 +28,32 @@
           <li class="nav-item"><a class="nav-link" href="#habilidades"><h5>Habilidades</h5></a></li>
           <li class="nav-item"><a class="nav-link" href="#proyectos"><h5>Proyectos</h5></a></li>
           <li class="nav-item"><a class="nav-link" href="#contactame"><h5>Contacto</h5></a></li>         
+        
+        
+          <!--PRUEBA LOGIN-->
+          <!-- Iniciar sesión -->
+          <li *ngIf="esta_logueado, else elseBlock" class="nav-item">
+            <button type="button" class="btn btn-primary" (click)="onlogout()">Cerrar sesión</button>
+          </li>
+          
+          <ng-template #elseBlock>
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary" (click)="onlogin()">Iniciar sesión</button>
+            </li>
+          </ng-template>
+        
+        
         </ul>
       
-      
+        
+
+
         <!-- Button Login modal -->
         
         <!--Creo que (click)="login()" hay que sacarlo (tb del *.ts) xq con el modal no hace falta-->
         <!--button type="button" class="btn btn-light" (click)="login()" *ngIf="!modoEdit"> INICIAR SESION</button--> <!--SACAR ESTE BOTÓN-->
-        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal" > 
-          <!--<i class="fa-sharp fa-solid fa-lock"></i>-->
+        <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal" > 
+          <i class="fa-sharp fa-solid fa-lock"></i>
           Login <i class="fa-solid fa-right-to-bracket"></i>
         </button>
         <app-modal-login></app-modal-login>
@@ -44,11 +61,11 @@
 
         <!-- Button Logout modal -->
         
-        <button type="button" class="btn btn-light" (click)="onLogOut()" *ngIf="modoEdit"> CERRAR SESION</button><!--TAL VEZ HAY Q SACAR ESTE BOTÓN-->
-        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#logoutModal">
-          <!-- <i class="fa-solid fa-lock-open"></i>-->
+        <!--button type="button" class="btn btn-light" (click)="onLogOut()" *ngIf="modoEdit"> CERRAR SESION</button><!--TAL VEZ HAY Q SACAR ESTE BOTÓN-->
+        <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#logoutModal">
+          <i class="fa-solid fa-lock-open"></i>
           <i class="fa-solid fa-right-from-bracket"></i>
-        </button>
+        </button-->
         <app-modal-logout></app-modal-logout>
 
       </div>

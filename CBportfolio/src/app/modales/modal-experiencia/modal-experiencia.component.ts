@@ -15,12 +15,11 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 export class ModalExperienciaComponent implements OnInit {
   
   expeForm: FormGroup;
+  id: number;
   
-  //id: number;
+  //expe: Experiencia = null;
+  expe: Experiencia = new Experiencia (0,'','','','','','','',1);
   
-  //expeEditar: Experiencia = null;
-  expeEditar: Experiencia = new Experiencia (0,'','','','','','','',1);
-
     
   constructor(
     private formBuilder: FormBuilder, 
@@ -62,6 +61,8 @@ export class ModalExperienciaComponent implements OnInit {
   }
  
 
+
+/*
   ngOnInit(): void {
     this.traerExperiencia();
   }
@@ -86,7 +87,39 @@ export class ModalExperienciaComponent implements OnInit {
         //window.location.reload();
       }
     )}     
+  */
+
   
+
+
+  /*cerrar(): void{
+    window.location.reload();
+  }*/
+
+  /*limpiar(): void{
+    this.expForm.reset();
+  }*/
+
+  ngOnInit(): void {
+    this.id = this.insert.idEditar;
+    this.sExperiencia.getById(this.id).subscribe(data =>
+      {console.log("paso 2");
+      this.expe=data
+      console.log(this.expe);
+    },err =>{
+        //alert("Error al llamar a los datos");
+      }
+    )
+  }
+
+  onUpdate(): void{
+    this.sExperiencia.edit(this.expe).subscribe(
+      data=>{alert("Experiencia modificada");
+    }, err=>{
+      alert("fallo al modificar");
+    })
+  } 
+
   onEnviar(event:Event){
     event.preventDefault;
     if(this.expeForm.valid){
@@ -99,35 +132,12 @@ export class ModalExperienciaComponent implements OnInit {
       this.expeForm.markAllAsTouched();
     }
   }
-
-  /*cerrar(): void{
-    window.location.reload();
-  }*/
-
-  /*limpiar(): void{
-    this.expForm.reset();
-  }*/
-
-/*ngOnInit(): void {
-    this.info();
-  }
-
-  info():void {
-    //this.id = this.insert.idEditar;
-    this.sExperience.getById(this.id).subscribe(data =>
-      {this.expe=data},
-      err =>{
-        alert("Error al llamar a los datos");
-      });
-  }
-
-  onUpdate(): void{
-    this.sExperience.edit(this.expe).subscribe(data=>{})
-  } 
-*/ 
+  
   /*onUpdate(): void{
-    this.sExperience.editById(this.id, this.expe).subscribe(data=>{})
+    this.sExperience.editById(this.id, this.expeEditar).subscribe(data=>{})
   } */
+
+
 
   //MGB computacion
 /*
@@ -137,7 +147,6 @@ export class ModalExperienciaComponent implements OnInit {
     private activatedRouter: ActivatedRoute, 
     private router: Router) {}
   
-
 
 ngOnInit(): void {
   const id = this.activatedRouter.snapshot.params['id']; //captura id de la experiencia q queremos modificar
@@ -172,6 +181,7 @@ onUpdate():void {
 
  */
 
+  
 
 }
 

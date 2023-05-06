@@ -16,7 +16,8 @@ export class EducacionComponent implements OnInit {
   //isLogged = false;
   modoEdit: any;
   // idEditar: number;
-  isTrue = false;
+  //isTrue = false;
+  activatedRouter: any;
    
   constructor(private sEducacion: EducacionService, private router:Router) {} 
    //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
@@ -36,17 +37,32 @@ export class EducacionComponent implements OnInit {
       this.sEducacion.list().subscribe(data => {this.educacionesList=data});
     } //llama al método list del servicio
   
-    borrar(id?:number){
+    delete(id:number){
       if(id!=undefined){
         this.sEducacion.delete(id).subscribe(
           data=>{
+            alert("Se eliminó correctamente");
             this.cargarEducacion();
           }, err =>{
-            alert("No se pudo eliminar");
+            alert("No se pudo eliminar"); // SALE X EL ERROR
+            window.location.reload();
           }
         )
       }
     }
+
+    
+   /*onUpdate(): void{
+      const id = this.activatedRouter.snapshot.params['id_experiencia'];
+      this.sExperiencia.edit(this.expe).subscribe(
+        data =>{
+          alert("Experiencia modificada"); 
+          this.router.navigate(['']);
+          //window.location.reload();
+        }
+      )
+    } */
+    
   
   /* ESTO era del JSON, hay que sacarlo
 

@@ -16,7 +16,9 @@ export class DomicilioComponent implements OnInit {
   //isLogged = false;
   modoEdit: any;
   // idEditar: number;
-  isTrue = false;
+  //isTrue = false;
+  activatedRouter: any;
+
    
   constructor(private sDomicilio: DomicilioService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
@@ -36,7 +38,17 @@ export class DomicilioComponent implements OnInit {
       this.sDomicilio.list().subscribe(data => {this.domiciliosList=data});
     } //llama al método list del servicio
 
-
+    delete(id:number){
+      if(id !=undefined){
+        this.sDomicilio.delete(id).subscribe(data =>{
+          alert("Se eliminó correctamente")
+          this.cargarDomicilio();
+        },err =>{
+          alert("No se pudo eliminar la experiencia");
+          window.location.reload();
+        })
+      }
+    }
 
    /* ESTO era del JSON, hay que sacarlo
 

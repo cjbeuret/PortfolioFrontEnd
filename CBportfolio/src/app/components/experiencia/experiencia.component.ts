@@ -17,26 +17,84 @@ export class ExperienciaComponent implements OnInit {
   //experienciasList: any = []; --> esta era la del JSON
   
   //esto es del modal
-  expeForm: FormGroup;
-  expeEditar: Experiencia = new Experiencia (0,'','','','','','','',1);
+  //expeForm: FormGroup;
+  //expe: Experiencia = new Experiencia (0,'','','','','','','',1); //?esto es de EDIT?
 
   //isLogged = false;
   modoEdit: any;
   idEditar: number;
-  //isTrue = false;
+  isTrue = false;
   activatedRouter: any;
    
   constructor(private sExperiencia: ExperienciaService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
+ 
+
+  ngOnInit(): void {
+    this.cargarExperiencia();
+      if(sessionStorage.getItem('currentUser') == "null") {
+       this.modoEdit = false;
+     } else if(sessionStorage.getItem('currentUser') == null) {
+       this.modoEdit = false;
+     } else {
+       this.modoEdit = true;
+     } 
+    }  
+
   
-  // datos se refiere a datosPorfolio
-   
-  //eliminar: se hace desde el componente de las Expriencias
-  //cargar: se hace a través de un modal q se va a encargar de cargar la experiencia
-  //va a editar una expriencia que lo tiene en otro componente (otro formulario) q es un modal
-  //agregar tb lo tiene en otro componente
+    cargarExperiencia(): void {
+      this.sExperiencia.list().subscribe(
+        data => {
+          this.experienciasList=data});
+          //this.router.navigate(['']);
+          //window.location.reload();
+    } //llama al método list del servicio
+
+
+    /*idEdit(id:number){
+      /*this.isTrue = true;
+      this.idEditar = id;
+      console.log("paso1");
+    }*/
   
-  // TAL VEZ ESTO VA EN EL MODAL?!
+    delete(id:number){
+      if(id !=undefined){
+        this.sExperiencia.delete(id).subscribe(
+          data =>{
+            alert("Se eliminó correctamente");
+            this.cargarExperiencia();
+          },err =>{
+            //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
+            window.location.reload();
+          }
+        )
+      }
+    }
+  
+   /*onUpdate(): void{
+      const id = this.activatedRouter.snapshot.params['id_experiencia'];
+      this.sExperiencia.edit(this.expe).subscribe(
+        data =>{
+          alert("Experiencia modificada"); 
+          this.router.navigate(['']);
+          //window.location.reload();
+        }
+      )
+    } */
+  
+  
+//  constructor(private sExperiencia: ExperienciaService, /*tokenService:TokenService*/) {} 
+/*
+  ngOnInit(): void {
+    this.cargarExperiencia();
+    /* if(this.tokenService.getToken()){
+        this.isLogged = true;
+    }else{
+      this,isLogged = false;
+    }  
+  }
+
+// TAL VEZ ESTO VA EN EL MODAL?!
   
   /*ngOnInit(): void {
     this.datos.obtenerDatos().subscribe(data => {
@@ -54,91 +112,11 @@ export class ExperienciaComponent implements OnInit {
   }
   */
 
-  ngOnInit(): void {
-    this.cargarExperiencia();
-      if(sessionStorage.getItem('currentUser') == "null") {
-       this.modoEdit = false;
-     } else if(sessionStorage.getItem('currentUser') == null) {
-       this.modoEdit = false;
-     } else {
-       this.modoEdit = true;
-     } 
-    }  
   
-    cargarExperiencia(): void {
-      this.sExperiencia.list().subscribe(
-        data => {
-          this.experienciasList=data});
-    } //llama al método list del servicio
-    
-
-  //CON ESTE DE ABAJO FUNCIONA. REVISAR!
-
-//  constructor(private sExperiencia: ExperienciaService, /*tokenService:TokenService*/) {} 
-/*
-  ngOnInit(): void {
-    this.cargarExperiencia();
-    /* if(this.tokenService.getToken()){
-        this.isLogged = true;
-    }else{
-      this,isLogged = false;
-    }  
-  }
-
-  //acá prueba una modificación xq el loggin q implementé es distinto
-  ngOnInit(): void {
-    this.cargarExperiencia();
-      if(sessionStorage.getItem('currentUser') == "null") {
-       this.modoEdit = false;
-     } else if(sessionStorage.getItem('currentUser') == null) {
-       this.modoEdit = false;
-     } else {
-       this.modoEdit = true;
-     } 
-    }  
-
-  */ 
-
-
- /*idEdit(id:number){
-    this.isTrue = true;
-    this.idEditar = id;
-  }*/
-  
- /* 
-  delete(id:number){
-    this.sExperiencia.delete(id).subscribe(data =>{
-     alert("Se eliminó correctamente")
-     this.cargarExperiencia();
-    });
-  }
-  */
-
-  delete(id:number){
-    if(id !=undefined){
-      this.sExperiencia.delete(id).subscribe(data =>{
-        alert("Se eliminó correctamente")
-        this.cargarExperiencia();
-      },err =>{
-        //alert("No se pudo eliminar la experiencia");
-        window.location.reload();
-      })
-    }
-  }
-
-
-  onUpdate(): void{
-    const id = this.activatedRouter.snapshot.params['id_experiencia'];
-    
-    this.sExperiencia.edit(this.expeEditar).subscribe(
-        data => {
-          alert("Experiencia modificada"); 
-          this.router.navigate(['']);
-          //window.location.reload();
-        }
-      )} 
 
 } 
+  
+
 
   
   

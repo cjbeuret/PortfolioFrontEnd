@@ -16,7 +16,8 @@ export class HabilidadesComponent implements OnInit {
   //isLogged = false;
   modoEdit: any;
   // idEditar: number;
-  isTrue = false;
+  //isTrue = false;
+  activatedRouter: any;
    
   constructor(private sHabilidad: HabilidadService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
@@ -40,9 +41,9 @@ export class HabilidadesComponent implements OnInit {
       if(id !=undefined){
         this.sHabilidad.delete(id).subscribe(data =>{
           alert("Se eliminó correctamente")
-          //this.cargarExperiencia();
+          this.cargarHabilidad();
         },err =>{
-          alert("No se pudo eliminar la experiencia");
+          alert("No se pudo eliminar la experiencia");//SALE X EL ERROR
         })
       }
     }

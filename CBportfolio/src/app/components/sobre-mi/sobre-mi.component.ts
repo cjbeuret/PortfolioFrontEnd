@@ -11,6 +11,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class SobreMiComponent implements OnInit {
  
+  esta_logueado: boolean = false;
   personasList: Persona[]=[]
   /*
   nombreVar: string = '';
@@ -29,14 +30,34 @@ export class SobreMiComponent implements OnInit {
   */
 
    //isLogged = false;
-   modoEdit: any;
+   //modoEdit: any;
    // idEditar: number;
-   isTrue = false;
+   //isTrue = false;
 
 
   constructor(private sPersona: PersonaService, private router:Router) {}
 
   ngOnInit(): void {
+    this.mostrarPersona();
+    if (localStorage.getItem("estado_login"))
+            {
+              this.esta_logueado=true;
+            }
+            else
+              {
+              this.esta_logueado=false;
+              }
+  }
+
+  mostrarPersona():void {
+    this.sPersona.list().subscribe(
+      data => {
+        this.personasList=data;
+                
+    });
+  }
+
+  /*ngOnInit(): void {
     this.cargarPersona();
     if(sessionStorage.getItem('currentUser') == "null") {
      this.modoEdit = false;
@@ -45,7 +66,7 @@ export class SobreMiComponent implements OnInit {
    } else {
      this.modoEdit = true;
    } 
-  }
+  }*/
 
   
   /*

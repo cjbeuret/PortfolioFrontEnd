@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/servicios/auth.service';
+//import { AuthService } from 'src/app/servicios/auth.service';
 //import { DataService } from 'src/app/servicios/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LoginService } from 'src/app/servicios/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,25 +11,56 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+//redesList : any = [];
+
 //isLogged = false;
-modoEdit: any;
-idEditar: number;
-isTrue = false;
+//modoEdit: any;
 
-  //Tbn hay que traer el array, estamos instanciando la variable experiencias p usarla en ngOnInit
-  redesList : any = [];
-  mostrar: boolean = false;
+logindatos:any;
+esta_logueado: boolean = false;
 
+
+constructor(
+  private datosLogin: LoginService,
+  private router:Router
+){}
+
+ngOnInit(): void {
+
+  if (localStorage.getItem("estado_login"))
+      {
+        this.esta_logueado=true;
+      }
+      else
+        {
+         this.esta_logueado=false;
+        }
+ 
+}
+     
+onlogin() {
+  this.router.navigate(['/login']);
+}
+
+onlogout(){
+  //localStorage.setItem('estado_login','no_logueado');
+  localStorage.removeItem('estado_login')
+  console.log('tiene que cerrar');
+  window.location.reload();
+}
+  
+
+  /*
   constructor(private router:Router, private authService: AuthService) {}
   
-  /* este está en MGB Computación
+   este está en MGB Computación
   ngOnInit(): void {
     if(this.tokenService.getToken()){
       this.isLogged = true;
     }else{
       this,isLogged = false;
     }  
-  }*/
+  }
 
   //este sería el adaptado
   ngOnInit(): void {
@@ -50,7 +82,7 @@ isTrue = false;
     //this.authService.iniciarSesion(){
       this.router.navigate(['/iniciar-sesion'])
     }
-
+*/
   
 
   

@@ -11,6 +11,9 @@ export class RedService {
 
   constructor(private httpClient:HttpClient) { }
 
+  public obtenerDatos():Observable<any>  {
+    return this.httpClient.get<any>(this.redURL);
+  }
   public list(): Observable<Red[]> {
     return this.httpClient.get<Red[]>(this.redURL + 'lista');
   }
