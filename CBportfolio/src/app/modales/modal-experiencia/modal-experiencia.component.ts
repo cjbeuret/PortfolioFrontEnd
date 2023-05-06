@@ -60,6 +60,40 @@ export class ModalExperienciaComponent implements OnInit {
     return this.Cargo?.touched && !this.Cargo.valid;
   }
  
+  ngOnInit(): void {}
+/* REVISAR ESTE MÉTODOOOO
+  ngOnInit(): void {
+    this.id = this.insert.idEditar;
+    this.sExperiencia.getById(this.id).subscribe(data =>
+      {console.log("paso 2");
+      this.expe=data
+      console.log(this.expe);
+    },err =>{
+        //alert("Error al llamar a los datos");
+      }
+    )
+  }*/
+
+  onUpdate(): void{
+    this.sExperiencia.edit(this.expe).subscribe(
+      data=>{alert("Experiencia modificada");
+    }, err=>{
+      alert("fallo al modificar");
+    })
+  } 
+
+  onEnviar(event:Event){
+    event.preventDefault;
+    if(this.expeForm.valid){
+      this.onUpdate(); //toma el método onUpdate
+      alert("OK.Datos modificados");
+      //this.router.navigate(['']);
+      window.location.reload();
+    }else{
+      alert("Error de carga. Intente nuevamente");
+      this.expeForm.markAllAsTouched();
+    }
+  }
 
 
 /*
@@ -100,38 +134,8 @@ export class ModalExperienciaComponent implements OnInit {
     this.expForm.reset();
   }*/
 
-  ngOnInit(): void {
-    this.id = this.insert.idEditar;
-    this.sExperiencia.getById(this.id).subscribe(data =>
-      {console.log("paso 2");
-      this.expe=data
-      console.log(this.expe);
-    },err =>{
-        //alert("Error al llamar a los datos");
-      }
-    )
-  }
-
-  onUpdate(): void{
-    this.sExperiencia.edit(this.expe).subscribe(
-      data=>{alert("Experiencia modificada");
-    }, err=>{
-      alert("fallo al modificar");
-    })
-  } 
-
-  onEnviar(event:Event){
-    event.preventDefault;
-    if(this.expeForm.valid){
-      this.onUpdate(); //toma el método onUpdate
-      alert("OK.Datos modificados");
-      //this.router.navigate(['']);
-      window.location.reload();
-    }else{
-      alert("Error de carga. Intente nuevamente");
-      this.expeForm.markAllAsTouched();
-    }
-  }
+ 
+  
   
   /*onUpdate(): void{
     this.sExperience.editById(this.id, this.expeEditar).subscribe(data=>{})

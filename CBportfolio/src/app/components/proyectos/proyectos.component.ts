@@ -13,8 +13,8 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 export class ProyectosComponent implements OnInit {
   
   proyectosList: Proyecto[]=[]
-  //isLogged = false;
-  modoEdit: any;
+  isLogged : boolean = false;
+  //modoEdit: any;
   // idEditar: number;
   //isTrue = false;
   activatedRouter: any;
@@ -24,15 +24,13 @@ export class ProyectosComponent implements OnInit {
   
   ngOnInit(): void {
     this.cargarProyecto();
-      if(sessionStorage.getItem('currentUser') == "null") {
-       this.modoEdit = false;
-     } else if(sessionStorage.getItem('currentUser') == null) {
-       this.modoEdit = false;
-     } else {
-       this.modoEdit = true;
-     } 
-    }  
-  
+    if (localStorage.getItem("modoLogin")) {
+      this.isLogged=true;
+    } 
+    else {
+      this.isLogged=false;
+    }
+  }
     cargarProyecto(): void {
       this.sProyecto.list().subscribe(data => {this.proyectosList=data});
     } //llama al método list del servicio
@@ -48,6 +46,19 @@ export class ProyectosComponent implements OnInit {
         })
       }
     }
+  
+
+
+    /*ngOnInit(): void {
+    this.cargarProyecto();
+      if(sessionStorage.getItem('currentUser') == "null") {
+       this.modoEdit = false;
+     } else if(sessionStorage.getItem('currentUser') == null) {
+       this.modoEdit = false;
+     } else {
+       this.modoEdit = true;
+     } 
+    }  */
   
   /* ESTO era del JSON, hay que sacarlo
 

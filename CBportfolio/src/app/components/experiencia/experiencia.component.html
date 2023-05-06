@@ -7,7 +7,7 @@
       <!-- Modificar EXPERIENCIA -->  
       <div id="editExperiencia" class="bg-dark p-2">  
         <a href="#top"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-arrow-turn-up"></i></button></a>
-        <div class="btn-group" role="group" aria-label="agregarExperiencia" >
+        <div class="btn-group" role="group" aria-label="agregarExperiencia" *ngIf="isLogged">
           <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editExpModal"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
           <!--button type="submit" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar"><i class="fa-solid fa-trash"></i></button-->
           <button type="submit" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addExpModal"><i class="fa-solid fa-plus"></i> AGREGAR EXPERIENCIA</button> <!-- Agregar-->
@@ -33,7 +33,7 @@
         </div>  
         
         <div class="col-1" >
-          <div class="btn-group" role="group" aria-label="editarExperiencia"> 
+          <div class="btn-group" role="group" aria-label="editarExperiencia" *ngIf="isLogged"> 
             
             <button type="button" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal">
               <i class="fa-sharp fa-solid fa-pen" ></i> 
@@ -46,7 +46,7 @@
             <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar" (click)="delete(experiencia.id_experiencia)">
               <i class="fa-solid fa-trash"></i>
             </button><!-- Eliminar-->
-            <!--falta agregar luego de submit *ngIf="isLogged" o "modoEdit" -->
+            
           </div>  
         </div> 
       </div>

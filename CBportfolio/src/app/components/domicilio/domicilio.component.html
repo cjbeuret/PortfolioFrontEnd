@@ -1,7 +1,7 @@
 <div class="contacto container-fluid rounded shadow-sm mb-5 bg-body-transparent p-0">
   <div class="row p-3">
     <div class="col-1">
-      <a href="#top"><button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-arrow-turn-up"></i></button></a>        
+      <a href="#top"><button type="button" class="btn btn-outline-dark" *ngIf="isLogged"><i class="fa-solid fa-arrow-turn-up"></i></button></a>        
     </div>
     <div class="col-5">
       <h4><strong>Domicilio</strong></h4>
@@ -37,7 +37,7 @@
       </div>  
     </div>
 
-    <div class="col-1"> <!-- BOTÓN EDITAR domicilio-->  
+    <div class="col-1" *ngIf="isLogged"> <!-- BOTÓN EDITAR domicilio-->  
       <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editDomicilioModal"><i class="fa-sharp fa-solid fa-pen"></i></button>
     </div>
 

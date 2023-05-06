@@ -7,7 +7,7 @@
           <!-- Modificar HABILIDADES -->  
           <section id="editHabilidades" class="bg-dark p-2">  
             <a href="#top"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-arrow-turn-up"></i></button></a>
-            <div class="btn-group" role="group" aria-label="editarHabilidades">
+            <div class="btn-group" role="group" aria-label="editarHabilidades" *ngIf="isLogged">
               <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button-->
               <!--button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button-->
               <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addHabModal"><i class="fa-solid fa-plus"></i>AGREGAR HABILIDAD</button> <!-- Agregar-->
@@ -24,8 +24,11 @@
                   <span><i [ngClass]="habilidad.span"></i></span>
                 </div>
                 <h5>{{habilidad.nombreHab}}</h5>
-                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-                <button type="button" class="btn btn-light" (click)="delete(habilidad.id_habilidad)"><i class="fa-solid fa-trash"></i></button> 
+                <div *ngIf="isLogged">
+                  <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editHabModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+                  <button type="button" class="btn btn-light" (click)="delete(habilidad.id_habilidad)"><i class="fa-solid fa-trash"></i></button> 
+                </div>
+                
               </div> 
             </div>
           </div>

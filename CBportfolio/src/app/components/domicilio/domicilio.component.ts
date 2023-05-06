@@ -13,8 +13,8 @@ import { DomicilioService } from 'src/app/servicios/domicilio.service';
 export class DomicilioComponent implements OnInit {
 
   domiciliosList: Domicilio[]=[]
-  //isLogged = false;
-  modoEdit: any;
+  isLogged: boolean = false;
+  //modoEdit: any;
   // idEditar: number;
   //isTrue = false;
   activatedRouter: any;
@@ -25,6 +25,33 @@ export class DomicilioComponent implements OnInit {
   
   ngOnInit(): void {
     this.cargarDomicilio();
+    if (localStorage.getItem("modoLogin")) {
+      this.isLogged=true;
+    } 
+    else {
+      this.isLogged=false;
+    }
+  }
+ 
+  cargarDomicilio(): void {
+    this.sDomicilio.list().subscribe(data => {this.domiciliosList=data});
+  } //llama al método list del servicio
+
+  delete(id:number){
+    if(id !=undefined){
+      this.sDomicilio.delete(id).subscribe(data =>{
+        alert("Se eliminó correctamente")
+        this.cargarDomicilio();
+      },err =>{
+        //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
+        window.location.reload();
+      })
+    }
+  }
+
+
+ /*ngOnInit(): void {
+    this.cargarDomicilio();
       if(sessionStorage.getItem('currentUser') == "null") {
        this.modoEdit = false;
      } else if(sessionStorage.getItem('currentUser') == null) {
@@ -33,22 +60,7 @@ export class DomicilioComponent implements OnInit {
        this.modoEdit = true;
      } 
     }  
-  
-    cargarDomicilio(): void {
-      this.sDomicilio.list().subscribe(data => {this.domiciliosList=data});
-    } //llama al método list del servicio
-
-    delete(id:number){
-      if(id !=undefined){
-        this.sDomicilio.delete(id).subscribe(data =>{
-          alert("Se eliminó correctamente")
-          this.cargarDomicilio();
-        },err =>{
-          alert("No se pudo eliminar la experiencia");
-          window.location.reload();
-        })
-      }
-    }
+  */
 
    /* ESTO era del JSON, hay que sacarlo
 

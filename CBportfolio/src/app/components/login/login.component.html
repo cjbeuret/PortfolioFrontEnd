@@ -1,5 +1,5 @@
 <h3 class="m-5">Iniciar sesión</h3>
-<form [formGroup]="formularioLogin" (ngSubmit)="onLogin($event)" class="m-5">
+<form [formGroup]="loginForm" (ngSubmit)="onLogin($event)" class="m-5">
   <div class="form-group">
     <label for="exampleInputEmail1">Usuario</label>
     <input type="email" formControlName="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

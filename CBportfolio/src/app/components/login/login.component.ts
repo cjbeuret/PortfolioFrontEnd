@@ -10,8 +10,8 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  formularioLogin: FormGroup;
-  usuarioArray: Usuario[] = [];
+  loginForm: FormGroup;
+  usuariosList: Usuario[] = [];
   
     
   constructor(private formBuilder:FormBuilder,
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
               private datos:UsuarioService
     ) { 
 
-    this.formularioLogin=this.formBuilder.group(
+    this.loginForm=this.formBuilder.group(
       {
         username: ['',[Validators.required]],
         password: ['',[Validators.required]],
@@ -29,32 +29,32 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void{
     this.datos.list().subscribe(
-      datau=>{
-        this.usuarioArray=datau;
+      data=>{
+        this.usuariosList=data;
             
     });
   }
   
 
 get Username(){
-  return this.formularioLogin.get('username');
+  return this.loginForm.get('username');
 }
 
 get Password() {
-  return this.formularioLogin.get('password');
+  return this.loginForm.get('password');
 }
  
 onLogin(event: Event){
-  if (this.formularioLogin.value.password===this.usuarioArray[0].password && 
+  if (this.loginForm.value.password===this.usuariosList[0].password && 
     
-    this.formularioLogin.value.username===this.usuarioArray[0].username)
+    this.loginForm.value.username===this.usuariosList[0].username)
   {    
-    localStorage.setItem('estado_login','logueado');
-    alert('Te logueaste correctamente');
+    localStorage.setItem('modoLogin','logueado');
+    alert('Iniciaste sesión correctamente');
     this.ruta.navigate(['/indice']);
   }
   else {
-    alert('Ingreso incorrecto');
+    alert('Datos invalidos. Vuelve a intentar');
     this.ruta.navigate(['/indice']);
      }
 }

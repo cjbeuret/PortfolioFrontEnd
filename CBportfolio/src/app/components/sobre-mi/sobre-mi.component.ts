@@ -11,25 +11,11 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class SobreMiComponent implements OnInit {
  
-  esta_logueado: boolean = false;
+  isLogged: boolean = false;
   personasList: Persona[]=[]
-  /*
-  nombreVar: string = '';
-  apellidoVar: string = '';
-  especialidad1Var: string = '';
-  especialidad2Var: string = '';
-  sobreMiVar: string = '';
-  bannerVar: any ='';
-  //altBannerVar: any ='';
-  imagenPerfilVar: any = '';
-  //altImgPerfilVar: any = '';
-  telefonoVar: any = '';
-  emailVar: string = '';
-  passwordVar: string = '';
-  fechaNacVar: string = '';
-  */
+  
 
-   //isLogged = false;
+   
    //modoEdit: any;
    // idEditar: number;
    //isTrue = false;
@@ -38,57 +24,15 @@ export class SobreMiComponent implements OnInit {
   constructor(private sPersona: PersonaService, private router:Router) {}
 
   ngOnInit(): void {
-    this.mostrarPersona();
-    if (localStorage.getItem("estado_login"))
-            {
-              this.esta_logueado=true;
-            }
-            else
-              {
-              this.esta_logueado=false;
-              }
-  }
-
-  mostrarPersona():void {
-    this.sPersona.list().subscribe(
-      data => {
-        this.personasList=data;
-                
-    });
-  }
-
-  /*ngOnInit(): void {
     this.cargarPersona();
-    if(sessionStorage.getItem('currentUser') == "null") {
-     this.modoEdit = false;
-   } else if(sessionStorage.getItem('currentUser') == null) {
-     this.modoEdit = false;
-   } else {
-     this.modoEdit = true;
-   } 
-  }*/
-
-  
-  /*
-  cargarPersona(): void {
-    this.sPersona.getById(1).subscribe(data => {
-    this.nombreVar=data.nombre;
-    this.apellidoVar=data.apellido;
-    this.especialidad1Var=data.especialidad1;
-    this.especialidad2Var=data.especialidad2;
-    this.sobreMiVar=data.sobreMi;
-    this.bannerVar=data.banner;
-    //this.altBannerVar=data.altBanner;
-    this.imagenPerfilVar=data.imagen;
-    //this.altImgPerfilVar=data.altImagenPerfil;
-    this.telefonoVar=data.telefono;
-    this.emailVar=data.email;
-    this.passwordVar=data.password;
-    this.fechaNacVar=data.fechaNac;
-    });
+    if (localStorage.getItem("modoLogin")) {
+      this.isLogged=true;
+    } 
+    else {
+      this.isLogged=false;
+    }
   }
-  */
-  
+
   cargarPersona(): void {
     this.sPersona.list().subscribe(data => {this.personasList=data});
   } //llama al método list del servicio
@@ -99,13 +43,30 @@ export class SobreMiComponent implements OnInit {
         alert("Se eliminó correctamente")
         this.cargarPersona();
       },err =>{
-        //alert("No se pudo eliminar la experiencia");
+        alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
         window.location.reload();
       })
     }
   }
+  
+  
+/*ngOnInit(): void {
+    this.cargarPersona();
+    if(sessionStorage.getItem('currentUser') == "null") {
+     this.modoEdit = false;
+   } else if(sessionStorage.getItem('currentUser') == null) {
+     this.modoEdit = false;
+   } else {
+     this.modoEdit = true;
+   } 
+  }*/
+  
+  
+  
+  
   /* ESTO era del JSON, hay que sacarlo
 
+  
   bannerVar: any ='';
   //altBannerVar: any ='';
   imagenPerfilVar: any = '';

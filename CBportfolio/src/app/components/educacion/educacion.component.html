@@ -7,7 +7,7 @@
       <!-- Modificar EDUCACION -->  
       <article id="editEducacion" class="bg-dark p-2">  
         <a href="#top"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-arrow-turn-up"></i></button></a>
-        <div class="btn-group" role="group" aria-label="editarEducacion">
+        <div class="btn-group" role="group" aria-label="editarEducacion" *ngIf="isLogged">
           <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editEducModal"><i class="fa-sharp fa-solid fa-pen"></i></button-->
           <!--button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button-->
           <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addEducModal"><i class="fa-solid fa-plus"></i> AGREGAR EDUCACION </button> <!-- Agregar-->
@@ -29,7 +29,7 @@
           <h6>{{educacion.comentario}}</h6>
           <p>{{educacion.alcanceTitulo}}</p>
         </div>
-        <div class="col-1">
+        <div class="col-1" *ngIf="isLogged">
           <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editEducModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
           <br>
           <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar" (click)="delete(educacion.id_educacion)"><i class="fa-solid fa-trash"></i></button> 

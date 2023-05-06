@@ -13,8 +13,8 @@ import { RedService } from 'src/app/servicios/red.service';
 export class RedesComponent implements OnInit {
 
   redesList: Red[]=[]
-  //isLogged = false;
-  modoEdit: any;
+  isLogged: boolean = false;
+  //modoEdit: any;
   // idEditar: number;
   //isTrue = false;
   activatedRouter: any;
@@ -24,6 +24,32 @@ export class RedesComponent implements OnInit {
   
   ngOnInit(): void {
     this.cargarRed();
+    if (localStorage.getItem("modoLogin")) {
+      this.isLogged=true;
+    } 
+    else {
+      this.isLogged=false;
+    }
+  }
+  
+  cargarRed(): void {
+    this.sRed.list().subscribe(data => {this.redesList=data});
+  } //llama al método list del servicio
+
+  delete(id:number){
+    if(id !=undefined){
+      this.sRed.delete(id).subscribe(data =>{
+        alert("Se eliminó correctamente")
+        this.cargarRed();
+      },err =>{
+        //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
+        window.location.reload();
+      })
+    }
+  }
+
+  /*ngOnInit(): void {
+    this.cargarRed();
       if(sessionStorage.getItem('currentUser') == "null") {
        this.modoEdit = false;
      } else if(sessionStorage.getItem('currentUser') == null) {
@@ -31,23 +57,7 @@ export class RedesComponent implements OnInit {
      } else {
        this.modoEdit = true;
      } 
-    }  
-  
-    cargarRed(): void {
-      this.sRed.list().subscribe(data => {this.redesList=data});
-    } //llama al método list del servicio
-
-    delete(id:number){
-      if(id !=undefined){
-        this.sRed.delete(id).subscribe(data =>{
-          alert("Se eliminó correctamente")
-          this.cargarRed();
-        },err =>{
-          //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
-          window.location.reload();
-        })
-      }
-    }
+    }  */
 
   /* ESTO era del JSON, hay que sacarlo
 

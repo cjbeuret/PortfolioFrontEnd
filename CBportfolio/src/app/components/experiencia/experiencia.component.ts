@@ -20,17 +20,54 @@ export class ExperienciaComponent implements OnInit {
   //expeForm: FormGroup;
   //expe: Experiencia = new Experiencia (0,'','','','','','','',1); //?esto es de EDIT?
 
-  //isLogged = false;
-  modoEdit: any;
-  idEditar: number;
-  isTrue = false;
+  isLogged: boolean = false;
+  //modoEdit: any;
+  //idEditar: number;
+  //isTrue = false;
   activatedRouter: any;
    
   constructor(private sExperiencia: ExperienciaService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
  
-
   ngOnInit(): void {
+    this.cargarExperiencia();
+    if (localStorage.getItem("modoLogin")) {
+      this.isLogged=true;
+    } 
+    else {
+      this.isLogged=false;
+    }
+  }
+ 
+  cargarExperiencia(): void {
+      this.sExperiencia.list().subscribe(
+        data => {
+          this.experienciasList=data});
+          //this.router.navigate(['']);
+          //window.location.reload();
+    } //llama al método list del servicio  
+  
+  delete(id:number){
+    if(id !=undefined){
+      this.sExperiencia.delete(id).subscribe(
+        data =>{
+          alert("Se eliminó correctamente");
+          this.cargarExperiencia();
+        },err =>{
+          //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
+          window.location.reload();
+        }
+      )
+    }
+  }
+  
+    /*idEdit(id:number){
+      /*this.isTrue = true;
+      this.idEditar = id;
+      console.log("paso1");
+    }*/
+
+/*ngOnInit(): void {
     this.cargarExperiencia();
       if(sessionStorage.getItem('currentUser') == "null") {
        this.modoEdit = false;
@@ -39,38 +76,8 @@ export class ExperienciaComponent implements OnInit {
      } else {
        this.modoEdit = true;
      } 
-    }  
+    }  */
 
-  
-    cargarExperiencia(): void {
-      this.sExperiencia.list().subscribe(
-        data => {
-          this.experienciasList=data});
-          //this.router.navigate(['']);
-          //window.location.reload();
-    } //llama al método list del servicio
-
-
-    /*idEdit(id:number){
-      /*this.isTrue = true;
-      this.idEditar = id;
-      console.log("paso1");
-    }*/
-  
-    delete(id:number){
-      if(id !=undefined){
-        this.sExperiencia.delete(id).subscribe(
-          data =>{
-            alert("Se eliminó correctamente");
-            this.cargarExperiencia();
-          },err =>{
-            //alert("No se pudo eliminar la experiencia"); // SALE X EL ERROR
-            window.location.reload();
-          }
-        )
-      }
-    }
-  
    /*onUpdate(): void{
       const id = this.activatedRouter.snapshot.params['id_experiencia'];
       this.sExperiencia.edit(this.expe).subscribe(

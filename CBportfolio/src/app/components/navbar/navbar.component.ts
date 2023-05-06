@@ -17,25 +17,19 @@ export class NavbarComponent implements OnInit {
 //modoEdit: any;
 
 logindatos:any;
-esta_logueado: boolean = false;
+isLogged: boolean = false;
 
 
-constructor(
-  private datosLogin: LoginService,
-  private router:Router
-){}
+constructor(private datosLogin: LoginService, private router:Router){}
 
 ngOnInit(): void {
 
-  if (localStorage.getItem("estado_login"))
-      {
-        this.esta_logueado=true;
-      }
-      else
-        {
-         this.esta_logueado=false;
-        }
- 
+  if (localStorage.getItem("modoLogin")) {
+    this.isLogged=true;
+  }
+  else {
+    this.isLogged=false;
+  } 
 }
      
 onlogin() {
@@ -43,17 +37,18 @@ onlogin() {
 }
 
 onlogout(){
-  //localStorage.setItem('estado_login','no_logueado');
-  localStorage.removeItem('estado_login')
+  //localStorage.setItem('modoLogin','modoLogout');
+  localStorage.removeItem('modoLogin')
   console.log('tiene que cerrar');
   window.location.reload();
+  //this.router.navigate(['']);
 }
   
 
   /*
   constructor(private router:Router, private authService: AuthService) {}
   
-   este está en MGB Computación
+  
   ngOnInit(): void {
     if(this.tokenService.getToken()){
       this.isLogged = true;

@@ -19,8 +19,11 @@
       </div>
       <!--h5>{{idioma.idioma}}</h5-->
       <p style="font-style: italic;">{{idioma.comentario}}</p>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editIdiomasModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-      <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button>  
+      <div *ngIf="isLogged">
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editIdiomasModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+        <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button>  
+      </div>
+      
     </div>
   </div>
 </div>

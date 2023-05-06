@@ -13,8 +13,8 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 export class HabilidadesComponent implements OnInit {
  
   habilidadesList: Habilidad[]=[]
-  //isLogged = false;
-  modoEdit: any;
+  isLogged : boolean = false;
+  //modoEdit: any;
   // idEditar: number;
   //isTrue = false;
   activatedRouter: any;
@@ -22,7 +22,32 @@ export class HabilidadesComponent implements OnInit {
   constructor(private sHabilidad: HabilidadService, private router:Router) {} 
   //en constructor tb pone private tokenService: TokenService y no estoy segura si va el router
   
- ngOnInit(): void {
+  ngOnInit(): void {
+    this.cargarHabilidad();
+    if (localStorage.getItem("modoLogin")) {
+      this.isLogged=true;
+    } 
+    else {
+      this.isLogged=false;
+    }
+  }
+ 
+  cargarHabilidad(): void {
+    this.sHabilidad.list().subscribe(data => {this.habilidadesList=data});
+  } //llama al método list del servicio
+
+  delete(id:number){
+    if(id !=undefined){
+      this.sHabilidad.delete(id).subscribe(data =>{
+        alert("Se eliminó correctamente")
+        this.cargarHabilidad();
+      },err =>{
+        alert("No se pudo eliminar la experiencia");//SALE X EL ERROR
+      })
+    }
+  }
+
+/*ngOnInit(): void {
     this.cargarHabilidad();
       if(sessionStorage.getItem('currentUser') == "null") {
        this.modoEdit = false;
@@ -31,24 +56,7 @@ export class HabilidadesComponent implements OnInit {
      } else {
        this.modoEdit = true;
      } 
-    }  
-  
-    cargarHabilidad(): void {
-      this.sHabilidad.list().subscribe(data => {this.habilidadesList=data});
-    } //llama al método list del servicio
-
-    delete(id:number){
-      if(id !=undefined){
-        this.sHabilidad.delete(id).subscribe(data =>{
-          alert("Se eliminó correctamente")
-          this.cargarHabilidad();
-        },err =>{
-          alert("No se pudo eliminar la experiencia");//SALE X EL ERROR
-        })
-      }
-    }
-
-
+    }  */
 
   /* ESTO era del JSON, hay que sacarlo
 

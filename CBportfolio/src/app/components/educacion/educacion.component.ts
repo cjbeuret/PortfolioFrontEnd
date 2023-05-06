@@ -13,8 +13,8 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 export class EducacionComponent implements OnInit {
   
   educacionesList: Educacion[]=[]
-  //isLogged = false;
-  modoEdit: any;
+  isLogged: boolean = false;
+  //modoEdit: any;
   // idEditar: number;
   //isTrue = false;
   activatedRouter: any;
@@ -24,18 +24,21 @@ export class EducacionComponent implements OnInit {
   
   ngOnInit(): void {
     this.cargarEducacion();
-      if(sessionStorage.getItem('currentUser') == "null") {
-       this.modoEdit = false;
-     } else if(sessionStorage.getItem('currentUser') == null) {
-       this.modoEdit = false;
-     } else {
-       this.modoEdit = true;
-     } 
-    }  
-  
-    cargarEducacion(): void {
-      this.sEducacion.list().subscribe(data => {this.educacionesList=data});
-    } //llama al método list del servicio
+    if (localStorage.getItem("modoLogin")) {
+      this.isLogged=true;
+    } 
+    else {
+      this.isLogged=false;
+    }
+  }
+
+  cargarEducacion(): void {
+    this.sEducacion.list().subscribe (
+      data => {
+        this.educacionesList=data});
+        //this.router.navigate(['']);
+        //window.location.reload();
+  } //llama al método list del servicio
   
     delete(id:number){
       if(id!=undefined){
@@ -44,13 +47,24 @@ export class EducacionComponent implements OnInit {
             alert("Se eliminó correctamente");
             this.cargarEducacion();
           }, err =>{
-            alert("No se pudo eliminar"); // SALE X EL ERROR
+            //alert("No se pudo eliminar"); // SALE X EL ERROR
             window.location.reload();
           }
         )
       }
     }
-
+ 
+    /*ngOnInit(): void {
+    this.cargarEducacion();
+      if(sessionStorage.getItem('currentUser') == "null") {
+       this.modoEdit = false;
+     } else if(sessionStorage.getItem('currentUser') == null) {
+       this.modoEdit = false;
+     } else {
+       this.modoEdit = true;
+     } 
+    }  
+  */
     
    /*onUpdate(): void{
       const id = this.activatedRouter.snapshot.params['id_experiencia'];

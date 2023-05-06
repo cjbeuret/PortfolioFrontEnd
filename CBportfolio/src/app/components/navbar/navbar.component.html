@@ -32,7 +32,7 @@
         
           <!--PRUEBA LOGIN-->
           <!-- Iniciar sesión -->
-          <li *ngIf="esta_logueado, else elseBlock" class="nav-item">
+          <li *ngIf="isLogged, else elseBlock" class="nav-item">
             <button type="button" class="btn btn-primary" (click)="onlogout()">Cerrar sesión</button>
           </li>
           
