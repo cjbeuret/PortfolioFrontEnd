@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   
     
   constructor(private formBuilder:FormBuilder,
-              private ruta:Router,
-              private datos:UsuarioService
+              private router:Router,
+              private sUsuario:UsuarioService
     ) { 
 
     this.loginForm=this.formBuilder.group(
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    this.datos.list().subscribe(
+    this.sUsuario.list().subscribe(
       data=>{
         this.usuariosList=data;
             
@@ -44,18 +44,18 @@ get Password() {
   return this.loginForm.get('password');
 }
  
-onLogin(event: Event){
+onEnviar(event: Event){
   if (this.loginForm.value.password===this.usuariosList[0].password && 
     
     this.loginForm.value.username===this.usuariosList[0].username)
   {    
     localStorage.setItem('modoLogin','logueado');
     alert('Iniciaste sesión correctamente');
-    this.ruta.navigate(['/indice']);
+    this.router.navigate(['/indice']);
   }
   else {
     alert('Datos invalidos. Vuelve a intentar');
-    this.ruta.navigate(['/indice']);
+    this.router.navigate(['/indice']);
      }
 }
 }

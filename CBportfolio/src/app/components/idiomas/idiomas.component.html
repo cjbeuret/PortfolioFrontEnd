@@ -2,7 +2,7 @@
 
  <!-- Modificar IDIOMAS -->  
  <section id="editIdiomas" class="bg-dark p-2">
-  <a href="#top"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-arrow-turn-up"></i></button></a>
+  <a href="#top"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-arrow-turn-up"></i></button></a> <!-- Subir-->
   <div class="btn-group" role="group" aria-label="editarIdiomas" *ngIf="isLogged">
     <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editIdiomasModal"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Modificar Idioma-->
     <!--button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button--><!-- Eliminar Idioma-->
@@ -21,7 +21,7 @@
       <p style="font-style: italic;">{{idioma.comentario}}</p>
       <div *ngIf="isLogged">
         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editIdiomasModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-        <button type="button" class="btn btn-light" (click)="delete(idioma.id_idioma)"><i class="fa-solid fa-trash"></i></button>  
+        <button type="button" class="btn btn-light" (click)="delete(idioma.id_idioma)"><i class="fa-solid fa-trash"></i></button>  <!-- Borrar-->
       </div>
       
     </div>

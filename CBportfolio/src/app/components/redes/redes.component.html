@@ -8,13 +8,13 @@
 
 <!-- LISTADO REDES  SOCIALES-->
 <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">  
-  <button type="button" *ngIf="isLogged" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addRedesModal"><i class="fa-solid fa-plus" style="font-size: medium;"></i></button>
+  <button type="button" *ngIf="isLogged" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addRedesModal"><i class="fa-solid fa-plus" style="font-size: medium;"></i></button> <!-- Agregar-->
   <div *ngFor="let red of redesList">
     <a class="nav-link" [href]="red.url" target="_blank" rel="noopener noreferrer">
     <span><i [ngClass]="red.span"></i></span>
     </a>
     <button *ngIf="isLogged" type="button" class="btn btn-light btn-sm editRedes" data-bs-toggle="modal" data-bs-target="#editRedesModal"><i class="fa-sharp fa-solid fa-pen" style="font-size: medium;"></i></button> <!-- Editar-->
-    <button *ngIf="isLogged" type="button" class="btn btn-light btn-sm" (click)="delete(red.id_red)"><i class="fa-solid fa-trash" style="font-size: medium;"></i></button> 
+    <button *ngIf="isLogged" type="button" class="btn btn-light btn-sm" (click)="delete(red.id_red)"><i class="fa-solid fa-trash" style="font-size: medium;"></i></button> <!-- Borrar-->
     
     <!--div class="btn-group" role="group" aria-label="editarExperiencia" *ngIf="isLogged"> 
       <button *ngIf="isLogged" type="button" class="btn btn-light editRedes" data-bs-toggle="modal" data-bs-target="#editRedesModal"><i class="fa-sharp fa-solid fa-pen"></i></button> 

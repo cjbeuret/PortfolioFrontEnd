@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-//importamos la librerias de formularios que vamos a necesitar
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/servicios/auth.service';
+import { Usuario } from 'src/app/model/usuario';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
+//import { AuthService } from 'src/app/servicios/auth.service';
 
 
 @Component({
@@ -13,46 +14,83 @@ import { AuthService } from 'src/app/servicios/auth.service';
 export class ModalLoginComponent implements OnInit {
   //Creamos un formulario, especificamos q es FormGroup, q es el q vamos a enlazar con nuestro template
   loginForm:FormGroup;
-    
+
+  usuariosList: Usuario[] = [];
+   
   //Como FormBuilder es un servicio lo inyectamos en el constructor
-  constructor(private formBuilder: FormBuilder, private autenticacionService: AuthService, private router:Router) {
-    
+  constructor(private formBuilder: FormBuilder,
+    private sUsuario:UsuarioService, 
+    private router:Router
+    ) {
     //inicializamos el formulario utilizando el servicio de FormBuilder 
-    this.loginForm= this.formBuilder.group({
+    this.loginForm= this.formBuilder.group(
+      {
         //debemos especificar el grupo de formControls (controles p/el form de login)
         //respetar el modelo del Body del JSON 
         //los formsControl dentro del FormGrup deben tener los mismos nombres q el modelo
-        email:['',[Validators.required, Validators.email]],
+        
+        username: ['',[Validators.required,Validators.minLength(10)]],
+        //email:['',[Validators.required, Validators.email]],
         password:['',[Validators.required, Validators.minLength(8)]],
         
       })
   }
 
-  ngOnInit(): void {}
-
-  get Mail() {
-    return this.loginForm.get("email");
+  ngOnInit(): void {
+    this.sUsuario.list().subscribe(
+      data=>{
+        this.usuariosList=data;            
+    });
   }
+
+  get Usename() {
+    return this.loginForm.get("username");
+  }
+
+  /*get Mail() {
+    return this.loginForm.get("email");
+  }*/
 
   get Password() {
     return this.loginForm.get("password");
   }
 
-  /*get PasswordInvalid() {
-    return this.Password?.touched && !this.Password?.valid;
+  get UsernameInvalid() {
+    return this.Usename?.touched && !this.Usename?.valid;
   }
 
-  //get MailValid() {
-  //  return false
-  //}
-
+  /*
+  get MailValid() {
+    return false
+  }
   get MailInvalid() {
     return this.Mail?.touched && !this.Mail?.valid;
   }*/
 
-  //metodo botón enviar(usa el servicio p enviar creddenciales a API)
-  //recibe como parámetro un evento, p llamar al metodo preventDefault
+  get PasswordInvalid() {
+    return this.Password?.touched && !this.Password?.valid;
+  }
+
  
+  onEnviar(event: Event){
+    if (this.loginForm.value.password===this.usuariosList[0].password && 
+      
+      this.loginForm.value.username===this.usuariosList[0].username)
+    {    
+      localStorage.setItem('modoLogin','logueado');
+      alert('Iniciaste sesión correctamente');
+      window.location.reload();
+      //this.router.navigate(['/indice']);
+    }
+    else {
+      alert('Datos invalidos. Vuelve a intentar');
+      this.router.navigate(['/indice']);
+      }
+  }
+}  
+
+
+/*
   onEnviar(event: Event) {
     
     //Detenemos la propagacion o ejecucion del comportamiento submit de un form
@@ -71,7 +109,7 @@ export class ModalLoginComponent implements OnInit {
     
   }
 
-   
+ 
 
 /* onEnviar ORIGINAL
 
@@ -111,4 +149,4 @@ export class ModalLoginComponent implements OnInit {
     return userLogged;
   }*/
   
-}
+

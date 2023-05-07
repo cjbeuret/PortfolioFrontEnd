@@ -2,13 +2,29 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+        <h1 class="modal-title fs-5" id="loginModalLabel">INICIAR SESION</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
+      <!--FORMULARIO LOGIN-->
       <div class="modal-body">             
-        <form [formGroup]="loginForm" (ngSubmit)="onEnviar($event)"> <!--(ngSubmit)="login()"-->
+        <form [formGroup]="loginForm" (ngSubmit)="onEnviar($event)"> 
+          
           <div class="mb-3">
+            <label for="exampleusername">Usuario:</label>
+            <input type="text" formControlName="username"
+            [ngClass]="{'is-invalid':Usename?.errors && Usename?.touched, 
+            'is-valid':!Usename?.errors && Usename?.touched}"
+            class="form-control" id="exampleInputUsuario" 
+            placeholder="nombre de usuario" required--> 
+            
+            <div *ngIf="Usename?.errors && Usename?.touched">
+              <p *ngIf="Usename?.errors?.['minlength']" class="error">El nombre de usuario debe tener 10 o más caracteres</p>
+              <p *ngIf="Usename?.hasError('required')" class="error">El nombre de usuario es requerido</p>
+            </div>
+          </div>
+
+          <!--div class="mb-3">
             <label for="email">Email:</label>
             <input type="email" formControlName="email" 
             [ngClass]="{'is-invalid':Mail?.errors && Mail?.touched, 
@@ -16,11 +32,11 @@
             class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
             placeholder="correo electronico" required--> <!--[class.border-danger]="MailInvalid"-->
             <!--Gracias al getter q configuramos en el controlador-->
-            <div *ngIf="Mail?.errors && Mail?.touched">
+            <!--div *ngIf="Mail?.errors && Mail?.touched">
               <p *ngIf="Mail?.hasError('required')" class="error">El mail es requerido</p>
               <p *ngIf="Mail?.hasError('email')" class="error">El formato del mail debe ser válido</p>
             </div>
-          </div>
+          </div-->
           
           <br>
 
@@ -39,8 +55,8 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
           </div>
         </form>
         <!--<a routerLink="/">Volver</a>-->
