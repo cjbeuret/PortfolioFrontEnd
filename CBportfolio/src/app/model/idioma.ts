@@ -8,7 +8,7 @@ export class Idioma {
     comentario : string;
     id_persona : number; //esto no sé si va
     
-    constructor(id_idioma: number, idioma : string, porcentaje: number, comentario: string, progreso: string, id_persona: number){
+    constructor(id_idioma: number, idioma : string, porcentaje: number, progreso: string, comentario: string, id_persona: number){
         this.id_idioma = id_idioma;
         this.idioma = idioma;
         this.porcentaje = porcentaje;

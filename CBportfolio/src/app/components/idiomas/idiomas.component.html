@@ -3,7 +3,7 @@
  <!-- Modificar IDIOMAS -->  
  <section id="editIdiomas" class="bg-dark p-2">
   <a href="#top"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-arrow-turn-up"></i></button></a>
-  <div class="btn-group" role="group" aria-label="editarIdiomas">
+  <div class="btn-group" role="group" aria-label="editarIdiomas" *ngIf="isLogged">
     <!--button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editIdiomasModal"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Modificar Idioma-->
     <!--button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Delete"><i class="fa-solid fa-trash"></i></button--><!-- Eliminar Idioma-->
     <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addIdiomasModal"><i class="fa-solid fa-plus"></i> AGREGAR IDIOMA </button> <!-- Agregar Idioma-->
@@ -15,13 +15,13 @@
     <div class="col-6 col-sm-4" *ngFor="let idioma of idiomasList">
       <div [ngClass]="idioma.progreso" class="progress-circle">
         <!--span>{{idioma.porcentaje}}</span-->
-        <span>{{idioma.idioma}} </span>
+        <span  style="font-style: italic; font-size:medium">{{idioma.idioma}} </span>
       </div>
       <!--h5>{{idioma.idioma}}</h5-->
       <p style="font-style: italic;">{{idioma.comentario}}</p>
       <div *ngIf="isLogged">
         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editIdiomasModal"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-        <button type="button" class="btn btn-light"><i class="fa-solid fa-trash"></i></button>  
+        <button type="button" class="btn btn-light" (click)="delete(idioma.id_idioma)"><i class="fa-solid fa-trash"></i></button>  
       </div>
       
     </div>

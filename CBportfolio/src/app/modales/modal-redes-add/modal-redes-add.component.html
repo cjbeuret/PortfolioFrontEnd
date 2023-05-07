@@ -1,1 +1,69 @@
-<p>modal-redes-add works!</p>
+<!-- Form AGREGAR REDES Modal-->
+<div class="modal fade" id="addRedesModal" tabindex="-1" aria-labelledby="addRedesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addRedesModalLabel">Agregar redes sociales</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <!--formulario AGREGAR REDES-->
+        <form [formGroup]="redAddForm" (ngSubmit)="onEnviar($event)" name="redFormAdd">
+        <!--form [formGroup]="redAddForm" (ngSubmit)="form.valid && onCreate()" name="redFormAdd"-->     
+            <div class="modal-body">             
+                <!--div class="mb-3"> 
+                <input type="hidden" formControlName="id" [(ngModel)]="id_red" id="">
+                </div-->
+                <!--div class="mb-3">
+                <label for="inputNombreRed" class="form-label">Nombre de la red</label>
+                <input type="text" class="form-control" id="inputNombreRed" placeholder="nombre de la red">              
+                </div-->
+                <div class="mb-3">
+                    <label for="inputNombreRed" class="form-label">Nombre de la red</label>
+                    <input class="form-control" type="text" placeholder="inserte nombre de la red" id="inputNombreRed" 
+                    name="inputNombreRed" formControlName="nombreRed" [(ngModel)]="nombreRed" required
+                    [ngClass]="{'is-invalid': NombreRed?.errors && NombreRed?.touched, 'is-valid': ! NombreRed?.errors && NombreRed?.touched}"> 
+                    <div *ngIf="NombreRed?.errors && NombreRed?.touched">
+                    <p *ngIf="NombreRed?.hasError('required')" class="text-danger">
+                        El nombre de la red es un dato requerido.
+                    </p>
+                    </div>              
+                </div>
+                <!--div class="mb-3">
+                <label for="inputSpan" class="form-label">Span/icono</label>
+                <input type="text" class="form-control" id="inputSpan" placeholder="ingrese span / icono"
+                name="span" formControlName="span" [(ngModel)]="span">              
+                </div-->
+                <div class="mb-3">
+                    <label for="inputSpan" class="form-label">Span/icono</label>
+                    <input class="form-control" type="text" placeholder="ingrese span / icono" id="inputSpan" 
+                    name="inputSpan" formControlName="span" [(ngModel)]="span" required
+                    [ngClass]="{'is-invalid': Span?.errors && Span?.touched, 'is-valid': ! Span?.errors && Span?.touched}"> 
+                    <div *ngIf="Span?.errors && Span?.touched">
+                    <p *ngIf="Span?.hasError('required')" class="text-danger">
+                        El campo es requerido.
+                    </p>
+                    </div>              
+                </div>
+                <div class="mb-3">
+                <label for="inputUrl" class="form-label">Nombre de la URL</label>
+                <input class="form-control" type="text" placeholder="inserte la URL" id="inputUrl" 
+                name="inputUrl" formControlName="url" [(ngModel)]="url" required
+                [ngClass]="{'is-invalid': Url?.errors && Url?.touched, 'is-valid': ! Url?.errors && Url?.touched}"> 
+                <div *ngIf="Url?.errors && Url?.touched">
+                    <p *ngIf="Url?.hasError('required')" class="text-danger">
+                    La URL es un dato requerido.
+                    </p>
+                </div>              
+                </div>        
+                <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+            </div> 
+        </form>
+
+      </div>
+    </div>
+</div> 
+

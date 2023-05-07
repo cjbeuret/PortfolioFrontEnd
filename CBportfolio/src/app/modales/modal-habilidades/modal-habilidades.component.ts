@@ -60,7 +60,7 @@ export class ModalHabilidadesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.traerHabilidad();
+    //this.traerHabilidad();
   }
 
   traerHabilidad() {

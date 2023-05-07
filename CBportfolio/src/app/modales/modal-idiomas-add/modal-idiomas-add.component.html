@@ -1,13 +1,13 @@
-<!-- Boton AGREGAR IDIOMAS Modal-->
+<!-- Form AGREGAR IDIOMAS Modal-->
 <div class="modal fade" id="addIdiomasModal" tabindex="-1" aria-labelledby="addIdiomasModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="addIdiomasModalLabel">Agregar idiomas</h1>
+          <h1 class="modal-title fs-5" id="addIdiomasModalLabel">Agregar idioma</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
-        <!--formulario AGREGAR HABILIDAD-->
+        <!--formulario AGREGAR IDIOMAS-->
         <form [formGroup]="idiomaAddForm" (ngSubmit)="onEnviar($event)" name="idiomaFormAdd">
           <!--form [formGroup]="idiomaAddForm" (ngSubmit)="form.valid && onCreate()" name="idiomaFormAdd"-->     
             <div class="modal-body">             
@@ -70,6 +70,7 @@
               </div>
             </div> 
         </form>
+        
       </div>
     </div>
 </div> 

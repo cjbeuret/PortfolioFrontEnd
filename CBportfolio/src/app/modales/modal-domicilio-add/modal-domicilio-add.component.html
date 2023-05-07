@@ -1,1 +1,77 @@
-<p>modal-domicilio-add works!</p>
+<!-- Form AGREGAR DOMICILIO Modal-->
+<div class="modal fade" id="addDomicilioModal" tabindex="-1" aria-labelledby="addDomicilioModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addDomicilioModalLabel">Agregar Domicilio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+       <!--formulario AGREGAR DOMICILIO-->
+       <form [formGroup]="domAddForm" (ngSubmit)="onEnviar($event)" name="domFormAdd">             
+       <!--form [formGroup]="domAddForm" (ngSubmit)="form.valid && onCreate()" name="domicilioFormAdd"-->   
+          <div class="modal-body">             
+            
+            <div class="mb-3">
+              <label for="inputCalle" class="form-label">Calle</label>
+              <input class="form-control" type="text" placeholder="inserte nombre de la calle" id="inputCalle" 
+              name="inputCalle" formControlName="calle" [(ngModel)]="calle" required 
+              [ngClass]="{'is-invalid': Calle?.errors && Calle?.touched, 'is-valid': !Calle?.errors && Calle?.touched}"> <!--required-->  
+              <div *ngIf="Calle?.errors && Calle?.touched">
+                <p *ngIf="Calle?.hasError('required')" class="text-danger">
+                  El nombre de la calle es un dato requerido.
+                </p>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputAltura" class="form-label">Altura</label>
+                <input class="form-control" type="text" placeholder="inserte la altura" id="inputAltura" 
+                name="inputAltura" formControlName="altura" [(ngModel)]="altura" required 
+                [ngClass]="{'is-invalid': Altura?.errors && Altura?.touched, 'is-valid': !Altura?.errors && Altura?.touched}"> <!--required-->  
+                <div *ngIf="Altura?.errors && Altura?.touched">
+                    <p *ngIf="Altura?.hasError('required')" class="text-danger">
+                    La altura es un dato requerido.
+                    </p>
+                </div>
+            </div>
+            <div class="mb-3">
+              <label for="inputPiso" class="form-label">Piso</label>
+              <input class="form-control" type="text" placeholder="inserte el piso" id="inputPiso" 
+              name="piso" formControlName="piso" [(ngModel)]="piso">             
+            </div>
+            <div class="mb-3">
+                <label for="inputLocalidad" class="form-label">Localidad</label>
+                <input class="form-control" type="text" placeholder="inserte el nombre de la localidad" id="inputLocalidad" 
+                name="inputLocalidad" formControlName="localidad" [(ngModel)]="localidad" required 
+                [ngClass]="{'is-invalid': Localidad?.errors && Localidad?.touched, 'is-valid': !Localidad?.errors && Localidad?.touched}"> <!--required-->  
+                <div *ngIf="Localidad?.errors && Localidad?.touched">
+                    <p *ngIf="Localidad?.hasError('required')" class="text-danger">
+                    La localidad es un dato requerido.
+                    </p>
+                </div>
+            </div>
+            <div class="mb-3">
+              <label for="inputProvincia" class="form-label">Provincia</label>
+              <input class="form-control" type="text" placeholder="inserte la provincia" id="inputProvincia" 
+              name="provincia" formControlName="provincia" [(ngModel)]="provincia">             
+            </div>
+            <div class="mb-3">
+                <label for="inputMapa" class="form-label">Ubicación en el mapa</label>
+                <input class="form-control" type="url" placeholder="inserte la url del mapa" id="urlMapa" 
+                name="urlMapa" formControlName="mapa" [(ngModel)]="mapa">             
+              </div>
+            <div>
+              <!--label for="domIdPersona" class="form-label"> Persona asociada</label-->
+              <input type="hidden" class="form-control" id="domIdPersona" name="id_persona" 
+              formControlName="id_persona" [(ngModel)]="id_persona" id="">             
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" >Limpiar</button> <!--(click)="limpiar()"-->
+            <button type="submit" class="btn btn-primary">Agregar</button>
+          </div> 
+          
+        </form>
+        
+      </div>
+    </div>
+</div>
