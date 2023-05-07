@@ -32,8 +32,9 @@
             class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required--> <!--[class.border-danger]="PasswordInvalid"-->
             <!--Gracias al getter q configuramos en el controlador-->
             <div *ngIf="Password?.errors && Password?.touched">
-              <p *ngIf="Password?.hasError('required')" class="error">La contraseña es requerida</p>
               <p *ngIf="Password?.errors?.['minlength']" class="error">La contraseña debe tener 8 o más caracteres</p>
+              <p *ngIf="Password?.hasError('required')" class="error">La contraseña es requerida</p>
+              
             </div>
           </div>
 

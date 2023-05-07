@@ -1,18 +1,18 @@
 export class Red {
  //insertar atributos y tipo de datos y el contructor sin id
 
- id: number; 
+ id_red: number; 
  nombreRed : string;
  span : string;
  url : string;
- personaid : number; //esto no sé si va
+ id_persona : number; //esto no sé si va
  
- constructor(/*id: number,*/ nombreRed : string, span: string, url: string, personaid: number){
-     /*this.id = id;*/
+ constructor(id_red: number, nombreRed : string, span: string, url: string, id_persona: number){
+     this.id_red = id_red;
      this.nombreRed = nombreRed;
      this.span = this.span;
      this.url = this.url;
-     this.personaid = personaid;
+     this.id_persona = id_persona;
  }
 
 }

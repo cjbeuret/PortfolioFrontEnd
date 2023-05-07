@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ModalExperienciaAddComponent implements OnInit{
 
   expeAddForm: FormGroup;
-  //id: number;
+  //id_experiencia: number;
   empresa: string='';
   logo: string='';
   url: string='';
@@ -29,15 +29,16 @@ constructor(
 //Creamos el grupo de controles p el formulario
   this.expeAddForm= this.formBuilder.group(
     {
-    empresa: ['',[Validators.required]],
-    logo: [''],
-    url: [''],
-    cargo: ['',[Validators.required]], 
-    descPuesto: [''],
-    inicio: [''],
-    fin: [''],
-    id_persona: [1],
-  })
+      empresa: ['',[Validators.required]],
+      logo: [''],
+      url: [''],
+      cargo: ['',[Validators.required]], 
+      descPuesto: [''],
+      inicio: [''],
+      fin: [''],
+      id_persona: [1],
+    }
+  )
 }
 
   //Declarar para las validaciones
@@ -79,12 +80,18 @@ constructor(
     //crea una ctte experiencia y llama el metodo create del servicio
     const nuevaExpe = new Experiencia(0, this.empresa, this.logo, this.url, this.cargo, this.descPuesto, 
       this.inicio, this.fin, this.id_persona);
+      
       console.log(nuevaExpe)
       
       this.sExperience.create(nuevaExpe).subscribe(
         data => {
-          alert("Experiencia creada");
-    });
+          alert("Nueva experiencia creada");
+          //this.router.navigate(['']);
+          //window.location.reload();
+    }, err => {
+      alert("Error al interntar agregar la experiencia");
+      this.router.navigate(['']);
+    })
   } 
 
   onEnviar(event:Event){

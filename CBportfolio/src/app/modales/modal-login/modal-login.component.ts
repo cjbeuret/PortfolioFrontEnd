@@ -25,12 +25,6 @@ export class ModalLoginComponent implements OnInit {
         email:['',[Validators.required, Validators.email]],
         password:['',[Validators.required, Validators.minLength(8)]],
         
-        /*deviceInfo:this.formBuilder.group({
-          //FALTAN los datos. Los obtiene del Postman
-          deviceId: ["17867868768"],
-          deviceType: ["DEVICE_TYPE_ANDROID"],
-          notificationToken: ["67657575eececc34"]
-        })  */      
       })
   }
 

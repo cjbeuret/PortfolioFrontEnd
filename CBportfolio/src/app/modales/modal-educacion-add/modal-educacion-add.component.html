@@ -1,0 +1,87 @@
+<!-- Boton Agregar EDUCACION Modal-->
+<div class="modal fade" id="addEducModal" tabindex="-1" aria-labelledby="addEducModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addEducModalLabel">Agregar educación</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <!--formulario AGREGA EDUCACION-->         
+        <form [formGroup]="educAddForm" (ngSubmit)="onEnviar($event)" name="educFormAdd">
+        <!--form [formGroup]="educAddForm" (ngSubmit)="form.valid && onCreate()" name="educacionFormAdd"-->   
+          <div class="modal-body"> 
+            <!--div class="mb-3"> 
+              <input type="hidden" formControlName="id" [(ngModel)]="id_educacion" id="">
+            </div--> 
+            <!--div class="mb-3">
+              <label for="inputInstit" class="form-label">Institución</label>
+              <input type="text" placeholder="inserte nombre de la institución"class="form-control" id="inputInstit" 
+              name="inputInstit" required formControlName="Institucion" [(ngModel)]="institucion">               
+            </div-->
+            <div class="mb-3">
+              <label for="inputInstit" class="form-label">Agregar Institución</label>
+              <input class="form-control" type="text" placeholder="inserte nombre de la institucion" id="inputInstit" 
+              name="inputInstit" formControlName="institucion" [(ngModel)]="institucion" required 
+              [ngClass]="{'is-invalid': Institucion?.errors && Institucion?.touched, 'is-valid': !Institucion?.errors && Institucion?.touched}"> <!--required-->  
+              <div *ngIf="Institucion?.errors && Institucion?.touched">
+                <p *ngIf="Institucion?.hasError('required')" class="text-danger">
+                  El nombre de la institucion es un dato requerido.
+                </p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="inputLogoInstitucion" class="form-label">Logo Institución</label>
+              <input type="url" placeholder="inserte url del logo" id="logoInstitucion" 
+              name="logoInstitucion" formControlName="logoInstitucion" [(ngModel)]="logo">             
+            </div>
+            <div class="mb-3">
+              <label for="inputUrlInstit" class="form-label">Agregar url de Empresa</label>
+              <input class="form-control" type="url" placeholder="inserte url de la página de la institucion" id="urlInstit" 
+              name="inputUrlInstit" formControlName="url" [(ngModel)]="url">             
+            </div>
+            <!--div class="mb-3">
+              <label for="inputTitulo" class="form-label">Título</label>
+              <input type="text" placeholder="inserte titulo obtenido"class="form-control" id="inputTitulo" 
+              name="inputTitulo" required formControlName="Titulo" [(ngModel)]="titulo">              
+            </div-->
+            <div class="mb-3">
+              <label for="inputTitulo" class="form-label">Agregar Título</label>
+              <input class="form-control" type="text" placeholder="inserte titulo" id="inputTitulo" 
+              name="inputTitulo" formControlName="titulo" [(ngModel)]="titulo" required
+              [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched, 'is-valid': ! Titulo?.errors && Titulo?.touched}"> 
+              <div *ngIf="Titulo?.errors && Titulo?.touched">
+                <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+                  El título es un dato requerido.
+                </p>
+              </div>              
+            </div>
+            <div class="mb-3">
+              <label for="inputAlcance" class="form-label">Alcance del título</label>
+              <textarea class="form-control" id="inputAlcance" rows="3" name="AlcanceTitulo" 
+              formControlName="AlcanceTitulo" [(ngModel)]="alcanceTitulo"></textarea>               
+            </div>
+            <div class="mb-3">
+              <label for="inputfechaObt" class="form-label">Fecha de obtención del título</label>
+              <input type="date" class="form-control" id="fechaObt" formControlName="FechaObt" [(ngModel)]="fechaObt">
+            </div>
+            <div class="mb-3">
+              <label for="inputComent" class="form-label">Comentarios</label>
+              <input type="text" placeholder="Comentarios"class="form-control" id="inputComent" 
+              name="inputComent" required formControlName="Comentario" [(ngModel)]="comentario">              
+            </div>
+            <div>
+              <label for="expeIdPersona" class="form-label"> Persona asociada</label>
+              <input type="number" class="form-control" id="expeIdPersona" name="id_persona" 
+              formControlName="id_persona" [(ngModel)]="id_persona" id="">             
+            </div>
+            <div class="modal-footer">
+              <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Limpiar</button>
+              <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+          </div> 
+        </form>
+        
+      </div>
+    </div>
+  </div>

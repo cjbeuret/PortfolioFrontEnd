@@ -1,0 +1,87 @@
+<!-- Boton Editar PROYECTOS Modal-->
+<div class="modal fade" id="addProyModal" tabindex="-1" aria-labelledby="addProyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addProyModalLabel">Editar Proyectos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+       
+        <!--formulario AGREGA EDUCACION-->         
+        <form [formGroup]="proyAddForm" (ngSubmit)="onEnviar($event)" name="proyFormAdd">
+            <!--form [formGroup]="educAddForm" (ngSubmit)="form.valid && onCreate()" name="educacionFormAdd"-->   
+              <div class="modal-body"> 
+                <!--div class="mb-3"> 
+                  <input type="hidden" formControlName="id" [(ngModel)]="id_proyecto" id="">
+                </div--> 
+                <!--div class="mb-3">
+                  <label for="inputTituloProyecto" class="form-label">Titulo del proyecto</label>
+                  <input type="text" placeholder="inserte titulo del proyecto" class="form-control" id="inputTituloProyecto" 
+                  name="inputTituloProyecto" required formControlName="tituloProyecto" [(ngModel)]="tituloProyecto">               
+                </div-->
+                <div class="mb-3">
+                  <label for="inputTituloProyecto" class="form-label">Título del proyecto </label>
+                  <input class="form-control" type="text" placeholder="Inserte titulo del proyecto" id="inputTituloProyecto" 
+                  name="inputTituloProyecto" formControlName="tituloProyecto" [(ngModel)]="tituloProyecto" required 
+                  [ngClass]="{'is-invalid': TituloProyecto?.errors && TituloProyecto?.touched, 'is-valid': !TituloProyecto?.errors && TituloProyecto?.touched}"> <!--required-->  
+                  <div *ngIf="TituloProyecto?.errors && TituloProyecto?.touched">
+                    <p *ngIf="TituloProyecto?.hasError('required')" class="text-danger">
+                      El nombre del proyecto es un dato requerido.
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputImagen" class="form-label">Imagen</label>
+                  <input type="text" placeholder="inserte url de la imagen" id="imagenProy" 
+                  name="imagenProy" formControlName="imagen" [(ngModel)]="imagen">             
+                </div>
+                <div class="mb-3">
+                  <label for="inputUrlProy" class="form-label">Agregar url del proyecto</label>
+                  <input class="form-control" type="url" placeholder="inserte url de la página del proyecto" id="urlProy" 
+                  name="inputUrlProy" formControlName="url" [(ngModel)]="url">             
+                </div>
+                <div class="mb-3">
+                  <label for="inputDestinatario" class="form-label">Ingrese el destinatario del proyecto</label>
+                  <input type="text" placeholder="inserte nombre del destinatario del proyecto"class="form-control" id="inputDestinatario" 
+                  name="inputDestinatario" required formControlName="Titulo" [(ngModel)]="destinatario">              
+                </div>
+                <div class="mb-3">
+                  <label for="inputDescProyecto" class="form-label">Breve descripción del proyecto</label>                 
+                  <textarea class="form-control" type="text" placeholder="inserte titulo" id="inputDescProyecto" rows="3" 
+                  name="inputDescProyecto" formControlName="descProyecto" [(ngModel)]="descProyecto" required
+                  [ngClass]="{'is-invalid': DescProyecto?.errors && DescProyecto?.touched, 
+                  'is-valid': ! DescProyecto?.errors && DescProyecto?.touched}"> </textarea> 
+                  <div *ngIf="DescProyecto?.errors && DescProyecto?.touched">
+                    <p *ngIf="DescProyecto?.hasError('required')" class="text-danger">
+                      La descripción del proyecto es un dato requerido.
+                    </p>
+                  </div>              
+                </div>
+            
+                <div class="mb-3">
+                  <label for="inputPeriodoDesarrollo" class="form-label">Periodo de desarrollo</label>
+                  <input class="form-control" type="text" placeholder="inserte titulo" id="inputPeriodoDesarrollo" 
+                  name="inputDescProyecto" formControlName="periodoDesarrollo" [(ngModel)]="periodoDesarrollo" required
+                  [ngClass]="{'is-invalid': PeriodoDesarrollo?.errors && PeriodoDesarrollo?.touched, 
+                  'is-valid': ! PeriodoDesarrollo?.errors && PeriodoDesarrollo?.touched}"> 
+                  <div *ngIf="PeriodoDesarrollo?.errors && PeriodoDesarrollo?.touched">
+                    <p *ngIf="PeriodoDesarrollo?.hasError('required')" class="text-danger">
+                      El período de desarrollo es un dato requerido.
+                    </p>
+                  </div>              
+                </div>
+                <div>
+                  <label for="proyIdPersona" class="form-label"> Persona asociada</label>
+                  <input type="number" class="form-control" id="proyIdPersona" name="id_persona" 
+                  formControlName="id_persona" [(ngModel)]="id_persona" id="">             
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Limpiar</button>
+                  <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+              </div> 
+            </form>
+
+      </div>
+    </div>
+  </div> 

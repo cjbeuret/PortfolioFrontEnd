@@ -30,7 +30,7 @@ export class ModalExperienciaComponent implements OnInit {
 
     //creamos el grupo de controles para el formulario
     this.expeForm= this.formBuilder.group({
-      id_experiencia:[''],
+      id_experiencia:[],
       empresa: ['',[Validators.required]],
       logo: [''],
       url: [''],

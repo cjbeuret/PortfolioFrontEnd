@@ -1,14 +1,15 @@
 <!-- Boton Editar HABILIDADES Modal-->
-<div class="modal fade" id="editHabModal" tabindex="-1" aria-labelledby="editHabModalLabel" aria-hidden="true">
+<div class="modal fade" id="addHabModal" tabindex="-1" aria-labelledby="addHabModalLabel" aria-hidden="true" >
+    
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="editHabModalLabel">Editar habilidades</h1>
+          <h1 class="modal-title fs-5" id="addHabModalLabel">Agregar habilidades</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
-               <!--formulario AGREGAR HABILIDAD-->
-        <form [formGroup]="habForm" (ngSubmit)="onEnviar($event)" name="habFormAdd">
+        <!--formulario AGREGAR HABILIDAD-->
+        <form [formGroup]="habAddForm" (ngSubmit)="onEnviar($event)" name="habFormAdd">
         <!--form [formGroup]="habAddForm" (ngSubmit)="form.valid && onCreate()" name="habilidadFormAdd"-->     
           <div class="modal-body">             
             <!--div class="mb-3"> 
@@ -16,8 +17,8 @@
             </div--> 
             <div class="mb-3">
               <label for="inputSpan" class="form-label">Icono/imagen/span</label>
-              <input type="url" class="form-control" id="span" placeholder="ingrese url o src de la imagen/span"
-              name="span" formControlName="span" [(ngModel)]="habEdit.span">              
+              <input type="text" class="form-control" id="span" placeholder="ingrese span / imagen"
+              name="span" formControlName="span" [(ngModel)]="span">              
             </div>
             <!--div class="mb-3">
               <label for="inputNombreHab" class="form-label">Nombre de la habilidad</label>
@@ -26,7 +27,7 @@
             <div class="mb-3">
               <label for="inputNombreHab" class="form-label">Nombre de la habilidad</label>
               <input class="form-control" type="text" placeholder="inserte nombre de la habilidad" id="inputNombreHab" 
-              name="inputNombreHab" formControlName="nombreHab" [(ngModel)]="habEdit.nombreHab" required
+              name="inputNombreHab" formControlName="nombreHab" [(ngModel)]="nombreHab" required
               [ngClass]="{'is-invalid': NombreHab?.errors && NombreHab?.touched, 'is-valid': ! NombreHab?.errors && NombreHab?.touched}"> 
               <div *ngIf="NombreHab?.errors && NombreHab?.touched">
                 <p *ngIf="NombreHab?.hasError('required')" class="text-danger">
@@ -41,7 +42,7 @@
             <div class="mb-3">
               <label for="inputPorcentaje" class="form-label">Porcentaje: valor numérico(#)</label>
               <input class="form-control" type="number" placeholder="inserte el valor numérico (#) del porcentaje" id="inputProgreso" 
-              name="inputPorcentaje" formControlName="porcentaje" [(ngModel)]="habEdit.porcentaje" required
+              name="inputPorcentaje" formControlName="porcentaje" [(ngModel)]="porcentaje" required
               [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched,'is-valid': ! Porcentaje?.errors && Porcentaje?.touched}"> 
               <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
                 <p *ngIf="Porcentaje?.hasError('required')" class="text-danger">El porcentaje es obligatorio</p>
@@ -56,7 +57,7 @@
             <div class="mb-3">
               <label for="inputProgreso" class="form-label">Progreso (el valor numérico(#)debe ser equivalente al %)</label>
               <input class="form-control" type="text" placeholder="inserte progreso (formato: progress-#)" id="inputProgreso" 
-              name="inputProgreso" formControlName="progreso" [(ngModel)]="habEdit.progreso" required
+              name="inputProgreso" formControlName="progreso" [(ngModel)]="progreso" required
               [ngClass]="{'is-invalid': Progreso?.errors && Progreso?.touched, 'is-valid': ! Progreso?.errors && Progreso?.touched}"> 
               <div *ngIf="Progreso?.errors && Progreso?.touched">
                 <p *ngIf="Progreso?.hasError('required')" class="text-danger">
@@ -64,16 +65,14 @@
                 </p>
               </div>              
             </div>
-            <div>
-              <input type="hidden" formControlName="id_persona" [(ngModel)]="habEdit.id_persona" id="">
-            </div>
             
             <div class="modal-footer">
-              <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Limpiar</button>
+              <button type="submit" class="btn btn-primary">Agregar</button>
             </div>
           </div> 
         </form>
       </div>
     </div>
 </div> 
+

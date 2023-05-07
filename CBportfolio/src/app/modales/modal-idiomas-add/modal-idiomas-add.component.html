@@ -1,0 +1,76 @@
+<!-- Boton AGREGAR IDIOMAS Modal-->
+<div class="modal fade" id="addIdiomasModal" tabindex="-1" aria-labelledby="addIdiomasModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addIdiomasModalLabel">Agregar idiomas</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <!--formulario AGREGAR HABILIDAD-->
+        <form [formGroup]="idiomaAddForm" (ngSubmit)="onEnviar($event)" name="idiomaFormAdd">
+          <!--form [formGroup]="idiomaAddForm" (ngSubmit)="form.valid && onCreate()" name="idiomaFormAdd"-->     
+            <div class="modal-body">             
+              <!--div class="mb-3"> 
+                <input type="hidden" formControlName="id" [(ngModel)]="id_idioma" id="">
+              </div--> 
+              <!--div class="mb-3">
+                <label for="inputIdioma" class="form-label">Idioma</label>
+                <input type="text" class="form-control" id="inputIdioma" placeholder="nombre del idioma">              
+              </div-->
+              <div class="mb-3">
+                <label for="inputIdioma" class="form-label">Nombre del Idioma</label>
+                <input class="form-control" type="text" placeholder="ingrese el nombre del idioma" id="inputIdioma" 
+                name="inputIdioma" formControlName="idioma" [(ngModel)]="idioma" required
+                [ngClass]="{'is-invalid': Idioma?.errors && Idioma?.touched, 'is-valid': ! Idioma?.errors && Idioma?.touched}"> 
+                <div *ngIf="Idioma?.errors && Idioma?.touched">
+                  <p *ngIf="Idioma?.hasError('required')" class="text-danger">
+                    El nombre del idioma es un dato requerido.
+                  </p>
+                </div>              
+              </div>
+              <!--div class="mb-3">
+                <label for="inputPorcentaje" class="form-label">Porcentaje</label>
+                <input type="number" class="form-control" id="inputPorcentaje" placeholder="porcentaje. Solo número" required>              
+              </div-->
+              <div class="mb-3">
+                <label for="inputPorcentaje" class="form-label">Porcentaje: valor numérico(#)</label>
+                <input class="form-control" type="number" placeholder="inserte el valor numérico (#) del porcentaje" id="inputProgreso" 
+                name="inputPorcentaje" formControlName="porcentaje" [(ngModel)]="porcentaje" required
+                [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched,'is-valid': ! Porcentaje?.errors && Porcentaje?.touched}"> 
+                <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+                  <p *ngIf="Porcentaje?.hasError('required')" class="text-danger">El porcentaje es obligatorio</p>
+                  <p *ngIf="Porcentaje?.errors?.['min']" class="text-danger">El valor debe ser mayor a 0</p>
+                  <p *ngIf="Porcentaje?.errors?.['max']" class="text-danger">El valor debe ser menor a 100</p>
+                </div>              
+              </div>
+              <!--div class="mb-3">
+                <label for="inputProgreso" class="form-label">Progreso</label>
+                <input type="text" class="form-control" id="inputProgreso" placeholder="Progreso -formato: progress-#(número)" required>              
+              </div-->
+              <div class="mb-3">
+                <label for="inputProgreso" class="form-label">Progreso (el valor numérico(#)debe ser equivalente al %)</label>
+                <input class="form-control" type="text" placeholder="inserte progreso (formato: progress-#)" id="inputProgreso" 
+                name="inputProgreso" formControlName="progreso" [(ngModel)]="progreso" required
+                [ngClass]="{'is-invalid': Progreso?.errors && Progreso?.touched, 'is-valid': ! Progreso?.errors && Progreso?.touched}"> 
+                <div *ngIf="Progreso?.errors && Progreso?.touched">
+                  <p *ngIf="Progreso?.hasError('required')" class="text-danger">
+                    El campo de progreso es obligatorio.
+                  </p>
+                </div>              
+              </div>
+              <div class="mb-3">
+                <label for="inputSpan" class="form-label">Comentario</label>
+                <input type="text" class="form-control" id="inputComent" placeholder="observación breve"
+                name="comentario" formControlName="comentario" [(ngModel)]="comentario">              
+              </div>
+              <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+              </div>
+            </div> 
+        </form>
+      </div>
+    </div>
+</div> 
+

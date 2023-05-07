@@ -36,6 +36,12 @@ import { DataService } from './servicios/data.service';
 import { InterceptorService } from './servicios/interceptor.service';
 import { ExperienciaEditComponent } from './components/experiencia-edit/experiencia-edit.component';
 import { LoginComponent } from './components/login/login.component';
+import { ModalEducacionAddComponent } from './modales/modal-educacion-add/modal-educacion-add.component';
+import { ModalDomicilioAddComponent } from './modales/modal-domicilio-add/modal-domicilio-add.component';
+import { ModalHabilidadesAddComponent } from './modales/modal-habilidades-add/modal-habilidades-add.component';
+import { ModalIdiomasAddComponent } from './modales/modal-idiomas-add/modal-idiomas-add.component';
+import { ModalProyectosAddComponent } from './modales/modal-proyectos-add/modal-proyectos-add.component';
+import { ModalRedesAddComponent } from './modales/modal-redes-add/modal-redes-add.component';
 
 
 @NgModule({
@@ -69,6 +75,12 @@ import { LoginComponent } from './components/login/login.component';
     ModalExperienciaAddComponent,
     ExperienciaEditComponent,
     LoginComponent,
+    ModalEducacionAddComponent,
+    ModalDomicilioAddComponent,
+    ModalHabilidadesAddComponent,
+    ModalIdiomasAddComponent,
+    ModalProyectosAddComponent,
+    ModalRedesAddComponent,
   
   ],
   imports: [
