@@ -32,22 +32,19 @@
           <p>{{experiencia.descPuesto}}</p>
         </div>  
         
-        <div class="col-1" >
-          <div class="btn-group" role="group" aria-label="editarExperiencia" *ngIf="isLogged"> 
+        <div class="col-1" *ngIf="isLogged">
+
+          <button type="button" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal">
+            <i class="fa-sharp fa-solid fa-pen" ></i> 
+          </button> <!--Editar--> 
+           <br>
+          <button type="button" class="btn btn-light" routerLink="/editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
+          <!--button type="button" class="btn btn-light" routerLink="editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
+           <br>
+          <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar" (click)="delete(experiencia.id_experiencia)">
+            <i class="fa-solid fa-trash"></i>
+          </button><!-- Eliminar-->
             
-            <button type="button" class="btn btn-light" data-bs-toggler="modal" data-bs-target="#editExpModal">
-              <i class="fa-sharp fa-solid fa-pen" ></i> 
-            </button> <!--Editar--> 
-            
-            <button type="button" class="btn btn-light" routerLink="/editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button> <!-- Editar-->
-            <!--button type="button" class="btn btn-light" routerLink="editarexpe"><i class="fa-sharp fa-solid fa-pen"></i></button--> <!-- Editar-->
-            
-            <br>
-            <button type="button" class="btn btn-light" data-bs-toggle="tooltip" title="Confirma que desea borrar" (click)="delete(experiencia.id_experiencia)">
-              <i class="fa-solid fa-trash"></i>
-            </button><!-- Eliminar-->
-            
-          </div>  
         </div> 
       </div>
 

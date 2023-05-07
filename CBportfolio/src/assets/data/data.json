@@ -134,7 +134,7 @@
       "span": "fa-brands fa-html5", 
       "nombreHab": "HTML5",
       "porcentaje": 60, 
-      "progreso": "progress-60"
+      "progreso": "progress-50"
     },
     {
       "id": 2,
@@ -148,28 +148,35 @@
       "span": "fa-brands fa-bootstrap", 
       "nombreHab": "Bootstrap",
       "porcentaje": 50, 
-      "progreso": "progress-50"
+      "progreso": "progress-45"
     },
     {
       "id": 4,
       "span": "fa-brands fa-angular", 
-      "tituloHab": "Angular",
+      "nombreHab": "Angular",
       "porcentaje": 35, 
       "progreso": "progress-35"
     },
     {
       "id": 5,
       "span": "fa-brands fa-github-alt", 
-      "tituloHab": "GitHub",
+      "nombreHab": "GitHub",
       "porcentaje": 20, 
-      "progreso": "progress-20"
+      "progreso": "progress-25"
     },
     {
       "id": 6,
       "span": "fa-solid fa-database", 
-      "tituloHab": "Base de Datos",
+      "nombreHab": "Base de Datos",
       "porcentaje": 60, 
       "progreso": "progress-60"
+    },
+    {
+      "id": 7,
+      "span": "fa-brands fa-java", 
+      "nombreHab": "Java",
+      "porcentaje": 20, 
+      "progreso": "progress-20"
     }
   ],
 
